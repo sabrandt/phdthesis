@@ -1,0 +1,157 @@
+% -*- Mode:TeX -*-
+\documentclass[12pt,twoside]{mitthesis}
+\usepackage{lgrind}
+%% These have been added at the request of the MIT Libraries, because
+%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\pagestyle{plain}
+%\usepackage{graphics} %% uncomment when i actually fix the errors
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{cancel}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{notoccite}
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{dcolumn}
+
+\usepackage[left]{lineno}
+
+%% how to get the stupid references in right order
+
+% \bibliographystyle{unsrt}
+%% also need to do something about the ordering if there are citations in figures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\chapquote}[3]{\begin{quotation}\textit{#1} \end{quotation}\begin{flushright} - #2, \textit{#3}\end{flushright} }
+
+%%%%% Units, Variables, misc.
+\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand{\et}{\ensuremath{E_{\mathrm{T}}}\xspace}
+\newcommand{\met}{\ensuremath{E_{\mathrm{T}}^{miss}}\xspace}
+\newcommand{\vmet}{\ensuremath{\vec{E}_{\mathrm{T}}^{miss}}\xspace}
+\newcommand{\mt}{\ensuremath{m_{\mathrm{T}}}\xspace}
+\newcommand{\invpb}{\ensuremath{\,\mathrm{pb}^{-1}}\xspace}
+\newcommand{\pb}{\ensuremath{\,\mathrm{pb}}\xspace}
+\newcommand{\mll}{\ensuremath{\mathrm{M}_{ll}}\xspace}
+\newcommand{\s}{\ensuremath{\sqrt{s}}\xspace}
+\newcommand{\nsig}{\ensuremath{N_{sig}}\xspace}
+\newcommand{\sbr}{\ensuremath{\sigma \times Br}\xspace}
+\newcommand{\TeV}{\ensuremath{\,\text{Te\hspace{-.08em}V}}\xspace}
+\newcommand{\GeV}{\ensuremath{\,\text{Ge\hspace{-.08em}V}}\xspace}
+\newcommand{\serag}{\ensuremath{\sqrt{s}=5.02\TeV}\xspace}
+\newcommand{\serah}{\ensuremath{\sqrt{s}=13\TeV}\xspace}
+
+\newcommand{\rwpm}{\ensuremath{R_{\Wp/\Wm}}\xspace}
+\newcommand{\rwpz}{\ensuremath{R_{\Wp/\Z}}\xspace}
+\newcommand{\rwmz}{\ensuremath{R_{\Wm/\Z}}\xspace}
+\newcommand{\rwz}{\ensuremath{R_{\W/\Z}}\xspace}
+
+\newcommand{\lumig}{\ensuremath{291.1\pm 10 \invpb}\xspace}
+\newcommand{\lumih}{\ensuremath{199.3\pm 4 \invpb}\xspace}
+
+\newcommand{\GEANTfour} {{\textsc{Geant4}}\xspace}
+\newcommand{\MINLO} {\textsc{MINLO}\xspace}
+\newcommand{\MADGRAPH} {\textsc{MadGraph}\xspace}
+\newcommand{\aMCATNLO} {a\textsc{mc@nlo}\xspace}
+\newcommand{\MCATNLO} {\textsc{mc@nlo}\xspace}
+\newcommand{\MGvATNLO}{\MADGRAPH{}5\_a\MCATNLO}
+\newcommand{\PHOTOS} {\textsc{photos}\xspace}
+\newcommand{\POWHEG} {{\textsc{powheg}}\xspace}
+\newcommand{\PYTHIA} {{\textsc{pythia}}\xspace}
+
+\newcommand{\masswindow}{\ensuremath{60\GeV\leq \mathrm{M}_{ll}\leq 120\GeV}\xspace}
+
+
+\newcommand{\uprp}{\ensuremath{u_{\perp}}\xspace}
+\newcommand{\upar}{\ensuremath{u_{||}}\xspace}
+\newcommand{\muf}{\ensuremath{\mu_{F}}\xspace}
+\newcommand{\mur}{\ensuremath{\mu_{R}}\xspace}
+%%%%% quark pairs, proton stuff, etc
+
+\newcommand{\pp}{\ensuremath{pp}\xspace}
+\newcommand{\ppbar}{\ensuremath{p\bar{p}}\xspace}
+\newcommand{\qqbar}{\ensuremath{q\bar{q}}\xspace}
+\newcommand{\udbar}{\ensuremath{u\bar{d}}\xspace}
+\newcommand{\dubar}{\ensuremath{d\bar{u}}\xspace}
+\newcommand{\ttbar}{\ensuremath{t\bar{t}}\xspace}
+
+
+%% Bosons: 
+\newcommand{\Z}{\ensuremath{Z}\xspace}
+\newcommand{\W}{\ensuremath{W}\xspace}
+\newcommand{\Zzero}{\ensuremath{\Z^0}\xspace}
+\newcommand{\Wpm}{\ensuremath{\W^{\pm}}\xspace}
+\newcommand{\Wp}{\ensuremath{\W^+}\xspace}
+\newcommand{\Wm}{\ensuremath{\W^-}\xspace}
+
+%% Z decays
+\newcommand{\zmm}{\ensuremath{\Z\to\mu\mu}\xspace}
+\newcommand{\zee}{\ensuremath{\Z\to e e}\xspace}
+\newcommand{\zll}{\ensuremath{\Z\to \ell \ell}\xspace}
+
+\newcommand{\ztt}{\ensuremath{Z\to\tau\tau}\xspace}
+
+%% W decays
+\newcommand{\wlnu}{\ensuremath{\W\to \ell \nu}\xspace}
+\newcommand{\wenu}{\ensuremath{\W\to e \nu}\xspace}
+\newcommand{\wmunu}{\ensuremath{\W\to \mu \nu}\xspace}
+\newcommand{\wtau}{\ensuremath{\W\to \tau \nu}\xspace}
+
+\newcommand{\wlp}{\ensuremath{\W^+\to \ell^+ \nu}\xspace}
+\newcommand{\wep}{\ensuremath{\W^+\to e^+ \nu}\xspace}
+\newcommand{\wmp}{\ensuremath{\W^+\to \mu^+ \nu}\xspace}
+
+\newcommand{\wlm}{\ensuremath{\W^-\to \ell^- \nu}\xspace}
+\newcommand{\wem}{\ensuremath{\W^-\to e^- \nu}\xspace}
+\newcommand{\wmm}{\ensuremath{\W^-\to \mu^- \nu}\xspace}
+
+
+\linenumbers
+
+%% This bit allows you to either specify only the files which you wish to
+%% process, or `all' to process all files which you \include.
+
+%%\typein [\files]{Enter file names to process, (chap1,chap2 ...), or `all' to
+%%process all files:}
+%%\def\all{all}
+%%\ifx\files\all \typeout{Including all files.} \else \typeout{Including only \files.} \includeonly{\files} \fi
+
+\begin{document}
+
+\include{cover}
+% Some departments (e.g. 5) require an additional signature page.  See
+% signature.tex for more information and uncomment the following line if
+% applicable.
+% \include{signature}
+\pagestyle{plain}
+\input{numbers.tex}
+\input{contents}
+\input{01-01-Intro.tex}
+\input{02-01-SM.tex}
+\input{02-02-Gen.tex}
+\input{03-01-Exp-LHC.tex}
+\input{03-02-Exp-CMS.tex}
+\input{03-03-Exp-Misc.tex}
+\input{04-01-Reco.tex}
+\input{05-01-Data-Sel.tex}
+\input{06-01-Eff.tex}
+\input{07-01-Corrections-Misc.tex}
+\input{08-01-Acceptance.tex}
+\input{09-01-Recoil.tex}
+\input{10-01-SignalExtraction.tex}
+\input{12-01-Systematics.tex}
+\input{13-01-Results.tex}
+% \input{14-01-Summary.tex}
+
+
+\appendix
+% \input{A-Recoil-Fits.tex} %% leave out for now, comment in later?
+
+\input{biblio}
+\end{document}
+

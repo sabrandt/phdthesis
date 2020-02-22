@@ -1,0 +1,135 @@
+\chapter{Event Reconstruction}\label{ch:reco}
+Events in CMS are created by reconstructing energy depositions in the various subdetectors into particles and other objects. This section outlines the method for reconstructing and identifying various components of events.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%      Track
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tracks}
+Track reconstruction combines hits in the pixel and strip detectors, which are fit to construct tracks. Zero-suppressed signals in the pixel and strip detectors are clustered into hits, which provides hit position and uncertainty information. The track finding algorithm is an interative process which uses an implementation of the combinatorial Kalman Filter. The combinatorial Kalman Filter provides a combintation of pattern recognition and track fitting. The 6-pass iterative procedure initially finds the tracks that are easiest to identify, removes the hits associated with these tracks, and reiterates over the remaining collection of tracker hits. \cite{Chatrchyan:2014fea}
+
+Tracks are seeded using three hits in the inner pixel detector which correspond approximately to a track from the beam spot. The innermost tracker layers are used because electrons undergo significant energy and trajectory loss due to bremsstrahlung and many charged pions undergo inelastic collisions as they traverse the inner tracking layers. The highly granular pixel detector has lower occupancy than the outer strip detectors. These seed hits combined with the beam spot location provide enough information to derive parameters describing a helical trajectory as the particle moves through the magnetic field. The tracks are propagated outwards to subsequent tracker layers, incorporating additional hits if a $\chi^2$ is below a target threshold. Kalman filtering is then used to update the parameters of the track \cite{Adam:2005cg}. 
+
+Effects of tracker and support material on the energy loss and trajectory of particles traversing the tracker are also accounted for in this process. These effects are incorporated by Runge-Kutta based iterative propagator to describe a parametrized material distribution of the CMS detector and relevant interactions assuming every track is a $\pi$ meson. 
+
+Spurious track segments not corresponding to actual particle trajectories are removed after reconstruction. Requirements on minimum fit quality ($\chi^2/NDF$), proximity to the primary vertex ($\Delta z$), and proximity to the beam spot ($d_0/\delta d_0$) are used to remove such tracks. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%      PV
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Primary Vertex}
+Primary vertex (PV) reconstruction ensures the position of each proton-proton interaction in every event. Reconstructed tracks with high fit quality and several tracker hits are propagated back to the beamline. A clustering algorithm combines the position of closest-approach to the beamline into vertices based on their $z$-axis location \cite{Chatrchyan:2014fea}. The clustering algorithm currently used is a deterministic annealing algorithm, which produces a high performance in successful cluster finding in a noisy environment \cite{Chabanat:2005zz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%      electrons
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Electron Reconstruction}\label{ch:reco:ele}
+% \subsection{Electron Reconstruction}
+Electron reconstruction starts with an energy deposition in the ECAL, known as a supercluster. With the supercluster as a seed, a track is projected inwards from the ECAL, and pairs of hits in the silicon pixel tracker are searched for. From these, further tracker hits compatible with the trajectory are incorporated into the electron reconstruction. Due to Bremsstrahlung, electrons lose significant amounts of energy and change trajectory. The Bremsstrahlung losses are accounted for using a set of possible energy loss models. This is incorporated using a weighted technique known as a Gaussian Sum Filter (GSF) algorithm. 
+
+From the electron track reconstruction, multiple observables describing the kinematics of the electron, the surrounding event, and quality of the reconstruction are produced. These are later used to identify candidate electrons originating in the signal processes for this analysis. Variables produced in the electron reconstruction are listed with explanation below. Particular requirements on electron observables used in this thesis for candidate event selection are listed in Chapter~\ref{ch:IdIso:Ele}. 
+\subsubsection{Electron Observables}
+\begin{itemize}
+    \item ($\Delta\eta_{In}$,$\Delta\phi_{In}$): Angular separation between the supercluster and track, extrapolated to the vertex
+    \item $\sigma_{i\eta i\eta}$: Profile of the ECAL cluster
+    \item H/E: Allow only a small amount of activity in the HCAL in the region behind the ECAL electron
+    \item $|d_{0,bs}|$,~$|d_{z,bs}|$: Impact parameters of the muon track in transverse and longitudinal axes relative to the beamspot
+    \item $|1/E-1/p|$:  ??
+    \item \textsc{Isolation}
+    \item \textsc{\# Missing Hits}: Number of missing tracker hits in tracker layer
+    \item \textsc{Conversion probability}: Electrons originating from photon conversion within tracker volume are identified by fitting electron track pairs to common vertex
+\end{itemize}
+
+Particle flow isolation ($\mathrm{Iso_{PF}}$) is computed from the other isolation variables. The 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%      muons
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Muon Reconstruction}\label{ch:reco:muon}
+
+% \subsection{Muon Reconstruction}\label{ch:reco:mu:type}
+\subsubsection{Standalone Muons}
+A standalone muon track is built solely from information collected by the muon chambers. Energy depositions in the CSC and DT are combined as track segments. These are used as seeds for track reconstruction from the muon chambers CSC, DT, and RPCs, which are combined using a Kalman filter\cite{Sirunyan:2018fpa}. 
+
+\subsubsection{Global Muons}
+%% Our ID requires a global muon
+The global muon reconstruction starts with an energy deposition in the muon chambers which is propagated inwards towards the inner tracker. Standalone muon tracks are used as the seed for global muon reconstruction. Kalman filter techniques are used to combine the tracker and muon track segments to form a global muon. Energy loss effects due to detector material and support structure between the tracker and muon chambers are also accounted for. Global muon reconstruction improves momentum resolution for muons with $\pt > 200 \GeV$.
+
+\subsubsection{Tracker Muons}
+Tracker muons are muons which are identified as tracks in the tracker with at least $\pt > 0.5$ and $p > 2.5\GeV$. Tracker muon reconstruction is similar to global muon reconstruction, but the seed is a track segment from the inner tracker as opposed to a muon track segment.
+
+Observables describing the muon kinematics, event topolgy, and quality of muon reconstruction are produced. These allow the identification of muon candidates at a given quality threshold, as required by a particular analysis. The observables related to muon reconstruction and identification are listed below. Particular requirements on muon observables used in this thesis for candidate event selection are listed in Chapter~\ref{ch:IdIso:Mu}.  
+
+
+
+% \subsection{Muon ID and Isolation}
+% \subsubsection{Cut-based Muon Identification}
+% Cut-based selection is used for the muon identification. The observables utilized in the cut-based approach are listed below. The tight working point is used as the criteria for the W and Z decay daughter leptons. Designed to suppress muons originating from decay-in-flight and hadronic punch-through, the tight working point requires the muon have multiple tracker and muon system hits and be reconstructed as both tracker and global muon This results in a selected subset of PF muons. Criteria for the tight working point are listed in Table~\ref{tab:Data:Sel:Mu}.
+% Selection for the W events also requires a veto on additional muons in the event. Muons satisfying the loose muon working point are used for the veto. The loose ID identifies prompt muons as well as those from light and heavy flavor decays. As shown in Table~\ref{tab:Data:Sel:Mu:Veto}, this requires that the muon be both a PF muon and one of global or tracker muon. 
+
+% \input{tables/Reco/tab-MuID.tex}
+% \input{tables/Reco/tab-MuVetoID.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsubsection{Muon Isolation}\label{ch:mu:iso}
+% The isolation variable provides a measure of particles within close proximity to the muon. This aids in the distinction between muons originating within jets from prompt muons. Particle flow isolation, in Equation~\ref{ch:pfiso}, is the sum of the charged hadron momenta, neutral hadron energies, and photon energies in a geometrically close proximity to the muon and scaled to the muon momentum. 
+\begin{equation}
+    I_{PF} = \frac{1}{p_T} \Bigg(\sum_{h^{\pm}} p_T^{h^{\pm}} +\sum_{\gamma} p_T^{\gamma} + \sum_{h^{0}} p_T^{h^{0}}\Bigg)
+    \label{ch:pfiso}
+\end{equation}
+The individual contributions to the PF isolation are the sums of corresponding particle types which fall within a cone of $\Delta R < 0.4$ (Equation~\ref{eq:dR}).
+\begin{equation}
+    \Delta R = \sqrt{\Delta\eta^2+\Delta\phi^2}
+    \label{eq:dR}
+\end{equation}
+Neutral particle contributions due to pileup are estimated by computing charged hadron contributions from pileup vertices and scaling it by 0.5. The scaling factor was determined using simulation. This pileup contribution is subtracted from the total neutral particle energy sum to get the neutral particle isolation, which is limited to be $\geq0$.
+The value for the tight working point for PF isolation is $I_{PF} < 0.15$ \cite{Sirunyan_2017}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Muon Observables}
+\begin{itemize}
+    % \item $p_T$ > 25 GeV
+    % \item $|\eta|$ < 2.4
+    \item \textsc{IsPFMuon}: Muon is reconstructed by particle flow algorithm
+    \item \textsc{IsGlobalMuon} Muon is reconstructed by global muon algorithm
+    \item $\chi^2/$ndof: Quality of the global muon fit
+    \item \textsc{\# Valid Muon Hits} ~: Number of good muon system hits included in the global muon reconstruction
+    \item \textsc{\# Matched Stations} ~: Number of muon segments in the muon stations
+    \item \textsc{\# Tracker Layers} ~: Number of tracker layers hits associated with muon
+    \item \textsc{\# Valid Pixel Hits}~: Number of pixel tracker hits associated with muon
+    \item $|d_{0,bs}|$,~$|d_{z,bs}|$: Impact parameters of the muon track in transverse and longitudinal axes relative to the beamspot
+    \item $I_{PF}$: Muons must be isolated. Particle-flow isolation is used. 
+    \item \textsc{isolation}
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%      Particle Flow
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Particle Flow}
+The CMS detector is suited to using the particle flow (PF) technique in event reconstruction. The general principal of PF is to combine information from tracks and calorimeter deposits into one object. This analysis relies on the transverse missing energy (\met) as provided by the particle flow algorithm. This section describes the PF algorithm as well as the PF \met. 
+
+\subsection{Particle Flow Reconstruction}
+\subsubsection{Basic Elements}
+The basic elements of the PF algorithm are tracks in the tracker, track segments in the muon chambers, and energy clusters from the ECAL and HCAL. 
+Calorimeter clustering begins with a local maximum energy deposition as a seed, and are grown by incorporating neighboring cells with an energy above a certain threshold. The threshold is 2$\sigma$ above the standard electronic noise of the subdetector (80 MeV in ECAL Barrel, 300 MeV in ECAL Endcap, and 800 MeV in the HCAL). 
+An individual particle will produce multiple PF elements, and a linking algorithm is used to incorporate the elements from each subsystem into one object. 
+
+\subsubsection{Linking Algorithm}
+The linking algorithm finds the PF elements from each detector that correspond to individual objects and groups them together. Tracks are associated with calorimeter clusters by extrapolating from the outermost tracker hit, through the preshower and ECAL, and one interaction length into the HCAL. Pairwise matching between the extrapolated track and nearby calorimeter clusters is performed, and linking occurs if the track extrapolation falls within the cluster cells as measured in the $(\eta,\phi)$ plane for the ECAL barrel and HCAL and $(x,y)$ plane for the ECAL endcap and preshower. Calorimeter-to-calorimeter cluster linking is performed in a similar way by extrapolating clusters between the ECAL and HCAL, seeded with the cluster from the more granular detector. 
+
+In cases where multiple objects from one detector are linked with the same object from another detector, only the pair with the closest link (best fit) is kept. 
+
+Bremsstrahlung photons in the ECAL are linked by searching for ECAL clusters which are consistent with a tangential projection from the GSF electron track reconstruction. Additionally, bremsstrahlung photons radiated within the tracker are identified by tracks corresponding to photon conversion and can be linked to the GSF electron. 
+
+Linking information from the muon chambers is also performed, and is described in the muon reconstruction Section~\ref{ch:reco:muon}.
+
+
+\subsection{\met}
+Missing transverse energy (\met) is defined as the negative vector sum of all transverse momenta in an event, as in Equation~\ref{eq:met}.
+\begin{equation}
+    E_T^{miss}=-\sum_{p} \vec{p_T}
+    \label{eq:met}
+\end{equation}
+Particle flow \met is constructed from reconstructed PF particles.

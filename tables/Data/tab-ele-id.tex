@@ -1,0 +1,26 @@
+%%%% Table containing the Ele ID+Iso cuts
+\begin{table}[htbp]
+\begin{center}
+\scalebox{0.8}{
+\begin{tabular}{|c|c|c|}
+\hline
+Observable & Barrel & Endcap \\
+\hline \hline
+$p_T$ & \multicolumn{2}{c|}{$> 25$ \GeV} \\ \hline % OK
+$|\eta|$ & \multicolumn{2}{c|}{$< 2.4$}\\ \hline% OK
+$\Delta\eta_{In}$ & $< 0.0032$ & $< 0.00632$\\ \hline% OK
+$\Delta\phi_{In}$ & $< 0.0547$ & $< 0.0394$\\ \hline% OK
+$\sigma_{i\eta i\eta}$ & $<  0.0106$ & $< 0.0387$\\ \hline% OK
+H/E & $< 0.046+1.16/E_{SC}+0.0324\rho/E_{SC}$ & $< 0.0275+2.52/E_{SC}+0.183\rho/E_{SC}$\\ \hline%
+$|d_{0,bs}|$ & $< 0.05$ & $< 0.10$\\ \hline% OK
+$|d_{z,bs}|$ & $< 0.10$ & $< 0.20$\\ \hline% OK
+$|1/E-1/p|$ & $< 0.184$& $< 0.0721$\\ \hline% OK
+$\mathrm{Iso_{PF}}/$\pt &$< 0.0478+0.506/p_{\mathrm{T},ele}$ &$< 0.0658+0.963/p_{\mathrm{T},ele}$ \\ \hline
+Missing Hits & \multicolumn{2}{c|}{$\leq 1$}\\ \hline
+\multicolumn{3}{|c|}{Pass conversion veto}\\
+\hline
+\end{tabular} }
+\end{center}
+\caption{Reconstructed identification and isolation criteria fulfilling the medium cut-based ID for electron selection.}
+\label{tab:Data:Sel:Ele}
+\end{table}

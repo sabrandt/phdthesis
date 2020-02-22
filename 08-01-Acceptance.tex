@@ -1,0 +1,65 @@
+\chapter{Acceptance}
+
+\section{Acceptance Calculation}
+The acceptance, $A$, for \Wpm and \Z events is the fraction of simulated events producing decay products within the fiducial volume satisfying the geometric and kinematic requirements. The specific requirements are $\pt>25\GeV$ and $|\eta| < 2.4$ for both electrons and muons (Table~\ref{tab:Acc:Gen:Cuts}). An additional requirement on transverse mass, $\mt > 40 \GeV$, is applied for \Wpm events. For \Z events, only those which are generated with \masswindow are considered.
+\input{tables/Acceptance/tab-fiducial-cuts.tex}
+Generator-level acceptance can be computed before and after the effects of final-state radiation (FSR) are simulated. The acceptance values for \Wp, \Wm, and \Z calculated from \aMCATNLO with NNPDF3.1 PDF and \PYTHIA8.2 for parton showering for electron and muon channels are shown in Table~\ref{tab:Acc:Gen:Val:5TeV} (Table~\ref{tab:Acc:Gen:Val:13TeV}) for \serag (\serah). The post-FSR column indicates that the leptons have undergone bremsstrahlung, and the dressed lepton category incorporates final state radiation photons into the lepton kinematics. This is done by identifying any photons which are within $\Delta R < 0.1$ of the lepton and adding them back to the lepton momentum vector. Statistical uncertainty on the generator-level acceptance is negligible. Additional uncertainties from theoretical sources are discussed in the next section.
+\input{tables/Acceptance/tab-acc-vals-5.tex}
+\input{tables/Acceptance/tab-acc-vals-13.tex}
+
+Acceptance values for samples generated with \aMCATNLO and \POWHEG are shown in Table~\ref{tab:Acc:ele:5TeV} (electrons) and Table~\ref{tab:Acc:mu:5TeV} (muons) for \serag and Table~\ref{tab:Acc:ele:13TeV} (electrons) and Table~\ref{tab:Acc:mu:13TeV} (muons) for \serah. 
+\input{tables/Acceptance/tab-acc-gen-5.tex}
+\input{tables/Acceptance/tab-acc-gen-13.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Systematic Uncertainty}\label{ch:acc:unc}
+
+\subsection{Higher-order QCD corrections}
+
+The highest order calculation available for calculating the W cross section is NNLO, and uncertainty comes from the lack of higher order terms. The uncertainty due to these higher order terms is estimated by varying the the QCD renormalization (\mur) and factorization (\muf) scales and evaluating the impact this has on the acceptance.
+
+List the QCD parameters
+Variations
+Acceptance for each of these combinations is computed and compared against the primary acceptance value. The largest difference between the primary A and one of the variations is taken to be the uncertainty, as described in Equation~\ref{eq:acc.gen.unc.qcd}. 
+\begin{equation}
+\sigma_{QCD} = \mathrm{max}\Bigg(\frac{A_{QCD_i}-A}{A}\Bigg),~ \forall~i \in[1, NQCD]
+\label{eq:acc.gen.unc.qcd}
+\end{equation}
+Systematic uncertainties due to QCD factorization and renoramlization scales are shown in Table~\ref{tab:Acc:Sys:QCD} for 13 TeV, 5 TeV, and 13TeV/5TeV.
+
+
+\input{tables/Acceptance/tab-unc-qcd-all.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{PDF variations}
+Uncertainties in the PDF parameters is determined by making different PDF replicas with variations. The difference between the acceptance using the nominal PDF and the replica models gives the uncertainty due to PDFs. 
+The computation of this uncertainty is shown in Equation~\ref{eq:acc.gen.unc.pdf}, where the number of replica PDFs, $N_{PDF}$, is 99.
+\begin{equation}
+\sigma_{PDF}=\sqrt{\sum_{i}^{N_{PDF}} \Bigg(\frac{A_{i}-A}{A}\Bigg)^2*\frac{1}{N_{PDF}}}
+\label{eq:acc.gen.unc.pdf}
+\end{equation}
+
+
+\input{tables/Acceptance/tab-unc-pdf-all.tex}
+
+\input{tables/Acceptance/tab-acc-unc-ele-13.tex}
+\input{tables/Acceptance/tab-acc-unc-mu-13.tex}
+\input{tables/Acceptance/tab-acc-unc-ele-5.tex}
+\input{tables/Acceptance/tab-acc-unc-mu-5.tex}
+
+
+% \input{ch09/tab.09.02.syst/tab.09.02.Acc.Gen.Sys.13.tex}
+% \input{ch09/tab.09.02.syst/tab.09.02.Acc.Gen.Sys.5.tex}
+% \input{ch09/tab.09.02.syst/tab.09.02.Acc.Gen.Sys.Rat.tex}
+
+%\input{ch09/tab.09.02.syst/tab.09.02.Acc.Gen.All.tex}
+
+%%% Unsure about this part... 
+% \section{Acceptance at Reconstruction Level}
+% One of the inputs to the cross section calculation is the efficiency-corrected acceptance. This value is determined at the level of full event reconstruction, with the appropriate lepton efficiency scale factors applied to each event. Efficiency scale factors are described in detail in Chapter~\ref{ch7}(Reference Eff. SF chapter). 
+
+% The $A \times \epsilon$ value is computed by running the selection process, 
+
+% \input{ch09/tab.09.03.Acc.Reco/tab.09.03.Reco.13TeV.tex}
+% \input{ch09/tab.09.03.Acc.Reco/tab.09.03.Reco.5TeV.tex}
+% \input{ch09/tab.09.03.Acc.Reco/tab.09.03.Reco.13to5.tex}

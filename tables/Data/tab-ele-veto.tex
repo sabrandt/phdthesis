@@ -1,0 +1,27 @@
+%% Table containing the Electron ID+Iso Veto cuts
+%% Cut Type
+\begin{table}[htbp]
+\begin{center}
+\scalebox{0.8}{
+\begin{tabular}{|c|c|c|} %%%% Table needs vertical lines
+\hline
+Observable & Barrel & Endcap \\
+\hline \hline
+$p_T$ & \multicolumn{2}{c|}{$> 25$ \GeV} \\ \hline % OK
+$|\eta|$ & \multicolumn{2}{c|}{$< 2.4$}\\ \hline% OK
+$\Delta\eta_{In}$ & $< 0.00463$ & $< 0.00814$\\ \hline
+$\Delta\phi_{In}$ & $< 0.148$ & $< 0.19$\\ \hline
+$\sigma_{i\eta i\eta}$ & $< 0.0126$ & $< 0.0457$\\ \hline
+H/E & $< 0.05+1.16/E_{SC}+0.0324\rho/E_{SC}$ & $< 0.05+2.54/E_{SC}+0.183\rho/E_{SC}$\\ \hline%
+$|d_{0,bs}|$ & $< 0.05$ & $< 0.10$\\ \hline
+$|d_{z,bs}|$ & $< 0.10$ & $< 0.20$\\ \hline
+$|1/E-1/p|$ & $<0.209$& $< 0.132$\\ \hline
+$\mathrm{Iso_{PF}}/$\pt &$< 0.198+0.506/p_{T,ele}$ &$< 0.203+0.963/p_{T,ele}$ \\ \hline
+Missing Hits & $\leq 2$ & $\leq 3$\\ \hline
+\multicolumn{3}{|c|}{Pass conversion veto}\\
+\hline
+\end{tabular}}
+\end{center}
+\caption{Reconstructed identification and isolation criteria fulfilling the loose cut-based ID for electron selection used as a veto on \Wpm events with additional leptons present.}
+\label{tab:Data:Sel:EleVeto}
+\end{table}

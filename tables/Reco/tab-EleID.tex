@@ -1,0 +1,26 @@
+%%%% Table containing the Ele ID+Iso cuts
+\begin{table}%[htbp]
+\begin{center}
+\scalebox{0.8}{
+\begin{tabular}{|c|c|c|}
+\hline
+Observable & Barrel & Endcap \\
+\hline \hline
+% $p_T$ & \multicolumn{2}{c|}{> 25 GeV} \\ \hline % OK
+% $|\eta|$ & \multicolumn{2}{c|}{$< 2.5, \notin[1.442,1.556]$}\\ \hline% OK
+$\Delta\eta_{In}$ & $< 0.00255$ & $< 0.00501$\\ \hline% OK
+$\Delta\phi_{In}$ & $< 0.022$ & $< 0.0236$\\ \hline% OK
+$\sigma_{i\eta i\eta}$ & $<  0.0104$ & $< 0.0353$\\ \hline% OK
+H/E & $< 0.026+1.15/E_{SC}+0.0324\rho/E_{SC}$ & $< 0.0188+2.06/E_{SC}+0.183\rho/E_{SC}$\\ \hline%
+$|d_{0,bs}|$ & $< 0.05$ & $< 0.10$\\ \hline% OK
+$|d_{z,bs}|$ & $< 0.10$ & $< 0.20$\\ \hline% OK
+$|1/E-1/p|$ & $< 0.159$& $< 0.0197$\\ \hline% OK
+$\mathrm{PFIso}/p_T$ &$< 0.0287+0.506/p_{T,ele}$ &$< 0.0445+0.963/p_{T,ele}$ \\ \hline
+Missing Hits & \multicolumn{2}{c|}{$\leq 1$}\\ \hline
+\multicolumn{3}{|c|}{Pass conversion veto}\\
+\hline
+\end{tabular} }
+\end{center}
+\caption{Selection requirements for electrons passing the tight working point cut-based ID for 2017 data-taking.}
+\label{tab:Reco:Id:Ele}
+\end{table}
