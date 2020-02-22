@@ -16,24 +16,14 @@ Acceptance values for samples generated with \aMCATNLO and \POWHEG are shown in 
 
 \subsection{Higher-order QCD corrections}
 
-The highest order calculation available for calculating the W cross section is NNLO, and uncertainty comes from the lack of higher order terms. The uncertainty due to these higher order terms is estimated by varying the the QCD renormalization (\mur) and factorization (\muf) scales and evaluating the impact this has on the acceptance.
-
-List the QCD parameters
-Variations
-Acceptance for each of these combinations is computed and compared against the primary acceptance value. The largest difference between the primary A and one of the variations is taken to be the uncertainty, as described in Equation~\ref{eq:acc.gen.unc.qcd}. 
-\begin{equation}
-\sigma_{QCD} = \mathrm{max}\Bigg(\frac{A_{QCD_i}-A}{A}\Bigg),~ \forall~i \in[1, NQCD]
-\label{eq:acc.gen.unc.qcd}
-\end{equation}
-Systematic uncertainties due to QCD factorization and renoramlization scales are shown in Table~\ref{tab:Acc:Sys:QCD} for 13 TeV, 5 TeV, and 13TeV/5TeV.
+The highest order calculation available for calculating the W cross section is NNLO, and uncertainty comes from the lack of higher order terms. The uncertainty due to these higher order terms is estimated by varying the the QCD renormalization (\mur) and factorization (\muf) scales and evaluating the impact this has on the acceptance. Acceptance is calculated with variations on the \mur and \muf scales, and the uncertainty is taken to be the maximum deviation from the central value. Table~\ref{tab:Acc:Sys:QCD} for 13 TeV, 5 TeV, and 13TeV/5TeV.
 
 
 \input{tables/Acceptance/tab-unc-qcd-all.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{PDF variations}
-Uncertainties in the PDF parameters is determined by making different PDF replicas with variations. The difference between the acceptance using the nominal PDF and the replica models gives the uncertainty due to PDFs. 
-The computation of this uncertainty is shown in Equation~\ref{eq:acc.gen.unc.pdf}, where the number of replica PDFs, $N_{PDF}$, is 99.
+Uncertainties in the PDFs are determined by making different PDF replicas with variations. The uncertainty due to PDF variations is taken to be the envelope between the central value and replica sets, as shown in Equation~\ref{eq:acc.gen.unc.pdf}, where the number of replica PDFs, $N_{PDF}$, is 99.
 \begin{equation}
 \sigma_{PDF}=\sqrt{\sum_{i}^{N_{PDF}} \Bigg(\frac{A_{i}-A}{A}\Bigg)^2*\frac{1}{N_{PDF}}}
 \label{eq:acc.gen.unc.pdf}
@@ -41,11 +31,15 @@ The computation of this uncertainty is shown in Equation~\ref{eq:acc.gen.unc.pdf
 
 
 \input{tables/Acceptance/tab-unc-pdf-all.tex}
-
-\input{tables/Acceptance/tab-acc-unc-ele-13.tex}
-\input{tables/Acceptance/tab-acc-unc-mu-13.tex}
-\input{tables/Acceptance/tab-acc-unc-ele-5.tex}
-\input{tables/Acceptance/tab-acc-unc-mu-5.tex}
+\subsection{Resummation}
+Coming soon
+\subsection{EWK}
+[Coming soon] Difference between FSR models.
+% comment back in some time
+% \input{tables/Acceptance/tab-acc-unc-ele-13.tex}
+% \input{tables/Acceptance/tab-acc-unc-mu-13.tex}
+% \input{tables/Acceptance/tab-acc-unc-ele-5.tex}
+% \input{tables/Acceptance/tab-acc-unc-mu-5.tex}
 
 
 % \input{ch09/tab.09.02.syst/tab.09.02.Acc.Gen.Sys.13.tex}
