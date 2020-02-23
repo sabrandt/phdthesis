@@ -1,18 +1,23 @@
 \chapter{Signal Extraction}\label{ch:sig}
-The number of observed signal events for the \Wpm and \Z bosons are determined by a simultaneous fit of \Wp, \Wm, and \Z. This fit utilizes distributions of \mt for \Wpm and \mll for \Z, using simulated distributions for most of the signal and background processes, to extract a production rate for each of the processes. Transverse mass, \mt, is described in Equation~\ref{eq:mt}.
+\section{Fit Model}\label{ch:sig:fit}
+The cross sections of the \Wpm and \Z bosons are determined by a simultaneous fit of \Wp, \Wm, and \Z boson channels. Modeled observable distributions of \Wp, \Wm, and \Z boson signals and associated backgrounds are fit to their respective observable distribution in data. The discriminant for the \Wp and \Wm bosons is the transverse mass (\mt) observable, and for \Z bosons is the dilepton invariant mass \mll. Equation~\ref{eq:mt} shows the definition of \mt.
 \begin{equation}
 \mt = \sqrt{ 2 \pt^{\ell} \met ( 1 - \cos[\Delta\phi( {\vec \ell},\met ) ] ) }
 \label{eq:mt}
 \end{equation}
-The \mll distribution for the \zll signal processes are taken from simulation, with the appropriate lepton momentum scale and efficiency scale factors applied. The \mt distributions for the \wlnu signals additionally require the application of hadronic recoil corrections.
+The \mll and \mt distributions for the \Wp, \Wm, and \Z boson signal processes as well as their backgrounds are modeled as described in the following section. 
+The full fit model consists of the \Wp, \Wm, and \Z boson signal models, the diboson background, the \ttbar background, the Drell-Yan background, and the $W$+jets background. The \Wp and \Wm boson channels also include a QCD background. All signal and background models include the appropriate correction, which affect the discriminant distribution and overall normalizations. Detailed descriptions of the background processes and modeling are provided in the next section, the remainder of this section describes how these are incorporated into the  fit. 
+\subsubsection{Normalizations}
+Signal process normalizations are independent across channels. Within a given channel, the signal process and background process from the same production mechanism (i.e. \wmunu and \wtau) have their rates fixed relative to each other. The \ttbar normalizations and diboson normalizations are fully correlated across the \Wp, \Wm, and \Z boson channels. Uncertainties on the normalizations of each of these processes is set to $10\%$. The Drell-Yan background normalization is correlated between the \Wp and \Wm channels, with a normalization uncertainty of $3\%$. The luminosity uncertainty on the normalizations of all simulated processes is fully correlated for all simulated processes in all channels. 
 
-Uncertainties on normalization are included as nuisance parameters, and uncertainties on kinematic observables such as lepton \pt are propagated through the \mt or \mll distribution as shape uncertainties. Details of the signal and background \mt and \mll distribution modeling are provided in this chapter, as well as the results of the signal extraction fits.
+\subsubsection{Shape Uncertainties}
+Uncertainties on observables which impact the final discriminant distribution are included as shape uncertainties. Prefiring correction uncertainties are fully correlated for all simulated processes in the \Wp, \Wm, and \Z boson channels. Each uncertainty source from the lepton efficiency scale factors is also correlated over all simulated processes in all channels. Each uncertainty due to recoil/\met modeling is fully correlated across the \W signal and \W and \Z background processes in the \Wp and \Wm channels. The QCD-multijet background uncertainty is correlated between the \Wp and \Wm channels.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%               background
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background Modeling}\label{ch:sig:bkg}
-Backgrounds are estimated from both simulation and data-driven sources. Simulated backgrounds include the \ttbar and various electroweak processes, and include the appropriate normalization factors for prefiring and efficiency. Backgrounds to \W and \Z can include \ttbar and diboson (\W\W, \W\Z, \Z\Z) processes contributing one or two isolated leptons, respectively. The DY background to the \W is from a \zmm or \zee decay with only one lepton being in the detector volume, or the \ztt with one of the $\tau$ decaying leptonically. \ztt with leptonic $\tau$ decays is also a background to the \Z. The \wtaunu, with leptonic $\tau$ decay also contributes to the \W backgrounds.
+Backgrounds are estimated from both simulation and data-driven sources. Simulated backgrounds include the \ttbar and various electroweak processes, and include the appropriate normalization factors for prefiring and efficiency. Backgrounds to \W and \Z can include \ttbar and diboson ($WW$, $WZ$, $ZZ$) processes contributing one or two isolated leptons, respectively. The DY background to the \W is from a \zmm or \zee decay with only one lepton being in the detector volume, or the \ztt with one of the $\tau$ decaying leptonically. \ztt with leptonic $\tau$ decays is also a background to the \Z. The \wtaunu, with leptonic $\tau$ decay also contributes to the \W backgrounds.
 
  
 \subsubsection{QCD Background}\label{ch:w:qcd}
