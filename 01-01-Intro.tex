@@ -23,7 +23,7 @@ Cross sections of \Wpm and \Z boson production at the LHC has been studied at \s
 \subsubsection{Cross section}
 The cross section times branching ratio for a given channel is measured experimentally by determining the number of signal events observed and accounting for the acceptance of the measurement, as shown in Equation~\ref{eq:eq_xsec}. The acceptance of the fiducial volume is determined from simulation, and the efficiency scale factor is determined by measuring selection efficiency in both simulation and data. The following chapters of this thesis describe the derivation of these quantities in detail.
 \begin{equation}\label{eq:eq_xsec}
-\sigma\times Br = \frac{N_{signal}}{A\epsilon \int\mathcal{L} dt}
+\sigma\times Br = \frac{N_{sig}}{A\epsilon \int\mathcal{L} dt}
 \end{equation}
 \begin{itemize}
 \item \nsig: Number of signal events observed in a given channel
@@ -32,36 +32,20 @@ The cross section times branching ratio for a given channel is measured experime
 \item $\int\mathcal{L}dt$: integrated luminosity. The integrated luminosity provides the number of $pp$ collisions measured in a given dataset.
 \end{itemize}
 
-\subsubsection{Z boson cross section}
-Determining \nsig for the Z boson is fairly straightforward, as the dilepton decay of a Z is an extremely clean signature with minimal background. Two well-identified leptons are taken to be candidates for \zll decays, and events with invariant mass \masswindow are counted. Small background contributions primarily from diboson and \ttbar events are simulated, and the total contribution of the background processes is subtracted from the observed \zll yield. 
+\subsubsection{\Z boson cross section}
+Measuring the cross section of the \Z boson is fairly straightforward, as the dilepton decay of a \Z boson is an extremely clean signature with minimal background. Two well-identified leptons, required to be of the same flavor be oppositely charged, within the invariant mass range \masswindow are taken to be candidates for \zll decays. Small background contributions primarily from diboson and \ttbar events are simulated, and the total contribution of the background processes is subtracted from the observed \Z boson yield. 
 
-
-
-\subsubsection{W boson cross section}
-The W decay channels used in this measurement include the production of a neutrino, which is not measured by CMS. Therefore, the final state cannot be fully reconstructed, and additionally has a fairly large background. Instead of a fully reconstructed final state, an observable, transverse missing energy, \met, is used to differentiate between the signal and background. The expected \met distribution for the \wlnu process, as well as several background processes, are used in a fit to data to extract the yield for \nsig as well as the background contributions. 
-Measuring the W cross section relies heavily on the Z boson---there are multiple corrections that need to be derived for the W that cannot be done without the Z. In addition to the lepton efficiency and momentum corrections, the fit to \met requires an accurate modeling of hadronic recoil in an event. Hadronic recoil corrections account for differences between simulation and data, and are derived in a data-driven approach which relies on the Z boson, and are described in Chapter~\ref{ch:recoil}. 
+\subsubsection{\W boson cross section}
+The \W boson decay channels used in this measurement include the production of a neutrino, which is not measured by CMS. Therefore, the final state cannot be fully reconstructed, and additionally has a fairly large background. Instead of a fully reconstructed final state, an observable, transverse missing energy, \met, is used to infer the momentum of the neutrino. Transverse mass, \mt, is constructed from the lepton momentum and \met as a proxy for the neutrino. The simulated \mt distribution for the \wlnu signal process, as well as several background processes, are used in a fit to data to determine the cross section. 
+Measuring the \W boson production cross section relies on the \Z boson---there are multiple corrections that need to be derived for the \W boson simulations that cannot be done without the \Z boson. In addition to the lepton efficiency and momentum corrections, the fit to \mt requires an accurate modeling of \met and therefore the hadronic recoil in an event. Hadronic recoil corrections account for differences between simulation and data, and are derived in a data-driven approach which relies on the \Z boson, and are described in Chapter~\ref{ch:recoil}. 
 
 
 \subsubsection{Measurements}
-The results presented in this thesis are derived from datasets with \s = 5.02 \TeV and \s = 13 \TeV. This provides the opportunity to produce results with the highest precision available for two center-of-mass energies. The measurements are presented as the cross sections for \Wp, \Wm, \W, \Z, as well as the ratios of the cross sections $W^+/W^-$, $W^+/Z$, $W^-/Z$, $W/Z$. Evaluating the ratios allows the subtraction of any correlated systematic uncertainties, and increases the precision of the measurement. Notably, the uncertainty from the luminosity calibration is one of the largest uncertainties, and it completely cancels for these ratios. Additionally, making separate measurements at \s = 13 \TeV and \s = 5 \TeV provides another method for providing results with reduced uncertainties---taking ratios of the quantities: [13 \TeV]/[5 \TeV] allows us to further remove any correlated uncertainties. Some of the uncertainties which are correlated in this manner are the luminosity calibrations (partial correlation) and the theoretical uncertainties on the predictions. 
-
-%% Where to put this section
-% \section{\W and \Z bosons at the LHC}
-% In proton-proton collisions, the primary mode of production for both the \W and \Z bosons is the Drell-Yann process. The valence quark composition of the protons is $uud$, so at least one sea quark is required for \W or \Z production. The processes are primarily $u\bar{u}, d\bar{d}\rightarrow Z$,  $u\bar{d}\rightarrow W^+$,  and $d\bar{u}\rightarrow W^-$. 
-
-% The \W and \Z both decay via hadronic and leptonic channels, with branching fractions LOOK UP IN PDG. The leptonic decay channels have $Br(Z\rightarrow ee) = Br(Z\rightarrow \mu\mu) = Br(Z\rightarrow\tau\tau)$ due to lepton universality. 
-% The decay channels \zll and \wlnu provide extremely clean signatures, as electrons and muons are well-measured in CMS. The channels that this measurement is performed on are \zee, \zmm, \wenu, and \wmunu. 
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=\linewidth]{ch01/plots/zprod_dy.png}
-% %   \caption{1a}
-% %   \label{fig:Eff:el:5\TeV:GSFSel:pos
-% \caption{Drell-Yann production of Z bosons.}
-% \label{fig:ch08:prefire:2017H}
-% \end{figure}
+The results presented in this thesis are derived from datasets at \s = 5.02 \TeV and \s = 13 \TeV. This provides the opportunity to produce results with high precision for two center-of-mass energies. The measurements are presented as the cross sections for \Wp, \Wm, \W, \Z, as well as the ratios of the cross sections $W^+/W^-$, $W^+/Z$, $W^-/Z$, $W/Z$. Evaluating the ratios allows for the subtraction of any correlated systematic uncertainties, and increases the precision of the measurement. Notably, the uncertainty from the luminosity calibration is one of the largest uncertainties, and it completely cancels for these ratios. 
+% Comment back in when I add the 13/5 ratios
+% Additionally, making separate measurements at \s = 13 \TeV and \s = 5 \TeV provides another method for providing results with reduced uncertainties---taking ratios of the quantities: [13 \TeV]/[5 \TeV] allows us to further remove any correlated uncertainties. Some of the uncertainties which are correlated in this manner are the luminosity calibrations (partial correlation) and the theoretical uncertainties on the predictions. 
 
 
 \section{Impact of the Measurement}
-\W and \Z boson production is an important measurement at any hadron collider. The precision measurement of the \W and \Z  production provides a precision test of the Standard Model as well as a benchmark for the state-of-the-art calculations and models that are used to describe the proton and simulate physical interactions at the LHC and other experiments. The inclusive cross section measurements are the foundation of differential cross section measurements which provide greater constraints on different aspects of the models.  \W and \Z production is also significant background to many other electroweak measurements and searches for new physics.
+\W and \Z boson production is an important measurement at any hadron collider. The precision measurement of the \W and \Z  production provides a precision test of the Standard Model (SM), as well as a benchmark for the state-of-the-art calculations and models that are used to describe the proton and simulate physical interactions at the LHC and other experiments. The inclusive cross section measurements are the foundation of differential cross section measurements which provide greater constraints on different aspects of the models.  \W and \Z boson production is also significant background to many other electroweak measurements and searches for new physics.
 Additionally, \W and \Z bosons are a significant source of isolated, high-\pt leptons. The clean signature of \zll is used for detector calibration and luminosity monitoring \cite{xinmei}.

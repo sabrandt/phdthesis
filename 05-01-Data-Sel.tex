@@ -68,14 +68,50 @@ The fiducial region for the \Wpm and \Z boson acceptance at generator-level emul
 \section{Object Identification}\label{ch:IdIso}
 The \W and \Z boson candidates are identified by the presence of one or two, respectively, well-identified leptons passing a strong set of criteria ensuring proper reconstruction and identification. This section contains a description of the identification requirements for the \wlnu and \zll signal leptons, as well as the requirements for the lepton veto for the \Wpm boson selection.
 
+\subsection{Isolation}\label{ch:id:iso}
+One of the most important observables used to separate the leptons from \Wp and \Wm boson events from QCD background is the isolation. Isolated leptons have little other activity within a cone of $\Delta R < 0.3$, and leptons from \wlnu decays are generally isolated. The isolation of a lepton is constructed from the sum of all charged and neutral hadrons and ECAL deposits within $\Delta R < 0.3$ of the lepton, as shown in Equation~\ref{eq:pfiso}. 
+\begin{equation}
+    I_{PF} = \frac{1}{p_T}\sum_{\Delta R<0.3}( \pt^{\h^0} + \pt^{h^\pm} +  \pt^{\gamma})
+    \label{eq:pfiso}
+\end{equation}
+The individual contributions to the PF isolation are the sums of corresponding particle types which fall within a cone of $\Delta R < 0.4$.
+% \begin{equation}
+%     \Delta R = \sqrt{\Delta\eta^2+\Delta\phi^2}
+%     \label{eq:dR}
+% \end{equation}
+% Neutral particle contributions due to pileup are estimated by computing charged hadron contributions from pileup vertices and scaling it by 0.5. The scaling factor was determined using simulation. This pileup contribution is subtracted from the total neutral particle energy sum to get the neutral particle isolation, which is limited to be $\geq0$.
+
 \subsection{Electrons}\label{ch:IdIso:Ele}
-Electrons originating from a candidate \Wp, \Wm, and \Z bosons are required to pass the standard cut-based identification with medium working point. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Ele}~\cite{EgammaIDIsoCuts}. Descriptions of the observables are provided in Chapter~\ref{ch:reco:ele}. The \Wpm boson selection requires the absence of additional leptons in the event. The veto is performed with leptons fulfilling the loose working point identification requirements, with criteria for electrons listed in Table~\ref{tab:Data:Sel:EleVeto}. 
+Electrons originating from candidate \Wp, \Wm, and \Z bosons are required to pass the standard cut-based identification with medium working point. Backgrounds producing electron-like signatures include overlapping charged and neutral pions, pions showering in the ECAL, and jets, and the selection criteria are designed to exclude these. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Ele}~\cite{EgammaIDIsoCuts}. Descriptions of the observables are provided below. The \Wpm boson selection requires the absence of additional leptons in the event. The veto is performed with leptons fulfilling the loose working point identification requirements, with criteria for electrons listed in Table~\ref{tab:Data:Sel:EleVeto}. 
+\subsubsection{Electron Observables}
+\begin{itemize}
+    \item \textbf{($\Delta\eta_{In}$,$\Delta\phi_{In}$):} Geometric matching of the ECAL supercluster and electron GSF track, extrapolated to the vertex. Real electrons are well-matched since they come from the same object. 
+    \item \textbf{$\sigma_{i\eta i\eta}$:} Shape of the shower in the ECAL. Electrons can be discriminated from jets by the evolution of the shower in the 5x5 crystal region around the seed.
+    \item \textbf{H/E:} Ratio of energy deposited in HCAL to ECAL. Electrons tend to deposit most of their energy in the ECAL, while jets deposit substantial amounts their of energy in the HCAL.
+    \item \textbf{$|d_{0,bs}|$,~$|d_{z,bs}|$:} Impact parameters are defined as the distance of closest approach of the track to the vertex. Requiring an impact parameter cut removes electrons from displaced vertices.
+    \item \textbf{$|1/E-1/p|$:} Electron energy measured in ECAL is compatible with momentum measured in tracker.
+    \item \textbf{Number of Missing Hits}: Number of missing tracker hits in tracker layer
+    \item \textbf{Isolation:} Requiring that electrons be isolated reduces the number of jets reconstructed as electrons.
+    \item \textbf{Conversion probability}: Photons converting to electron-positron pairs are a source of isolated electrons. Electrons from photon conversion are identified by fitting $e^+e^-$ pairs to a common vertex.
+\end{itemize}
 
 \input{tables/Data/tab-ele-id.tex}
 \input{tables/Data/tab-ele-veto.tex}
 
 \subsection{Muons}\label{ch:IdIso:Mu}
-Muons originating from a candidate \Wpm or \Z boson are required to pass the standard cut-based identification with tight working point with tight working point requirement on the muon PF isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}~\cite{MuonIDIsoCuts}. Descriptions of the observables are provided in Chapter~\ref{ch:reco:mu}. As in the electron channel, the \Wpm boson selection requires the absence of additional leptons in an event which pass the loose cut-based ID. The criteria for muons is listed in Table~\ref{tab:Data:Sel:Mu:Veto}. 
+Muons originating from a candidate \Wpm or \Z boson are required to pass the standard cut-based identification with tight working point with tight working point requirement on the muon PF isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}~\cite{MuonIDIsoCuts}. Descriptions of the observables are provided below. As in the electron channel, the \Wpm boson selection requires the absence of additional leptons in an event which pass the loose cut-based ID. The criteria for muons is listed in Table~\ref{tab:Data:Sel:Mu:Veto}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Muon Observables}
+\begin{itemize}
+    \item \textbf{Global Muon \& PF Muon:} Muon candidate is successfully reconstructed by these algorithms
+    \item \textbf{$\chi^2/$ndof:} Quality of the muon track fit, require convergence of the fit.
+    \item \textbf{Number of Valid Hits:} Number of muon system hits included in the global muon reconstruction. Global muons rarely have 0 valid hits.
+    \item \textbf{Number of Matched Stations:} Number of muon segments in the muon stations
+    \item \textbf{Number of Pixel Hits:} Activity in the pixel tracker associated with the muon removes muons from backgrounds such as cosmic rays and decay-in-flight of pions and kaons. 
+    \item \textbf{Number of Tracker Hits:} Similar to the pixel tracker requirements, the total number of tracker hits can further reduce backgrounds from decay-in-flight.
+    \item \textbf{$|d_{0,bs}|$,~$|d_{z,bs}|$:} Impact parameters $d_0$ and $d_z$ are defined as the distance of closest approach of a track to the primary interaction vertex. Removes muons from displaced vertices and cosmic rays. 
+    \item \textbf{Isolation:} Muons originating from heavy flavor decays often have other leptons and light mesons nearby, and are therefore less isolated.
+\end{itemize}
 
 \input{tables/Data/tab-mu-id.tex}
 \input{tables/Data/tab-mu-veto.tex}

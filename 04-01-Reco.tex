@@ -27,20 +27,8 @@ Primary vertex (PV) reconstruction ensures the position of each proton-proton in
 % \subsection{Electron Reconstruction}
 Electron reconstruction starts with an energy deposition in the ECAL, known as a supercluster. With the supercluster as a seed, a track is projected inwards from the ECAL, and pairs of hits in the silicon pixel tracker are searched for. From these, further tracker hits compatible with the trajectory are incorporated into the electron reconstruction. Due to Bremsstrahlung, electrons lose significant amounts of energy and change trajectory. The Bremsstrahlung losses are accounted for using a set of possible energy loss models. This is incorporated using a weighted technique known as a Gaussian Sum Filter (GSF) algorithm. 
 
-From the electron track reconstruction, multiple observables describing the kinematics of the electron, the surrounding event, and quality of the reconstruction are produced. These are later used to identify candidate electrons originating in the signal processes for this analysis. Variables produced in the electron reconstruction are listed with explanation below. Particular requirements on electron observables used in this thesis for candidate event selection are listed in Chapter~\ref{ch:IdIso:Ele}. 
-\subsubsection{Electron Observables}
-\begin{itemize}
-    \item ($\Delta\eta_{In}$,$\Delta\phi_{In}$): Angular separation between the supercluster and track, extrapolated to the vertex
-    \item $\sigma_{i\eta i\eta}$: Profile of the ECAL cluster
-    \item H/E: Allow only a small amount of activity in the HCAL in the region behind the ECAL electron
-    \item $|d_{0,bs}|$,~$|d_{z,bs}|$: Impact parameters of the muon track in transverse and longitudinal axes relative to the beamspot
-    \item $|1/E-1/p|$:  ??
-    \item \textsc{Isolation}
-    \item \textsc{\# Missing Hits}: Number of missing tracker hits in tracker layer
-    \item \textsc{Conversion probability}: Electrons originating from photon conversion within tracker volume are identified by fitting electron track pairs to common vertex
-\end{itemize}
+From the electron track reconstruction, multiple observables describing the kinematics of the electron, the surrounding event, and quality of the reconstruction are produced. These are later used to identify candidate electrons originating in the signal processes for this analysis,as described in Chapter~\ref{ch:IdIso:Ele}.  
 
-Particle flow isolation ($\mathrm{Iso_{PF}}$) is computed from the other isolation variables. The 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      muons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,38 +45,6 @@ The global muon reconstruction starts with an energy deposition in the muon cham
 \subsubsection{Tracker Muons}
 Tracker muons are muons which are identified as tracks in the tracker with at least $\pt > 0.5$ and $p > 2.5\GeV$. Tracker muon reconstruction is similar to global muon reconstruction, but the seed is a track segment from the inner tracker as opposed to a muon track segment.
 
-Observables describing the muon kinematics, event topolgy, and quality of muon reconstruction are produced. These allow the identification of muon candidates at a given quality threshold, as required by a particular analysis. The observables related to muon reconstruction and identification are listed below. Particular requirements on muon observables used in this thesis for candidate event selection are listed in Chapter~\ref{ch:IdIso:Mu}.  
-
-\begin{equation}
-    I_{PF} = \frac{1}{p_T} \Bigg(\sum_{h^{\pm}} p_T^{h^{\pm}} +\sum_{\gamma} p_T^{\gamma} + \sum_{h^{0}} p_T^{h^{0}}\Bigg)
-    \label{ch:pfiso}
-\end{equation}
-The individual contributions to the PF isolation are the sums of corresponding particle types which fall within a cone of $\Delta R < 0.4$ (Equation~\ref{eq:dR}).
-\begin{equation}
-    \Delta R = \sqrt{\Delta\eta^2+\Delta\phi^2}
-    \label{eq:dR}
-\end{equation}
-Neutral particle contributions due to pileup are estimated by computing charged hadron contributions from pileup vertices and scaling it by 0.5. The scaling factor was determined using simulation. This pileup contribution is subtracted from the total neutral particle energy sum to get the neutral particle isolation, which is limited to be $\geq0$.
-The value for the tight working point for PF isolation is $I_{PF} < 0.15$ \cite{Sirunyan_2017}.
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Muon Observables}
-\begin{itemize}
-    % \item $p_T$ > 25 GeV
-    % \item $|\eta|$ < 2.4
-    \item \textsc{IsPFMuon}: Muon is reconstructed by particle flow algorithm
-    \item \textsc{IsGlobalMuon} Muon is reconstructed by global muon algorithm
-    \item $\chi^2/$ndof: Quality of the global muon fit
-    \item \textsc{\# Valid Muon Hits} ~: Number of good muon system hits included in the global muon reconstruction
-    \item \textsc{\# Matched Stations} ~: Number of muon segments in the muon stations
-    \item \textsc{\# Tracker Layers} ~: Number of tracker layers hits associated with muon
-    \item \textsc{\# Valid Pixel Hits}~: Number of pixel tracker hits associated with muon
-    \item $|d_{0,bs}|$,~$|d_{z,bs}|$: Impact parameters of the muon track in transverse and longitudinal axes relative to the beamspot
-    \item $I_{PF}$: Muons must be isolated. Particle-flow isolation is used. 
-    \item \textsc{isolation}
-\end{itemize}
 
 
 
