@@ -1,5 +1,5 @@
 \chapter{Event Reconstruction}\label{ch:reco}
-Events in CMS are created by reconstructing energy depositions in the various subdetectors into particles and other objects. This section outlines the method for reconstructing and identifying various components of events.
+Particles from collisions pass through CMS, producing signals in the various subdetectors. Events are reconstructed from the information delivered by the subsystems. This section outlines the method for reconstructing and identifying various components of events.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      Track
@@ -9,7 +9,7 @@ Track reconstruction combines hits in the pixel and strip detectors, which are f
 
 Tracks are seeded using three hits in the inner pixel detector which correspond approximately to a track from the beam spot. The innermost tracker layers are used because electrons undergo significant energy and trajectory loss due to bremsstrahlung and many charged pions undergo inelastic collisions as they traverse the inner tracking layers. The highly granular pixel detector has lower occupancy than the outer strip detectors. These seed hits combined with the beam spot location provide enough information to derive parameters describing a helical trajectory as the particle moves through the magnetic field. The tracks are propagated outwards to subsequent tracker layers, incorporating additional hits if a $\chi^2$ is below a target threshold. Kalman filtering is then used to update the parameters of the track \cite{Adam:2005cg}. 
 
-Effects of tracker and support material on the energy loss and trajectory of particles traversing the tracker are also accounted for in this process. These effects are incorporated by Runge-Kutta based iterative propagator to describe a parametrized material distribution of the CMS detector and relevant interactions assuming every track is a $\pi$ meson. 
+Effects of tracker and support material on the energy loss and trajectory of particles traversing the tracker are also accounted for in this process. These effects are incorporated by Runge-Kutta based iterative propagator to describe a parametrized material distribution of the CMS detector and relevant interactions assuming every track is a pion. 
 
 Spurious track segments not corresponding to actual particle trajectories are removed after reconstruction. Requirements on minimum fit quality ($\chi^2/NDF$), proximity to the primary vertex ($\Delta z$), and proximity to the beam spot ($d_0/\delta d_0$) are used to remove such tracks. 
 
@@ -59,18 +59,6 @@ Tracker muons are muons which are identified as tracks in the tracker with at le
 
 Observables describing the muon kinematics, event topolgy, and quality of muon reconstruction are produced. These allow the identification of muon candidates at a given quality threshold, as required by a particular analysis. The observables related to muon reconstruction and identification are listed below. Particular requirements on muon observables used in this thesis for candidate event selection are listed in Chapter~\ref{ch:IdIso:Mu}.  
 
-
-
-% \subsection{Muon ID and Isolation}
-% \subsubsection{Cut-based Muon Identification}
-% Cut-based selection is used for the muon identification. The observables utilized in the cut-based approach are listed below. The tight working point is used as the criteria for the W and Z decay daughter leptons. Designed to suppress muons originating from decay-in-flight and hadronic punch-through, the tight working point requires the muon have multiple tracker and muon system hits and be reconstructed as both tracker and global muon This results in a selected subset of PF muons. Criteria for the tight working point are listed in Table~\ref{tab:Data:Sel:Mu}.
-% Selection for the W events also requires a veto on additional muons in the event. Muons satisfying the loose muon working point are used for the veto. The loose ID identifies prompt muons as well as those from light and heavy flavor decays. As shown in Table~\ref{tab:Data:Sel:Mu:Veto}, this requires that the muon be both a PF muon and one of global or tracker muon. 
-
-% \input{tables/Reco/tab-MuID.tex}
-% \input{tables/Reco/tab-MuVetoID.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsubsection{Muon Isolation}\label{ch:mu:iso}
-% The isolation variable provides a measure of particles within close proximity to the muon. This aids in the distinction between muons originating within jets from prompt muons. Particle flow isolation, in Equation~\ref{ch:pfiso}, is the sum of the charged hadron momenta, neutral hadron energies, and photon energies in a geometrically close proximity to the muon and scaled to the muon momentum. 
 \begin{equation}
     I_{PF} = \frac{1}{p_T} \Bigg(\sum_{h^{\pm}} p_T^{h^{\pm}} +\sum_{\gamma} p_T^{\gamma} + \sum_{h^{0}} p_T^{h^{0}}\Bigg)
     \label{ch:pfiso}

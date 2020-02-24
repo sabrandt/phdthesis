@@ -2,20 +2,20 @@
 \begin{table}[htbp]
 \begin{center}
 \scalebox{0.9}{
-\begin{tabular}{lrr}
+\begin{tabular}{llr}
 \hline
-{Sample name} & {Cross section~[pb]} \\
+{Sample name} & {Generator} &{Cross section~[pb]} \\
 \hline \hline
-WJetsToLNu\_TuneCP5\_5020GeV-amcatnloFXFX-pythia8 & 21159 \\
+W+Jets & \aMCATNLO & 21159 \\
 \hline
-WWTo2L2Nu\_NNPDF31\_TuneCP5\_5p02TeV-powheg-pythia8 & 2.52 \\
-WZTo3LNU\_NNPDF30\_TuneCP5\_5p20TeV-powheg & 1.23 \\
-ZZTo4L\_5p02TeV\_powheg\_pythia8 & 2.75 \\
-ZZTo2L2Nu\_5p02TeV\_powheg\_pythia8 & 2.75 \\
+WWTo2L2Nu  & \POWHEG & 2.52 \\
+WZTo3LNU  & \POWHEG & 1.23 \\
+ZZTo4L  & \POWHEG & 2.75 \\
+ZZTo2L2Nu  & \POWHEG & 2.75 \\
 \hline
-TT\_TuneCP5\_5p02TeV-powheg-pythia8 &  69.5 \\
+\ttbar  & \POWHEG &  69.5 \\
 \hline
-DYJetsToLL\_MLL-50\_TuneCP5\_5020GeV-amcatnloFXFX-pythia8 & 2141  \\
+DYJetsToLL  & \aMCATNLO & 2141  \\
 \hline
 \end{tabular}}
 \end{center}
@@ -30,25 +30,81 @@ DYJetsToLL\_MLL-50\_TuneCP5\_5020GeV-amcatnloFXFX-pythia8 & 2141  \\
 \scalebox{0.9}{
 \begin{tabular}{lrr}
 \hline
-{Sample name} & {Cross section~[pb]} \\
+{Sample name}  & {Generator}& {Cross section~[pb]} \\
 \hline \hline
-WJetsToLNu\_0J\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 49397\\
-WJetsToLNu\_1J\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 8087 \\
-WJetsToLNu\_2J\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 3176 \\
+$W$+0 jets & \aMCATNLO & 49397\\
+$W$+1 jets  &\aMCATNLO & 8087 \\
+$W$+2 jets  & \aMCATNLO & 3176 \\
 \hline
-ZZ\_TuneCP5\_13TeV-pythia8  & 16.523 \\
-WZTo3LNu\_TuneCP5\_13TeV-powheg-pythia8  & 4.912 \\
-WWTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8  & 12.6 \\
+ZZ  & \POWHEG  & 16.523 \\
+$WZ\to 3\ell\nu$  & \POWHEG  & 4.912 \\
+$WZ\to 2\ell 2\nu$  & \POWHEG  & 12.6 \\
 \hline
-TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8  & 88.29 \\
-TTToSemiLeptonic\_TuneCP5\_13TeV-powheg-pythia8  & 365.35 \\
-TTToHadronic\_TuneCP5\_13TeV-powheg-pythia8  & 377.96 \\
+TTTo2L2Nu  & \POWHEG  & 88.29 \\
+TTToSemiLeptonic  & \POWHEG  & 365.35 \\
+TTToHadronic  & \POWHEG  & 377.96 \\
 \hline
-DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 6225.42 \\
+DYJetsToLL  & \aMCATNLO & 6225.42 \\
 \hline
 \end{tabular}}
 \end{center}
 \caption{Names and cross sections of simulated samples corresponding to run era 2017H (13 TeV).}
 \label{tab:allSamples13}
 \end{table}
+
+
+
+% %%% 5 TeV MCs
+% \begin{table}[htbp]
+% \begin{center}
+% \scalebox{0.9}{
+% \begin{tabular}{lrr}
+% \hline
+% {Sample name} & {Cross section~[pb]} \\
+% \hline \hline
+% WJetsToLNu\_TuneCP5\_5020GeV-amcatnloFXFX-pythia8 & 21159 \\
+% \hline
+% WWTo2L2Nu\_NNPDF31\_TuneCP5\_5p02TeV-powheg-pythia8 & 2.52 \\
+% WZTo3LNU\_NNPDF30\_TuneCP5\_5p20TeV-powheg & 1.23 \\
+% ZZTo4L\_5p02TeV\_powheg\_pythia8 & 2.75 \\
+% ZZTo2L2Nu\_5p02TeV\_powheg\_pythia8 & 2.75 \\
+% \hline
+% TT\_TuneCP5\_5p02TeV-powheg-pythia8 &  69.5 \\
+% \hline
+% DYJetsToLL\_MLL-50\_TuneCP5\_5020GeV-amcatnloFXFX-pythia8 & 2141  \\
+% \hline
+% \end{tabular}}
+% \end{center}
+% \caption{Names and cross sections of simulated samples corresponding to run era 2017G (5.02 TeV).}
+% \label{tab:allSamples5}
+% \end{table}
+
+
+% %%% 13 TeV MCs
+% \begin{table}[htbp]
+% \begin{center}
+% \scalebox{0.9}{
+% \begin{tabular}{lrr}
+% \hline
+% {Sample name} & {Cross section~[pb]} \\
+% \hline \hline
+% WJetsToLNu\_0J\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 49397\\
+% WJetsToLNu\_1J\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 8087 \\
+% WJetsToLNu\_2J\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 3176 \\
+% \hline
+% ZZ\_TuneCP5\_13TeV-pythia8  & 16.523 \\
+% WZTo3LNu\_TuneCP5\_13TeV-powheg-pythia8  & 4.912 \\
+% WWTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8  & 12.6 \\
+% \hline
+% TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8  & 88.29 \\
+% TTToSemiLeptonic\_TuneCP5\_13TeV-powheg-pythia8  & 365.35 \\
+% TTToHadronic\_TuneCP5\_13TeV-powheg-pythia8  & 377.96 \\
+% \hline
+% DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 6225.42 \\
+% \hline
+% \end{tabular}}
+% \end{center}
+% \caption{Names and cross sections of simulated samples corresponding to run era 2017H (13 TeV).}
+% \label{tab:allSamples13}
+% \end{table}
 

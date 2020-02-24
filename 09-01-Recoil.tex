@@ -1,10 +1,10 @@
 \chapter{Hadronic Recoil Corrections}\label{ch:recoil}
 
-Missing transverse energy spectra of the W and Z signal simulation does not fully describe the observed distributions in data. This is attributable to multiple effects, such as mis-modeling of multiple scattering and detector simulation, or imperfect detector calibration in data. Therefore, the simulated \met spectrum is not able to describe the observed \met spectrum to sufficient precision necessary for this measurement. Corrections to the hadronic recoil in simulated events in W and Z events are used to match the data and MC \met resolution and response. 
+Missing transverse energy spectra of the \W and \Z boson signal simulation does not fully describe the observed distributions in data. This is attributable to multiple effects, such as mis-modeling of multiple scattering and detector simulation, or imperfect detector calibration in data. Therefore, the simulated \met spectrum is not able to describe the observed \met spectrum to sufficient precision necessary for this measurement. Corrections to the hadronic recoil in simulated events in \W and \Z boson events are used to match the data and MC \met resolution and response. 
 
-The W and Z share a similar production mechanism and are similar in mass, so data corrections derived from \zmm. The hadronic recoil of each event is corrected, and the \met is recomputed based on these corrected values. 
+The \W and \Z boson share a similar production mechanism and are similar in mass, so data corrections derived from \zmm. The hadronic recoil of each event is corrected, and the \met is recomputed based on these corrected values. 
 
-The hadronic recoil is characterized as the negative vector sum of the \met and the \pt of the daughter leptons from the W or Z, as shown in Equation~\ref{eq:ch10:recoil}. This is effectively everything "else" in the event except for the W and daughter leptons.
+The hadronic recoil is characterized as the negative vector sum of the \met and the \pt of the daughter leptons from the \W or \Z boson, as shown in Equation~\ref{eq:ch10:recoil}. This is effectively everything "else" in the event except for the \W boson and daughter leptons.
 \begin{equation}
 \vec{U}=-(\vec{E_T^{miss}}+\sum{p_{T}^l})
     % \caption{}
@@ -33,10 +33,10 @@ The \upar and \uprp observables are both the source and target of the recoil cor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Recoil Modeling} \label{ch:recoil:modeling}
-the goal of recoil corrections is to derive a map to transform a source distribution of recoil values onto a target distribution of recoil values to provide an accurate Monte Carlo prediction of the MET spectrum. In this case, the source is the Z->ll or Wlnu Monte Carlo, and the target is data. Recoil components are parametrized for 3 samples: data, Z MC, and W MC. To apply recoil corrections to the Z sample, one only needs to replace the Z MC recoil distributions with those of Z data. Correction on the W requires an additional intermediate step of correcting to the Z Monte Carlo recoil before correcting to the Z data recoil.
+the goal of recoil corrections is to derive a map to transform a source distribution of recoil values onto a target distribution of recoil values to provide an accurate Monte Carlo prediction of the MET spectrum. In this case, the source is the \zll or \wlnu Monte Carlo, and the target is data. Recoil components are parametrized for 3 samples: data, Z MC, and W MC. To apply recoil corrections to the Z sample, one only needs to replace the \Z boson recoil distributions with those of Z data. Correction on the W requires an additional intermediate step of correcting to the Z Monte Carlo recoil before correcting to the Z data recoil.
 
 \section{Parametrization Derivation}
-Recoil is parametrized in generally the same way for each of the samples:
+Recoil is parametrized in general the same way for each of the samples:
 \begin{enumerate}
 \item \upar and \uprp are binned by boson \pt
 \item \upar and \uprp  in each \pt bin are fit with a double-Gaussian function
@@ -55,27 +55,22 @@ Additionally, fits for \upar and \uprp in Z data include the simulated dilepton 
 % put in a couple of plots
 \section{Application of Corrections}\label{ch:recoil:apply}
 The corrections derived in the previous section can be applied to the \W or \Z Monte Carlo. For simulated \W or \Z event, the original \upar and \uprp are replaced by a corrected value and the \met is recomputed. 
-\subsubsection{CDF inversion method} \label{ch10:recoil:apply}
-Using the same boson \pt definition that was used to create the parametrization, the recoil distributions for MC are corrected to match data via a CDF inversion into the data recoil distribution: 
+\subsubsection{Correcting Recoil} \label{ch10:recoil:apply}
+Using the same boson \pt definition that was used to create the parametrization, the recoil distributions in simulated \W and \Z bosons are corrected in the following manner: 
 \begin{enumerate}
-    \item Each fit result is integrated to create a cumulative distribution function
-    \item A p-value is determined by evaluating the W CDF from MC: $p_{i}=F_{U_{i}}^{M}(u_{i})$
-    \item A coreccted $u_i^{M}$ value is determined by finding the root of the Z MC CDF at $p$: $u_{i}^{M}={F_{U_{i}}^{Data}}^{-1}(p_{i})$
-    \item A p-value is determined by evaluating the W CDF from MC: $p_{i}=F_{U_{i}}^{M}(u_{i})$
-    \item A coreccted $u_i^{Data}$ value is determined by finding the root of the Z MC CDF at $p$: $u_{i}^{Data}={F_{U_{i}}^{Data}}^{-1}(p_{i})$
-    \item The difference between the $u_i^D$ and $u_i^M$ is added to the original recoil component to created the corrected value:  $u_{i}' = u_{i} + (u_i^D - u_i^M) $
+    \item Each fit result is integrated to create a cumulative distribution function (CDF)
+    \item A p-value is determined by evaluating the CDF of the \W boson simulation: $p_{i}=F_{U_{i}}^{M}(u_{i})$
+    \item $u_i^{M}$ value is determined by finding the root of the CDF from simulated \Z bosons at $p$: $u_{i}^{M}={F_{U_{i}}^{Data}}^{-1}(p_{i})$
+    \item $u_i^{Data}$ value is determined  by finding the root of the CDF from \Z bosons in data at $p$: $u_{i}^{Data}={F_{U_{i}}^{Data}}^{-1}(p_{i})$
+    \item The original recoil value is shifted by the difference between the \Z boson recoil in data ($u_i^D$) and simulation ($u_i^M$):  $u_{i}' = u_{i} + (u_i^D - u_i^M) $
     \item $u_{||}'$ and $u_{\perp}'$ are used to compute a new MET value for the event
 \end{enumerate}
-In the case where recoil corrections are applied to the Z sample, the effective steps are reduced to  
+When applying recoil corrections to \zll events, the first step is based off the \Z boson simulation and the steps effectively reduce to replacing the $u_{i}$ components with the result of step 4. 
 
 \subsubsection{Validation}
-The effect of the recoil corrections on the Zmm MET spectrum and recoil spectrum are shown in Figures~\ref{fig:recoil:validation:met}~and~\ref{fig:recoil:validation:recoil}.
-
+The effect of the recoil corrections on the \zmm \met and recoil distributions is shown in Figures~\ref{fig:recoil:validation:met}~and~\ref{fig:recoil:validation:recoil}. Closure of the recoil corrections is performed by comparing the mean and width of the recoil distributions of \zll events in data, simulated \zll without corrections, and \zll with corrections. These are shown in Figure~\ref{fig:recoil:validation:13} [13 TeV] and Figure~\ref{fig:recoil:validation:5} [5 TeV].
 \input{plots/Recoil/fig_closure_met.tex}
 \input{plots/Recoil/fig_closure_recoil.tex}
-
-Closure of the recoil correction derivation is performed by comparing recoil against the Z in data to the pre- and post-correction recoil in Z Monte Carlo. A comparison between the pre-correction Z MC, post-correction Z MC, and data is shown in Figure~\ref{fig:recoil:validation:13} [13 TeV] and Figure~\ref{fig:recoil:validation:5} [5 TeV].
-
 \input{plots/Recoil/fig_validate_13.tex}
 \input{plots/Recoil/fig_validate_5.tex}
 
@@ -92,7 +87,7 @@ The impact of these uncertainties is accounted for by propagating the difference
 The details of how each of the uncertainties is calculated is listed below.
 \begin{enumerate}
     \item Statistical uncertainty: covariance matrix for individual bin fit results are diagonalized. There is one eigenvalue per nuisance parameter Each eigenvalue is modified by 1$\sigma$, and new PDFs are constructed from the modified covariance matrix. The modified PDFs are then used as described in Section~\ref{ch10:recoil:apply}. 
-    \item Systematic due to assumption of double-Gaussian function: A Gaussian kernel function is chosen as an alternative fitting model. 
+    \item Systematic due to assumption of double-Gaussian function: A Gaussian kernel is used to describe the distributions. 
     \item Systematic due to rapidity binning: The main correction set is binned inclusively in $y$. An alternative binning choice is to separate fits into 3 eta bins: $|y|<0.5$,~ $0.5 <  |y| < 1.0$, and $|y| < 1.0$ and fit with the 2-Gaussian function. 
 \end{enumerate}
  
