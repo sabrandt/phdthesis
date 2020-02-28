@@ -72,19 +72,24 @@ In Equation~\ref{eq:yukawa}, $q_L$ and $u_R,d_R$ are the quark doubles and singl
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Quantum Chromodynamics}\label{ch:sm:qcd}
-The strong interaction between quarks and gluons is described by quantum chromodynamics (QCD). QCD is the $SU(3)$ part of the $SU(3)\otimes SU(2)\otimes U(1)$ part of the SM, and is given by the QCD Lagrangian in Equation~\ref{eq:qcd_lagrangian}. Repeated indices are summed over. The $\bar{\psi}_{f,\alpha}$ represent the quark spinors, where $f$ represents quark flavor (6 flavors: $u,c,t,d,s,b$), $\alpha$ represents color (3 colors), and the quark masses are $m_f$. 
+The strong interaction between quarks and gluons is described by quantum chromodynamics (QCD), the $SU(3)$ part of the SM. Interactions between quarks and gluons is described by the Dirac Lagrangian density given in Equation~\ref{eq:qcd_lagrangian}. Quarks and gluons carry color charges (red, green, or blue: $N_C = 3$ in Equation~\ref{eq:qcd_lagrangian}), and there are eight color-combinations of gluons as mediators of the strong force ($A^C_\mu$,~$C=[1...8]$). Quarks are represented by the $\bar{\psi}_{f,\alpha}$ spinors, with the six flavors of quarks ($u,c,t,d,s,b$) represented by $f$, the three colors by $\alpha$, and the quark masses by $m_f$.
 %% QCD Lagrangian
 \begin{equation}
-    \mathcal{L}=\bar{\psi}_{f,\alpha}(i\gamma^\mu \partial_\mu \delta_{\alpha\beta}-g_s\gamma^\mu t^C_{\alpha\beta}\mathcal{A}^C_\mu-m_f\delta_{\alpha\beta})\gamma_{f,\beta}-\frac{1}{4}F^b_{\mu\nu}F^{b,\mu\nu}-\theta\frac{g^2_{s}}{72\pi^2}\epsilon_{\mu\nu\rho\sigma}F^{c,\mu\nu}F^{c,\rho\sigma}
+    \mathcal{L}=\bar{\psi}_{f,\alpha}(i\gamma^\mu \partial_\mu \delta_{\alpha\beta}-g_s\gamma^\mu t^C_{\alpha\beta}\mathcal{A}^C_\mu-m_f\delta_{\alpha\beta})\gamma_{f,\beta}-\frac{1}{4}F^b_{\mu\nu}F^{b,\mu\nu}
     \label{eq:qcd_lagrangian}
 \end{equation}
-The gluon fields are given by $A^C_\mu$, where C is from 1 to $N_C^2 - 1 = 8$ ($N_C = 3$, with 8 gluons). $t^C_{\alpha\beta}$ are generators of the color group which are eight 3x3 matrices. $\gamma^\mu$ are the Dirac $\gamma$ matrices. The strong coupling constant is $g_s$ ($\alpha_s = \frac{g_s}{4\pi}$).  The field tensors $F_{\mu\nu}$ are given by: 
+%% %% Full Lagrangian
+% \begin{equation}
+%     \mathcal{L}=\bar{\psi}_{f,\alpha}(i\gamma^\mu \partial_\mu \delta_{\alpha\beta}-g_s\gamma^\mu t^C_{\alpha\beta}\mathcal{A}^C_\mu-m_f\delta_{\alpha\beta})\gamma_{f,\beta}-\frac{1}{4}F^b_{\mu\nu}F^{b,\mu\nu}-\theta\frac{g^2_{s}}{72\pi^2}\epsilon_{\mu\nu\rho\sigma}F^{c,\mu\nu}F^{c,\rho\sigma}
+%     \label{eq:qcd_lagrangian}
+% \end{equation}
+ The eight generators of the $SU(3)$ color group are $3\times 3$ matrices $t^C_{\alpha\beta}$. The strong coupling constant is $g_s$ ($\alpha_s = \frac{g_s}{4\pi}$).  The gluon field tensors $F_{\mu\nu}$ are given by: 
 \begin{equation}
 F_{\mu\nu}^A = \delta_{\mu} \mathcal{A}^A_{\nu} - \delta_{\nu} \mathcal{A}^A_\mu - g_s f_{ABC} \mathcal{A}_\mu^B \mathcal{A}_\nu^C,~~~~ [t^A, t^B] = if_{ABC}t^C
 \label{eq:qcd_field_tensors}
 \end{equation}
 where the $f_{ABC}$ are the structure constants of $SU(3)$. 
-The parameters of QCD are the quark masses ($m_f$) and the coupling constant ($g_s$). Additionally, the $\theta$ in the last term of Equation~\ref{eq:qcd_lagrangian}, indicates there is room in QCD for CP violation. One of the consequences of this is a non-zero electric dipole moment of the neutron. However, experimental limits constrain that term to be $\theta < 10^{-10}$ \cite{PhysRevLett.97.131801}.
+The parameters of QCD are the quark masses ($m_f$) and the coupling constant ($g_s$). There is an additional term in the QCD Lagrangian which is not included in Equation~\ref{eq:qcd_lagrangian}, which contains a parameter $\theta$, and allows for CP violation in QCD. Experimental limits on the neutron electric dipole moment constrain this term to be $\theta < 10^{-10}$ \cite{PhysRevLett.97.131801}.
 Predictive methods for QCD include lattice gauge theory and perturbative methods expanding in the coupling. Feynman rules include $q\bar{q}g$ and $ggg$ vertices which are proportional to $g_s$ and a 4-gluon vertex that is proportional to $g_s^2$ \cite{Ellis:1991qj}. Perturbative QCD (pQCD) expresses predictions for observables in terms of the coupling $\alpha_s(\mu_R^2)$, which is a function of the renormalization scale $\mu_R$. The effective strength of the strong interaction in a process with momentum transfer $Q^2$ is $\alpha_s(\mu_R^2 \sim Q^2)$. The renormalization group equation:
 \begin{equation}
     \mu^2_R\frac{d\alpha_s}{d\mu_R^2} = \beta(\alpha_s) = -(b_0 \alpha_s^2 + b_1 \alpha_s^3 + b_2 \alpha_s^4 + \cdots)

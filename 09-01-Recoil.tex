@@ -32,7 +32,7 @@ The \upar and \uprp observables are both the source and target of the recoil cor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Recoil Modeling} \label{ch:recoil:modeling}
-the goal of recoil corrections is to derive a map to transform a source distribution of recoil values onto a target distribution of recoil values to provide an accurate Monte Carlo prediction of the MET spectrum. In this case, the source is the \zll or \wlnu Monte Carlo, and the target is data. Recoil components are parametrized for 3 samples: data, Z MC, and W MC. To apply recoil corrections to the Z sample, one only needs to replace the \Z boson recoil distributions with those of Z data. Correction on the W requires an additional intermediate step of correcting to the Z Monte Carlo recoil before correcting to the Z data recoil.
+The recoil corrections provide a transformation from the simulated recoil distributions into a data-like distribution. The transformation is created from the difference in recoil distributions in \zll samples from simulation and data. Recoil distributions in simulated \W boson events are corrected by the difference between data and simulated \zll recoil.
 
 \section{Parametrization Derivation}
 Recoil is parametrized in general the same way for each of the samples:
