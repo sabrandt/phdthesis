@@ -26,7 +26,7 @@ Data used for physics analyses are required to pass the quality certification re
 % \centerline{\texttt{\small Cert\_306546-306826\_5TeV\_EOY2017ReReco\_Collisions17\_JSON.txt}}
 % \centerline{\texttt{\small Cert\_306896-307082\_13TeV\_PromptReco\_Collisions17\_JSON\_LowPU\_lowPU.txt}}
 %
-The 2017G and 2017H data taking periods are notable for the LHC conditions producing very few additional collisions in the concurrent or adjacent bunch crossings. These additional collisions are referred to as pileup events. Pileup conditions during the data taking periods are shown in Figure~\ref{fig:data:lumiPU13}, with an average of $\langle\mu\rangle=3$ collisions per bunch crossing. The instantaneous luminosity per day is shown in Figure~\ref{fig:data:lumiperday5}. Uncertainties on the luminosity measurement are 1.7\% (3.5\%) for the certified data at \serah (\serag). The total integrated luminosity collected by the data streams during \serag and \serah are listed in Table~\ref{tab:lumis}~\cite{LumiPOGNumbers}.
+The 2017G and 2017H data taking periods are notable for the LHC conditions producing very few additional collisions in the concurrent or adjacent bunch crossings. These additional collisions are referred to as pileup events. Pileup conditions during the data taking periods are shown in Figure~\ref{fig:data:lumiPU13}, with an average of $\langle\mu\rangle=3$ collisions per bunch crossing. The instantaneous luminosity per day is shown in Figure~\ref{fig:data:lumiperday5}. Uncertainties on the luminosity measurement are 1.7\% (3.5\%) for the certified data at \serah (\serag). The total integrated luminosity collected by the data streams during \serag and \serah are listed in Table~\ref{tab:lumis}.~\cite{LumiCalibTwiki,CMS:2018elu}.
 \input{plots/Data/fig-lumi-PU.tex}
 \input{plots/Data/fig-lumi-day.tex}
 \input{tables/Data/tab-lumi.tex}
@@ -82,7 +82,8 @@ The individual contributions to the PF isolation are the sums of corresponding p
 % Neutral particle contributions due to pileup are estimated by computing charged hadron contributions from pileup vertices and scaling it by 0.5. The scaling factor was determined using simulation. This pileup contribution is subtracted from the total neutral particle energy sum to get the neutral particle isolation, which is limited to be $\geq0$.
 
 \subsection{Electrons}\label{ch:IdIso:Ele}
-Electrons originating from candidate \Wp, \Wm, and \Z bosons are required to pass the standard cut-based identification with medium working point. Backgrounds producing electron-like signatures include overlapping charged and neutral pions, pions showering in the ECAL, and jets, and the selection criteria are designed to exclude these. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Ele}~\cite{EgammaIDIsoCuts}. Descriptions of the observables are provided below. The \Wpm boson selection requires the absence of additional leptons in the event. The veto is performed with leptons fulfilling the loose working point identification requirements, with criteria for electrons listed in Table~\ref{tab:Data:Sel:EleVeto}. 
+Electrons originating from candidate \Wp, \Wm, and \Z bosons are required to pass the standard cut-based identification with medium working point. Backgrounds producing electron-like signatures include overlapping charged and neutral pions, pions showering in the ECAL, and jets, and the selection criteria are designed to exclude these. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Ele} Descriptions of the observables are provided below. The \Wpm boson selection requires the absence of additional leptons in the event. The veto is performed with leptons fulfilling the loose working point identification requirements, with criteria for electrons listed in Table~\ref{tab:Data:Sel:EleVeto}. 
+%~\cite{EgammaIDIsoCuts}.
 \subsubsection{Electron Observables}
 \begin{itemize}
     \item \textbf{($\Delta\eta_{In}$,$\Delta\phi_{In}$):} Geometric matching of the ECAL supercluster and electron GSF track, extrapolated to the vertex. Real electrons are well-matched since they come from the same object. 
@@ -99,7 +100,10 @@ Electrons originating from candidate \Wp, \Wm, and \Z bosons are required to pas
 \input{tables/Data/tab-ele-veto.tex}
 
 \subsection{Muons}\label{ch:IdIso:Mu}
-Muons originating from a candidate \Wpm or \Z boson are required to pass the standard cut-based identification with tight working point with tight working point requirement on the muon PF isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}~\cite{MuonIDIsoCuts}. Descriptions of the observables are provided below. As in the electron channel, the \Wpm boson selection requires the absence of additional leptons in an event which pass the loose cut-based ID. The criteria for muons is listed in Table~\ref{tab:Data:Sel:Mu:Veto}. 
+Muons originating from a candidate \Wpm or \Z boson are required to pass the standard cut-based identification with tight working point with tight working point requirement on the muon PF isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}.Descriptions of the observables are provided below. As in the electron channel, the \Wpm boson selection requires the absence of additional leptons in an event which pass the loose cut-based ID. The criteria for muons is listed in Table~\ref{tab:Data:Sel:Mu:Veto}. 
+%~\cite{MuonIDIsoCuts}. 
+% do i even need citation
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Muon Observables}
 \begin{itemize}

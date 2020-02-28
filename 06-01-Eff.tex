@@ -1,5 +1,5 @@
 \chapter{Lepton Efficiency Scale Factors}\label{ch:eff}
-The efficiency of the trigger and reconstruction and identification steps for leptons is non-unity and differs between simulation and data. Determining the efficiency of the reconstruction and identification workflow separately for simulation and data provides a scale factor $\kappa = \frac{\epsilon_{data}}{\epsilon_{MC}}$ for each lepton to effectively match the reconstruction efficiency of simulation to data. Efficiency scale factors are derived over the fiducial region with fine enough granularity to separate behavior in different kinematic regions and detector geometry. The scale factor is applied to the simulated signal and background samples to emulate the lepton reconstruction and identification efficiency expected in data.
+The efficiency of the trigger and reconstruction and identification steps for leptons is non-unity and differs between simulation and data. Determining the efficiency of the reconstruction and identification workflow separately for simulation and data provides a scale factor $\epsilon_{data}/\epsilon_{MC}$ for each lepton to effectively match the reconstruction efficiency of simulation to data. Efficiency scale factors are derived over the fiducial region with fine enough granularity to separate behavior in different kinematic regions and detector geometry. The scale factor is applied to the simulated signal and background samples to emulate the lepton reconstruction and identification efficiency expected in data.
 
 % The overall impact of the efficiencies on the W signal provides the expected W signal event yield in the dataset, as shown in Equation~\ref{eq:W_eff}. 
 
@@ -7,8 +7,7 @@ The efficiency of the trigger and reconstruction and identification steps for le
 %   \epsilon_{W,data} = \epsilon_{W,MC}\times\frac{\epsilon_{tot,data}}{\epsilon_{tot,MC}}
 %   \label{eq:W_eff}
 % \end{equation}
-
-Lepton efficiencies are calculated as a function of the probe \pt and $\eta$. The factorization of the efficiency effects for electrons is shown in Equation~\ref{eq:ele_eff}. $\epsilon_{GSF+ID+Iso}$ is the efficiency of creating an ECAL-driven GSF electron that also passes the electron identification and isolation criteria, as described in Table~\ref{tab:Data:Sel:Ele}. $\epsilon_{HLT}$ describes the efficiency of a GSF electron passing the identification and isolation requirements to also be selected by the HLT. 
+The factorization of the efficiency effects for electrons is shown in Equation~\ref{eq:ele_eff}. $\epsilon_{GSF+ID+Iso}$ is the efficiency of creating an ECAL-driven GSF electron that also passes the electron identification and isolation criteria, as described in Table~\ref{tab:Data:Sel:Ele}. $\epsilon_{HLT}$ describes the efficiency of a GSF electron passing the identification and isolation requirements to also be selected by the HLT. 
 
 \begin{equation}
   \epsilon_{e} = \epsilon_{GSF+ID+ISO} \times \epsilon_{Trigger}
@@ -31,9 +30,11 @@ $\epsilon_{Trigger}$ is the efficiency with which a fully identified and isolate
 %%                Tag & Probe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tag and Probe}\label{ch:eff:tagandprobe}
-A tag-and-probe method is employed on the \zll sample. Using the \zll samples provides a high-purity sample of high-\pt leptons which have similar kinematic properties to those present in the leptonic W boson decays. Tag leptons are leptons passing the cut-based lepton ID requirements as described in Section~\ref{ch:IdIso} as well as being matched to the appropriate trigger object. Probe leptons are then selected from leptons passing the loose kinematic cuts of $p_T > 25 \mathrm{~GeV}$,~$|\eta|<2.4$, and producing a dilepton invariant mass in the range \masswindow. Probes are classified by their ability to pass a set of criteria depending on the efficiency being studied. Calculation of the efficiency is described in Section~\ref{ch:eff:fitting}.
+A tag-and-probe method is employed on the \zll sample, which provides a high-purity sample of high-\pt leptons which have similar kinematic properties to those also present in the leptonic \W boson decays\cite{Khachatryan:2010xn}. Tag leptons are leptons passing the cut-based lepton ID requirements as described in Section~\ref{ch:IdIso} as well as being matched to the appropriate trigger object. Probe leptons are then selected from leptons passing the loose kinematic cuts of $p_T > 25 \mathrm{~GeV}$,~$|\eta|<2.4$, and producing a dilepton invariant mass in the range \masswindow. Probes are classified by their ability to pass a set of criteria depending on the efficiency being studied. Calculation of the efficiency is described in Section~\ref{ch:eff:fitting}.
 
-The ($\eta$,$p_T$) binning used for each of the efficiency categories are shown in the tables later in the chapter. The trigger efficiency for all channels is derived with positively and negatively charged categories separated, while all of the other efficiency categories are charge-independent. Electron efficiency $\eta$ binning includes a category specifically to accommodate the gap between the endcap and barrel which contains a large amount of inactive material and has a significantly lower efficiency than other areas.
+Lepton efficiencies are calculated based on the probe \pt and $\eta$. Binning by $\eta$ is listed in Table~\ref{tab:eff:bin:eta} and binning by $\pt$ is listed in Table~\ref{tab:eff:bin:pt}. Identical $(\pt,\eta)$ binning is used at \serag and \serah for a given category. The trigger efficiency for all channels is derived with positively and negatively charged categories separated, while the charges are combined for the other categories. Electron efficiency $\eta$ binning includes a category specifically to accommodate the gap between the endcap and barrel which contains a large amount of inactive material and has a significantly lower efficiency than other areas.
+\input{tables/Efficiency/tab-eta-bin.tex}
+\input{tables/Efficiency/tab-pt-bin.tex}
 
 
 
@@ -48,13 +49,8 @@ Probes are categorized into a "pass" and "fail" category for each kinematic bin 
 \epsilon = \frac{N_{pass}}{N_{pass}+N_{fail}}
 \label{eq:eff:eq}
 \end{equation}
+Data, in particular the probes in the "fail" category, may also include background events in addition to the \zll signal events. To determine $N_{pass}$ and $N_{fail}$ in data, a fit is performed to discriminate between \zll events and other backgrounds. The \zll events are modeled using the Monte Carlo distribution smeared with a Gaussian. Backgrounds are modeled using a simple function which is varies based on efficiency category. The specific background models are described in Section~\ref{ch:eff:bkg}.
 
-Data may also include background events in addition to the \zll signal events. To determine $N_{pass}$ and $N_{fail}$ in data, a fit is performed to discriminate between \zll events and other backgrounds. The \zll events are modeled using the Monte Carlo distribution smeared with a Gaussian. Backgrounds are modeled using a simple function which is varies based on efficiency category. The various background models are described later in Section~\ref{ch:eff:bkg}.
-% \begin{itemize}
-% \item \textbf{exponential} for muon selection+ID+Isolation efficiency
-% \item \textbf{exponential $\otimes$ erf} for electron GSF ID+Isolation efficiency (where erf is the Gauss error function)
-% \item \textbf{quadratic polynomial} for muon standalone efficiency
-% \end{itemize}
 
 The events in the category of $\epsilon_{HLT}$ have negligible background, and $\epsilon$ is determined by counting events in the "pass" and "fail" categories.
 After construction of the signal and background models, the passing and failing categories for a given kinematic bin are simultaneously fit with Equations~\ref{eq:eff:pass:full} and~\ref{eq:eff:fail:full} to extract $\epsilon$. Examples of the fit are shown in Figure~\ref{fig:eff:musta:fitexample}.
@@ -79,30 +75,34 @@ F^{fail}\left(m_{ll}\right)=\left(1-\epsilon\right) \times N_{tot} \times F_{sig
 Uncertainties in the efficiency factors is evaluated for sources including signal model choice, background model choice, and tag selection. The variations in the scale factors is propagated to the discrminant distributions used in the final fit.
 \subsection{Evaluating Model Differences}
 Uncertainties in the scale factors are evaluated as coming from model-dependence of results on the signal and background shapes. These include the FSR model, generator, and background model. Additionally, the impact of the minimum tag selection \pt is evaluated. 
-The impact of the model assumptions is evaluated by generating a set of simulated datasets from the \mll distribution describing the original efficiency model and fitting with the alternative models. The pull, as in Equation~\ref{eq:ch7:pull}, for each trial fit is calculated, and the mean pull per \pt-$\eta$ bin is taken to be the uncertainty due to the alternate model. 
-\begin{equation}
-\mathrm{pull}=\frac{\epsilon_{meas}-\epsilon_{true}}{\sigma_{meas}}
-    \label{eq:ch7:pull}
-\end{equation}
+The impact of the model assumptions is evaluated by generating a set of simulated datasets from the \mll distribution describing the original efficiency model and fitting with the alternative models. The pull, $ (\epsilon_{meas}-\epsilon_{true})/{\sigma_{meas}} $, for each trial is calculated, and the mean pull per \pt-$\eta$ bin is taken to be the uncertainty due to the alternate model. 
+% \begin{equation}
+% \mathrm{pull}=\frac{\epsilon_{meas}-\epsilon_{true}}{\sigma_{meas}}
+%     \label{eq:ch7:pull}
+% \end{equation}
 
 \subsubsection{Generator Model}
-The primary signal simulation for this analysis is \aMCATNLO with \PYTHIA8.2. The matrix element calculation is done with \MADGRAPH5\_\aMCATNLO with NNPDF3.1 PDF sets. To account for the assumptions and approximations specific to this model, alternative samples generated with \POWHEG and \PYTHIA8.2 are used. Post-FSR generator-level information from the \POWHEG is used to create alternative simulated invariant mass distributions. These alternative \mll distributions are convoluted with a Gaussian to create new fitting functions. The difference between the fit results using the primary model and this alternative model are taken to be the uncertainty. 
+\textbf{\aMCATNLO vs. \POWHEG:} The primary signal simulation for this analysis is \\\aMCATNLO with \PYTHIA8.2. The matrix element calculation is done with \MADGRAPH5\_\aMCATNLO with NNPDF3.1 PDF sets. To account for the assumptions and approximations specific to this model, alternative samples generated with \POWHEG and \PYTHIA8.2 are used. Generator-level information from the \POWHEG sample is used to create alternative reconstructed \mll distributions from simulation. New fit models are created from the \POWHEG \mll distributions convolved with a Gaussian.
 
 \subsubsection{Final-State Radiation Model}
-Final state radiation for the main set of simulations is performed by \PYTHIA8.2. Evaluation of the FSR model choice is done by comparing \PYTHIA against the \PHOTOS model. As with the generator model uncertainty evaluation, \mll distribution based on the \PHOTOS sample is used to create a fitting function, which is fit to simulated \mll from the \PYTHIA sample, with the difference in efficiency results providing the uncertainty.
+\textbf{\PYTHIA vs. \PHOTOS:} Final state radiation for the main set of simulations is performed by \PYTHIA8.2. Evaluation of the FSR model choice is done by comparing \PYTHIA against the \PHOTOS model. As with the generator model uncertainty evaluation, new fit models are created from the \PHOTOS \mll distributions convolved with a Gaussian.
 
 \subsubsection{Background Model}\label{ch:eff:bkg}
-Simulated datasets are generated from the primary fit models, and alternatives containting different background functions are used to fit. The primary models for background are: 
+Simulated datasets are generated from the primary fit models, and alternatives containting different background functions are used to fit. The baseline corrections are derived with the background models: 
 \begin{itemize}
 \item \textbf{exponential} for muon selection+ID+Isolation efficiency
 \item \textbf{exponential $\otimes$ erf} for electron GSF ID+Isolation efficiency (where erf is the Gauss error function)
 \item \textbf{quadratic polynomial} for muon standalone efficiency
 \end{itemize}
-When evaluating the alternative background model, all of these are replaced with a power law function. Examples of a muon standalone efficiency fit using the standard quadraditc function and the alternative power law model are shown in Figure~\ref{fig:eff:musta:fitexample}. 
+The alternate set of fitting functions is constructed with:
+\begin{itemize}
+\item \textbf{power law} for alternative model in all categories
+\end{itemize}
+Examples of a muon standalone efficiency fit using the standard quadraditc function and the alternative power law model are shown in Figure~\ref{fig:eff:musta:fitexample}. 
 \input{plots/efficiency/fig-eff-fit-example.tex}
 
 \subsubsection{Tag Selection Uncertainty}
-Uncertainty due to the selection criteria of the tag lepton are evaluated by directly comparing the impact of efficiency scale factors using the standard cut ($\pt > 25 \GeV$) to efficiency scale factors derived using tag leptons with $\pt > 30\GeV$.
+Uncertainty due to the selection criteria of the tag lepton are evaluated by directly comparing the impact of efficiency scale factors using the standard cut ($\pt > 25 \GeV$) to efficiency scale factors derived using tag leptons with $\pt > 30\GeV$. 
 
 % \subsection{Summary of Systematic Uncertainties}
 % A summary of the systematic uncertainties on the efficiency scale factors can be found in the Systematics Chapter later. 
