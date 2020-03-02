@@ -20,25 +20,24 @@ Uncertainties in the measurement due to theoretical predictions are studied by u
 EWK calculations NLO, importnat for high boson pT
 ~\cite{Dittmaier:2014qza,Lindert:2017olm}
 
-%% Theory Uncertainties
-\subsubsection{Higher-Order QCD}
-Perturbative QCD predictions for \W and \Z boson production are currently only available to NNLO~\cite{Melnikov:2006kv,Catani:2009sm}. To estimate the effect of the missing higher-order terms of the expansion, the renormalization ($\mu_R$) and factorization ($\mu_F$) scales are varied by a factor of 2 from their baseline value, i.e. baseline $\mu = M_{\W}$ with variations $\mu=M_{\W}/2$ and $\mu=2M_{\W}$. Acceptance computed for each combination of $\mu_R$ and $\mu_F$ variations is compared to the baseline acceptance value and the maximum difference is used to estimate the uncertainty due to missing higher-order QCD terms.
-
-aMC@NLO:
- $\textsc{FxFx}$ scheme~\cite{Frederix:2012ps}
 
 \subsubsection{PDF uncertainties}
-The PDF sets are determined by fits to different datasets and using different techniques. To describe uncertainties in the PDF extraction method and $\alpha_S$, the groups that provide PDFs also provide means for determining impact of uncertainties in their calculations. NNPDF3.1 contains with 100 replica PDFs which 
-The standard deviation of the NNPDF3.1 replica set acceptance values is taken as the PDF uncertainty, following the procedure outlined in Reference~\cite{Butterworth:2015oua}.
+The proton PDFs describe the momentum probability distributions of quarks and gluons within the proton, and are obtained by fitting to experimental data. Several different collaborations produce PDFs, with derivations using different techniques and different datasets. Methods for evaluating uncertainties in the PDFs due to uncertainties in their parameters are also provided, generally in the form of error PDFs with a $\pm 1 \sigma$ variation on each parameter value. NNPDF provides replica PDFs which are created by using a Monte Carlo technique to sample the probability distributions of observables. Following the procedure outlined in Reference~\cite{Butterworth:2015oua}, the uncertainty in acceptance due to the PDF uncertainties is taken as the standard deviation of the replica set acceptance values. Results are listed in Table~\ref{tab:acc:sys:pdf:all}.
 
-\subsubsection{Resummation}
+\subsubsection{Resummation and NNLO QCD}
 For low-\pt boson production, the fixed order calculations are unreliable due to soft gluon emissions producing logarithmic divergences in the cross section calculation
 ~\cite{Collins:1984kg}. Resummation of the logarithmic terms is included as one of the components of the boson production cross section, and different tools can provide predictions to different orders of accuracy. Parton shower models with leading logarithmic (LL) accuracy (e.g. \PYTHIA, \SHERPA, \HERWIG ~\cite{Sjostrand:2014zea,Gleisberg:2008ta,Bahr:2008pv}) can be combined with fixed-order calculations (e.g. \aMCATNLO, \MINLO, \POWHEG) to provide full event descriptions~\cite{Nason:2004rx,Frixione:2002ik,Alioli:2010xd,Alwall:2014hca}. Higher-order resummation terms can be matched to the fixed-order calculations to provide accurate predictions over the entire boson \pt range~\cite{Balazs:1995nz,Catani:2015vma}. 
 The primary simulations are provided by \aMCATNLO, interfaced to \PYTHIA8 for parton showering and \MADGRAPH5 for the hard-scatter matrix element calculations. Resummation to LL is provided by \PYTHIA8 and QCD calculations to NLO are provided by \MADGRAPH5. Higher-order descriptions---NNLO for perturbative QCD and next-to-next-to-leading-logarithmic (NNLL) for resummation of soft QCD effects---are provided by \RESBOS~\cite{Ladinsky:1993zn, Balazs:1997xd, Landry:2002ix} using the CT14~\cite{Dulat:2015mca} NNLO PDF set.  Differences in acceptance predictions between the baseline sample with QCD to NLO and resummation to LL and the \RESBOS prediction with QCD to NNLO and resummation to NNLL are taken as the uncertainties.
 
+%% Theory Uncertainties
+\subsubsection{Higher-Order QCD}
+Perturbative QCD predictions for \W and \Z boson production are currently only available to NNLO~\cite{Melnikov:2006kv,Catani:2009sm}. To estimate the effect of the missing higher-order terms of the expansion, the renormalization ($\mu_R$) and factorization ($\mu_F$) scales are varied by a factor of 2 from their baseline value, i.e. baseline $\mu = M_{\W}$ with variations $\mu=M_{\W}/2$ and $\mu=2M_{\W}$. Acceptance computed for each combination of $\mu_R$ and $\mu_F$ variations is compared to the baseline acceptance value and the maximum difference is used to estimate the uncertainty due to missing higher-order QCD terms. Results are shown in Table~\ref{tab:Acc:Sys:QCD}.
+% aMC@NLO:
+%  $\textsc{FxFx}$ scheme~\cite{Frederix:2012ps}
+
+
 \subsubsection{Electroweak Corrections}
-Pythia vs PHOTOS [need citations]
-The highest order calculation available for calculating the W cross section is NNLO, and uncertainty comes from the lack of higher order terms. The uncertainty due to these higher order terms is estimated by varying the the QCD renormalization (\mur) and factorization (\muf) scales and evaluating the impact this has on the acceptance. Acceptance is calculated with variations on the \mur and \muf scales of a factor of 2 from their baseline value, and the uncertainty is taken to be the maximum deviation from the baseline acceptance value. Uncertainties are shown in  Table~\ref{tab:Acc:Sys:QCD}. Uncertainties in the NNPDF3.1 sets and $\alpha_s$ are evaluated as the envelope of the differences of each acceptance variation from the baseline acceptance.Differences between acceptance provided by the the MADGRAPH5\_\aMCATNLO and the RESBOS predictions with NNLL accuracy are taken as a systematic uncertainty. Both sets of preditions use CT14 PDF sets for consistency. Modeling of electromagnetic FSR is provided by \PYTHIA and \PHOTOS, with \POWHEG for the matrix-element calculations. Uncertainties in the FSR modeling are estimated as the difference in acceptance between the two models.
+Pythia vs PHOTOS [need citations] Modeling of electromagnetic FSR is provided by \PYTHIA and \PHOTOS, with \POWHEG for the matrix-element calculations. Uncertainties in the FSR modeling are estimated as the difference in acceptance between the two models.
 [currently waiting for samples for resummation]
 
 
