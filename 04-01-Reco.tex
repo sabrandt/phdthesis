@@ -7,7 +7,7 @@ Events in CMS are created by reconstructing energy depositions in the various su
 \section{Tracks}
 Track reconstruction combines hits in the pixel and strip detectors, which are fit to construct tracks. Zero-suppressed signals in the pixel and strip detectors are clustered into hits, which provides hit position and uncertainty information. The track finding algorithm is an interative process which uses an implementation of the combinatorial Kalman Filter. The combinatorial Kalman Filter provides a combintation of pattern recognition and track fitting. The 6-pass iterative procedure initially finds the tracks that are easiest to identify, removes the hits associated with these tracks, and reiterates over the remaining collection of tracker hits. \cite{Chatrchyan:2014fea}
 
-Tracks are seeded using three hits in the inner pixel detector which correspond approximately to a track from the beam spot. The innermost tracker layers are used because electrons undergo significant energy and trajectory loss due to bremsstrahlung and many charged pions undergo inelastic collisions as they traverse the inner tracking layers. The highly granular pixel detector has lower occupancy than the outer strip detectors. These seed hits combined with the beam spot location provide enough information to derive parameters describing a helical trajectory as the particle moves through the magnetic field. The tracks are propagated outwards to subsequent tracker layers, incorporating additional hits if a $\chi^2$ is below a target threshold. Kalman filtering is then used to update the parameters of the track \cite{Adam:2005cg}. 
+\phil{I think you mean Electron Tracks} Tracks are seeded using three hits in the inner pixel detector which correspond approximately to a track from the beam spot. The innermost tracker layers are used because electrons undergo significant energy and trajectory loss due to bremsstrahlung and many charged pions undergo inelastic collisions as they traverse the inner tracking layers. The highly granular pixel detector has lower occupancy than the outer strip detectors. These seed hits combined with the beam spot location provide enough information to derive parameters describing a helical trajectory as the particle moves through the magnetic field. The tracks are propagated outwards to subsequent tracker layers, incorporating additional hits if a $\chi^2$ is below a target threshold. Kalman filtering is then used to update the parameters of the track \cite{Adam:2005cg}. \phil{Not sure if you are talking about just electron reco or all, I would claify and if its electrons add the words Gaussian Sum Filtering(GSF) }
 
 Effects of tracker and support material on the energy loss and trajectory of particles traversing the tracker are also accounted for in this process. These effects are incorporated by Runge-Kutta based iterative propagator to describe a parametrized material distribution of the CMS detector and relevant interactions assuming every track is a $\pi$ meson. 
 
@@ -40,7 +40,7 @@ From the electron track reconstruction, multiple observables describing the kine
     \item \textsc{Conversion probability}: Electrons originating from photon conversion within tracker volume are identified by fitting electron track pairs to common vertex
 \end{itemize}
 
-Particle flow isolation ($\mathrm{Iso_{PF}}$) is computed from the other isolation variables. The 
+Particle flow isolation ($\mathrm{Iso_{PF}}$) is computed from the other isolation variables. The \phil{commenthis guy out}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      muons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,7 +102,7 @@ The value for the tight working point for PF isolation is $I_{PF} < 0.15$ \cite{
     \item \textsc{isolation}
 \end{itemize}
 
-
+\phil{Given you define PF Iso before particle flow, I would just move the particle flow section up}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      Particle Flow

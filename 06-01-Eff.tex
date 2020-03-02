@@ -49,7 +49,7 @@ Probes are categorized into a "pass" and "fail" category for each kinematic bin 
 \label{eq:eff:eq}
 \end{equation}
 
-Data may also include background events in addition to the \zll signal events. To determine $N_{pass}$ and $N_{fail}$ in data, a fit is performed to discriminate between \zll events and other backgrounds. The \zll events are modeled using the Monte Carlo distribution smeared with a Gaussian. Backgrounds are modeled using a simple function which is varies based on efficiency category. The primary background models are:
+Data may also include background events in addition to the \zll signal events. To determine $N_{pass}$ and $N_{fail}$ in data, a fit is performed to discriminate between \zll events and other backgrounds. The \zll events are modeled using the Monte Carlo distribution smeared with a Gaussian. Backgrounds are modeled using a simple function which is varies\phil{varied} based on efficiency category\phil{Can you add a setance motivating the variation. Selections with larger backgrounds have more complicated background models}. The primary background models are:
 % The signal model for each combination of lepton charge, ($\eta$,$p_T$) bin, efficiency type, and pass/fail category is constructed as in Equation~\ref{eq:eff:signal:function}, with the corresponding selection in Monte Carlo providing the shape template $F_{sig}^{MC}\left(m_{ll} \right)$. 
 % \begin{equation}
 % F_{sig}\left(m_{ll}\right)=F_{sig}^{MC}\left(m_{ll} \right)\otimes \mathrm{exp}{\left(-\frac{\left(m_{ll}-\mu_0\right)^2}{\sigma^2} \right)}
@@ -93,10 +93,11 @@ The impact of the model assumptions is evaluated by generating a set of simulate
 \end{equation}
 
 \subsubsection{Generator Model}
-The primary signal simulation for this analysis is \aMCATNLO with \PYTHIA8.2. The matrix element calculation is done with \MADGRAPH5\_\aMCATNLO with NNPDF3.1 PDF sets. To account for the assumptions and approximations specific to this model, alternative samples generated with \POWHEG and \PYTHIA8.2 are used. Post-FSR generator-level information from the \POWHEG is used to create alternative simulated invariant mass distributions. These alternative \mll distributions are convoluted with a Gaussian to create new fitting functions. The difference between the fit results using the primary model and this alternative model are taken to be the uncertainty. 
+The primary signal simulation for this analysis is \aMCATNLO with \PYTHIA8.2. The matrix element calculation is done with \MADGRAPH5\_\aMCATNLO with NNPDF3.1 PDF sets. To account for the assumptions and approximations specific to this model, alternative samples generated with \POWHEG and \PYTHIA8.2 are used. Post-FSR generator-level information from the \POWHEG is used to create alternative simulated invariant mass distributions. These alternative \mll distributions are convoluted with a Gaussian to create new fitting functions. The difference between the fit results using the primary model and this alternative model are taken to be the uncertainty. \phil{Can you add a setence saying we are going from NLO to LO so the aim of this is to broadly cover kinematic differences}
 
 \subsubsection{Final-State Radiation Model}
 Final state radiation for the main set of simulations is done using \PYTHIA8.2. Evaluation of the FSR model choice is done by comparing \PYTHIA against the \PHOTOS model. As with the generator model uncertainty evaluation, \mll distribution based on the \PHOTOS sample is used to create a fitting function, which is fit to simulated \mll from the \PYTHIA sample, with the difference in efficiency results providing the uncertainty.
+\phil{Again you need a setance saying Pythia is approximate NLO in FSR and Photos is full NLO Including EWK NLO, so this covers radiative effects}
 
 \subsubsection{Background Model}
 Simulated datasets are generated from the primary fit models, and alternatives containting different background functions are used to fit. The primary models for background are: 
@@ -105,7 +106,7 @@ Simulated datasets are generated from the primary fit models, and alternatives c
 \item muon standalone: quadratic function (3 free parameters)
 \item electron GSF+ID+Iso: Exponential $\otimes$ Error function
 \end{enumerate}
-When evaluating the alternative background model, all of these are replaced with a power law function. Examples of a muon standalone efficiency fit using the standard quadraditc function and the alternative power law model are shown in Figure~\ref{fig:eff:musta:fitexample}. 
+When evaluating the alternative background model, all of these are replaced with a power law function\phil{can yuo define power law}. Examples of a muon standalone efficiency fit using the standard quadraditc function and the alternative power law model are shown in Figure~\ref{fig:eff:musta:fitexample}. 
 \input{plots/efficiency/fig-eff-fit-example.tex}
 
 \subsubsection{Tag Selection Uncertainty}
