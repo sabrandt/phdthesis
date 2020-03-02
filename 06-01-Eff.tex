@@ -52,6 +52,21 @@ Probes are categorized into a "pass" and "fail" category for each kinematic bin 
 Data, in particular the probes in the "fail" category, may also include background events in addition to the \zll signal events. To determine $N_{pass}$ and $N_{fail}$ in data, a fit is performed to discriminate between \zll events and other backgrounds. The \zll events are modeled using the Monte Carlo distribution smeared with a Gaussian. Backgrounds are modeled using a simple function which is varies based on efficiency category. The specific background models are described in Section~\ref{ch:eff:bkg}.
 
 
+Data may also include background events in addition to the \zll signal events. To determine $N_{pass}$ and $N_{fail}$ in data, a fit is performed to discriminate between \zll events and other backgrounds. The \zll events are modeled using the Monte Carlo distribution smeared with a Gaussian. Backgrounds are modeled using a simple function which is varies\phil{varied} based on efficiency category\phil{Can you add a setance motivating the variation. Selections with larger backgrounds have more complicated background models}. The primary background models are:
+% The signal model for each combination of lepton charge, ($\eta$,$p_T$) bin, efficiency type, and pass/fail category is constructed as in Equation~\ref{eq:eff:signal:function}, with the corresponding selection in Monte Carlo providing the shape template $F_{sig}^{MC}\left(m_{ll} \right)$. 
+% \begin{equation}
+% F_{sig}\left(m_{ll}\right)=F_{sig}^{MC}\left(m_{ll} \right)\otimes \mathrm{exp}{\left(-\frac{\left(m_{ll}-\mu_0\right)^2}{\sigma^2} \right)}
+% \label{eq:eff:signal:function}
+% \end{equation}
+
+
+
+\begin{itemize}
+\item exponential for muon selection+ID+Isolation efficiency
+\item exponential $\otimes$ Erf for electron GSF ID+Isolation efficiency
+\item quadratic polynomial for muon standalone efficiency
+\end{itemize}
+
 The events in the category of $\epsilon_{HLT}$ have negligible background, and $\epsilon$ is determined by counting events in the "pass" and "fail" categories.
 After construction of the signal and background models, the passing and failing categories for a given kinematic bin are simultaneously fit with Equations~\ref{eq:eff:pass:full} and~\ref{eq:eff:fail:full} to extract $\epsilon$. Examples of the fit are shown in Figure~\ref{fig:eff:musta:fitexample}.
 
@@ -82,11 +97,12 @@ The impact of the model assumptions is evaluated by generating a set of simulate
 % \end{equation}
 
 \subsubsection{Generator Model}
-\textbf{\aMCATNLO vs. \POWHEG:} The primary signal simulation for this analysis is \\\aMCATNLO with \PYTHIA8.2. The matrix element calculation is done with \MADGRAPH5\_\aMCATNLO with NNPDF3.1 PDF sets. To account for the assumptions and approximations specific to this model, alternative samples generated with \POWHEG and \PYTHIA8.2 are used. Generator-level information from the \POWHEG sample is used to create alternative reconstructed \mll distributions from simulation. New fit models are created from the \POWHEG \mll distributions convolved with a Gaussian.
 
+\textbf{\aMCATNLO vs. \POWHEG:} The primary signal simulation for this analysis is \\\aMCATNLO with \PYTHIA8.2. The matrix element calculation is done with \MADGRAPH5\_\aMCATNLO with NNPDF3.1 PDF sets. To account for the assumptions and approximations specific to this model, alternative samples generated with \POWHEG and \PYTHIA8.2 are used. Generator-level information from the \POWHEG sample is used to create alternative reconstructed \mll distributions from simulation. New fit models are created from the \POWHEG \mll distributions convolved with a Gaussian.
+\phil{Can you add a setence saying we are going from NLO to LO so the aim of this is to broadly cover kinematic differences}
 \subsubsection{Final-State Radiation Model}
 \textbf{\PYTHIA vs. \PHOTOS:} Final state radiation for the main set of simulations is performed by \PYTHIA8.2. Evaluation of the FSR model choice is done by comparing \PYTHIA against the \PHOTOS model. As with the generator model uncertainty evaluation, new fit models are created from the \PHOTOS \mll distributions convolved with a Gaussian.
-
+\phil{Again you need a setance saying Pythia is approximate NLO in FSR and Photos is full NLO Including EWK NLO, so this covers radiative effects}
 \subsubsection{Background Model}\label{ch:eff:bkg}
 Simulated datasets are generated from the primary fit models, and alternatives containting different background functions are used to fit. The baseline corrections are derived with the background models: 
 \begin{itemize}
@@ -96,9 +112,10 @@ Simulated datasets are generated from the primary fit models, and alternatives c
 \end{itemize}
 The alternate set of fitting functions is constructed with:
 \begin{itemize}
-\item \textbf{power law} for alternative model in all categories
+\item \textbf{power law} for alternative model in all categories\phil{can yuo define power law}.
 \end{itemize}
 Examples of a muon standalone efficiency fit using the standard quadraditc function and the alternative power law model are shown in Figure~\ref{fig:eff:musta:fitexample}. 
+
 \input{plots/efficiency/fig-eff-fit-example.tex}
 
 \subsubsection{Tag Selection Uncertainty}

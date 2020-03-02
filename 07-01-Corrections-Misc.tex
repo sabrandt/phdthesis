@@ -22,8 +22,11 @@ As with electrons, muon momentum measurements include the need for corrections, 
 %                Prefiring
 
 \section{ECAL L1 Trigger Prefiring}\label{ch:prefire}
+
 Radiation damage to the $\mathrm{PbWO_4}$ crystals in the ECAL result in color centers forming within the crystal lattice, reducing transparency and altering light propagation through the crystal. Corrections to accommodate the change in scintillation light transmission were not applied in a way which completely removed the timing drift. Trigger primitives (TPs) in the forward regions of ECAL, $2.0 < |\eta| < 3.5$, were affected by the timing drift during the 2017 data-taking period. The timing drift caused certain TPs in the forward ECAL region to be incorrectly associated with the wrong bunch crossing, an effect described as "prefiring". The global trigger rules disallow the collection of consecutive bunch crossings, and no more than one event accepted per three consecutive bunch crossings, so an event which contains a prefired trigger primitive will cause the BX-1 (previous bunch crossing) to be read out, while BX0 (the current one containing the actual event with the TP) to be discarded by the trigger. In all likelihood, the read out event will not pass the HLT and will ultimately be discarded.
 This effect is not described in simulation, but a correction factor describing the rate of event loss is derived from data. Due to their large EM activity, photons and jets are used as the basis for the prefiring rate descriptions. A prefiring probability is assigned to each simulated event, based on the kinematics of the photons and jets present in the event, in Equation~\ref{eq:prefiring_weight}, re-scales contribution of simulated events given the likelihood of prefiring.
+\phil{there is some garbled english please rewrite end of this paragraph also below}.
+
 \input{plots/Prefire/fig_prefire.tex}
 \begin{equation}
     w_{pref} = 1 - P(\mathrm{prefire}) = \prod_{i=\gamma,jets}{(1 - \epsilon_i^{pref}(\eta,p_T))}
