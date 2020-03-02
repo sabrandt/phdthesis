@@ -1,86 +1,38 @@
 \chapter{Other Corrections}\label{ch:corrs}
-\section{Lepton Scale and Resolution Corrections}
-
-\subsection{Electron Energy Scale and Resolution Corections}
-Biases in the measurement of electron \et can be quantified and corrected. The ECAL cluster energy is corrected by varying the scale in data to match the scale in MC, and by applying a Gaussian smearing factor to the MC to match the resolution in data. Corrections are derived for separate categories of $\eta$, \et, and r9, with data further separated by run number. The scale factors for the data correction are derived by fitting a Breit-Wigner function convolved with a Crystal-Ball function to the dilepton invariant mass distribution for \zee events. The scale factor is the difference between the expected dilepton mass and the maximum determined by this fit. Smearing factors are likewise determined by using the simulated Z boson invariant mass distribution as a probability density function in a maximum likelihood fit, and using the residual to derive a correction factor. Applying this with a Gaussian smearing is sufficient to describe the data for all categories. \cite{Khachatryan:2015iwa}
-
-Plots demonstrating the \zee invariant mass distributions with and without energy scale and resolution corrections are shown in Figure~\ref{fig:lepscale:zee:13} (Figure~\ref{fig:lepscale:zee:5}) for the 13 TeV (5 TeV) data and simulation. 
+\section{Lepton Momentum Corrections}
+Reconstructed lepton momenta require additional corrections in data and simulation to ensure agreement of observable distributions. Several sources which are not fully modeled in the simulation, such as detector alignment, reconstruction software, and magnetic field uncertainty are encompassed by these additional corrections. These effects generally apply to both muons and electrons, but the magnitude of the overall correction is much smaller for muons. Scale factors align the maximum of the \zll \mll distribution observed in data to the expected value, while the resolution of lepton momentum reconstruction in simulation is corrected to match data.
+\subsection{Electron Energy Scale and Resolution}
+Electron energy is corrected at the ECAL cluster energy level. Corrections are derived for separate categories of observables such as $\eta$, and \et, with data further separated by run number. The scale factors for the data correction are derived by fitting a Breit-Wigner function\cite{Breit:1936zzb} convolved with a Crystal-Ball function\cite{Oreglia:1980cs,Skwarnicki:1986xj} to the dilepton invariant mass distribution for \zee events. The scale factor is the difference between the expected dilepton mass and the maximum determined by this fit. Smearing factors are likewise determined by using the simulated \Z boson invariant mass distribution as a probability density function in a maximum likelihood fit, and using the residual to derive a correction factor. Applying this with a Gaussian smearing is sufficient to describe the data for all categories\cite{Khachatryan:2015iwa}.
+Systematic uncertainties related to the energy scale and resolution corrections are computed as the difference between locations of the maximum of the \zee \mll distribution from varying electron categorization. 
+Scale and resolution corrections are derived using the method described above, from \zee simulation and the 2017H (\sh) single electron trigger dataset. Due to changing detector conditions and calibration, scale corrections are dependent on run number. Scale corrections for the 2017G (\sg) dataset are based on the 2017H Run Number 306936. As these data were taken nearly consecutively, the LHC and detector conditions are sufficiently similar to produce adequate results for events from all categories considered.
+The \mll distributions before and after applying electron energy scale corrections are shown in Figure~\ref{fig:lepscale:zee:13} (Figure~\ref{fig:lepscale:zee:5}) for \sh (\sg). 
 
 \input{plots/LepScaleSmear/fig_13_zee.tex}
 \input{plots/LepScaleSmear/fig_5_zee.tex}
 
-Scale and resolution corrections for the \serah sample are derived using the method described above, from the DY+jets simulation and the HighEGJet dataset. Scale corrections for data are derived for several sets of run numbers, reflecting changing run conditions and calibrations. Due to statistical limitations, the scale corrections for the \serag data could not be derived in this manner with sufficient $\eta$ granularity. Instead, scale corrections derived for Run 306936 from the \serah data are used along with the smearing corrections derived from the \serah DY+Jets simulation. Run 306936 occurred very shortly after the end of the \serag data taking and the detector conditions are sufficiently similar that these corrections produce adequate results for events from all categories considered.
 
-Systematic uncertainties related to the energy scale and resolution corrections are computed as the difference in \Z resonance maximum with variations on energy scale corrections due to different binning of observables (r9, eta, etc.). 
-
-
-
-\subsection{Muon Energy Scale and Resolution Corrections}
-Biases in the measurement of muon momentum, from sources such as detector alignment, software reconstruction bias, and magnetic field uncertainty, can be corrected under an iterative procedure which utilizes the muons from the \zmm decays. Corrections are derived from average lepton \pt and \zmm invariant mass distribution, so that the maximum and width of the \zmm invariant mass in simulation matches data
-\cite{Bodek:2012id}.  A single set of corrections is used for the entirety of 2017 data-taking. Distributions of \zmm invariant mass with and without the muon momentum corrections are shown in Figure~\ref{fig:lepscale:zmm:5} (Figure~\ref{fig:lepscale:zmm:13}) for \serag (\serah).
+\subsection{Muon Momentum Corrections}
+As with electrons, muon momentum measurements include the need for corrections, though the effect is much smaller than for electrons. Corrections are derived from average lepton \pt and \zmm invariant mass distribution, so that the maximum and width of the \zmm invariant mass in simulation matches data\cite{Bodek:2012id}.  A single set of corrections is used for the entirety of 2017 data-taking. Distributions of \zmm \mll before and after applying muon momentum corrections are shown in Figure~\ref{fig:lepscale:zmm:5} (Figure~\ref{fig:lepscale:zmm:13}) for \sg (\sh).
 
 \input{plots/LepScaleSmear/fig_5_zmm.tex}
 \input{plots/LepScaleSmear/fig_13_zmm.tex}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                Prefiring
 
 \section{ECAL L1 Trigger Prefiring}\label{ch:prefire}
-Radiation damage to the PbWO4 crystals in the ECAL result in color centers forming within the crystal lattice, reducing transparency and altering light propagation through the crystal. Corrections to accommodate the change in scintillation light transmission were not applied in a way which completely removed the timing drift. Trigger primitives (TPs) in the forward regions of ECAL, $2.0 < |\eta| < 3.5$, were affected by the timing drift during the 2017 data-taking period. The timing drift caused certain TPs in the forward ECAL region to be incorrectly associated with the wrong bunch crossing, an effect described as "pre-firing". The global trigger rules disallow the collection of consecutive bunch crossings, so an event which contains a pre-fired trigger primitive will cause the BX-1 (previous bunch crossing) to be read out, while BX0 (the current one containing the actual event with the TP) to be discarded by the trigger. In all likelihood, the read out event will not pass the HLT and will ultimately be discarded.
-This effect is not described in simulation, but a correction factor describing the rate of event loss is derived from data. A pre-firing probability is assigned to each simulated event, based on the kinematics of the photons and jets present in the event, in Equation~\ref{eq:prefiring_weight}, re-scales contribution of simulated events given the likelihood of pre-firing.\phil{there is some garbled english please rewrite end of this paragraph also below}.
+
+Radiation damage to the $\mathrm{PbWO_4}$ crystals in the ECAL result in color centers forming within the crystal lattice, reducing transparency and altering light propagation through the crystal. Corrections to accommodate the change in scintillation light transmission were not applied in a way which completely removed the timing drift. Trigger primitives (TPs) in the forward regions of ECAL, $2.0 < |\eta| < 3.5$, were affected by the timing drift during the 2017 data-taking period. The timing drift caused certain TPs in the forward ECAL region to be incorrectly associated with the wrong bunch crossing, an effect described as "prefiring". The global trigger rules disallow the collection of consecutive bunch crossings, and no more than one event accepted per three consecutive bunch crossings, so an event which contains a prefired trigger primitive will cause the BX-1 (previous bunch crossing) to be read out, while BX0 (the current one containing the actual event with the TP) to be discarded by the trigger. In all likelihood, the read out event will not pass the HLT and will ultimately be discarded.
+This effect is not described in simulation, but a correction factor describing the rate of event loss is derived from data. Due to their large EM activity, photons and jets are used as the basis for the prefiring rate descriptions. A prefiring probability is assigned to each simulated event, based on the kinematics of the photons and jets present in the event, in Equation~\ref{eq:prefiring_weight}, re-scales contribution of simulated events given the likelihood of prefiring.
+\phil{there is some garbled english please rewrite end of this paragraph also below}.
+
 \input{plots/Prefire/fig_prefire.tex}
 \begin{equation}
-    w_{pref} = 1 - P(\mathrm{pre-fire}) = \prod_{i=\gamma,jets}{(1 - \epsilon_i^{pref}(\eta,p_T))}
+    w_{pref} = 1 - P(\mathrm{prefire}) = \prod_{i=\gamma,jets}{(1 - \epsilon_i^{pref}(\eta,p_T))}
     \label{eq:prefiring_weight}
 \end{equation}
-Pre-firing probability maps for jets and photons are shown in Figure~\ref{fig:prefire:2017G} for 2017G (\serag) and Figure~\ref{fig:prefire:2017H} for 2017H (\serah). The probability of pre-firing is derived from a tag-and-probe method requiring a central tag and foward probe to ensure the probe is the source of the pr-efiring. Photon pre-firing prability is derived from the SingleElectron data stream and the jet pre-firing probability is derived from the SingleMuon data stream. In Equation~\ref{eq:prefiring_weight}, the probability of pre-firing due to an individual photon or jet given its \pt and $\eta$ is $\epsilon_i^{pref}(\eta,p_T)$. In events with overlapping photons and jets (with $\Delta  R < 0.4$), only the contribution from the object with the highest probability of pre-firing is used in Equation~\ref{eq:prefiring_weight}\cite{LATHOMAS}. Yield predictions from the \Wpm and \Z signal simulation are re-normalized to account for the pre-firing effect, with correction factors listed in Table~\ref{tab:prefire:5} for 2017G (\serag) and Table~\ref{tab:prefire:13} for 2017H (\serah). Uncertainties on the pre-firing probability are 20\%. The effect of pre-firing on the \zee rapidity distribution for 2017G (2017H) is shown in  Figure~\ref{fig:prefire:zrap:2017G} (Figure~\ref{fig:prefire:zrap:2017H}). These figures also demonstrate the effectiveness of the corrections at mitigating the effects of pre-firing on forward events.
+Prefiring probability maps for jets and photons are shown in Figure~\ref{fig:prefire:2017G} for 2017G (\sg) and Figure~\ref{fig:prefire:2017H} for 2017H (\sh). Trigger rules can be exploited to make a selection of "un-prefireable" events to serve as the baseline measurement to quantify the prefiring rate, which consist of events in BX0 with an event in BX-3 accepted by the L1 trigger. The rate of prefiring is derived from a tag-and-probe method requiring a central tag and forward probe to ensure the probe is the source of the prefiring.  Photon prefiring probability is derived from the single electron trigger dataset and the jet prefiring probability is derived from the single muon trigger dataset. In Equation~\ref{eq:prefiring_weight}, the probability of prefiring due to an individual photon or jet given its \pt and $\eta$ is $\epsilon_i^{pref}(\eta,p_T)$. In events with overlapping photons and jets (with $\Delta  R < 0.4$), only the contribution from the object with the highest probability of prefiring is used in Equation~\ref{eq:prefiring_weight}\cite{LATHOMAS}. Yield predictions from the \Wpm and \Z boson signal simulation are re-normalized to account for the prefiring effect, with correction factors listed in Table~\ref{tab:prefire:5} for 2017G (\sg) and Table~\ref{tab:prefire:13} for 2017H (\sh). Uncertainties in the prefiring probability are taken to be the maximum of the statistical uncertainty or 20\% of the prefiring probability. The effect of prefiring on the \zee rapidity distribution for 2017G (2017H) is shown in  Figure~\ref{fig:prefire:zrap:2017G} (Figure~\ref{fig:prefire:zrap:2017H}). These figures also demonstrate the effectiveness of the corrections at mitigating the effects of prefiring on forward events.
 \input{plots/Prefire/fig_z_rap.tex}
 \input{tables/Prefiring/tab-prefire-5.tex}
 \input{tables/Prefiring/tab-prefire-13.tex}
-
-%\documentclass[9pt, xcolor=dvipsnames]{beamer}
-%\begin{document}
-%  \begin{table}[htb]
-%    \begin{center}
-
-
-% Unclera if I need this information in here or not
-
-% \begin{tabular}{ccc}
-%     \hline
-%     Category & $\Delta\sigma$ [\%] & Error[\%]\\ \hline
-%  $|\eta| < 1$ $r9 < 0.94$	&	1.6449	&	0.1090 \\
-%  $|\eta| < 1$ $r9 > 0.94$	&	1.6463	&	0.1480 \\
-%  $|\eta| < 2$ $r9 < 0.94$	&	3.0774	&	0.1491 \\
-%  $|\eta| < 2$ $r9 > 0.94$	&	2.8476	&	0.1783 \\
-%  $|\eta| > 1$ $r9 < 0.94$	&	2.4120	&	0.0898 \\
-%  $|\eta| > 1$ $r9 > 0.94$	&	1.9079	&	0.5127 \\
-%  $|\eta| > 2$ $r9 < 0.94$	&	3.5359	&	0.2112 \\
-%  $|\eta| > 2$ $r9 > 0.94$	&	3.5945	&	0.0645 \\
-%   \hline
-% \end{tabular}
-
-
-% SCALE
-% %\documentclass[9pt, xcolor=dvipsnames]{beamer}
-% %\begin{document}
-% %  \begin{table}[htb]
-% %    \begin{center}
-%       \begin{tabular}{ccc}
-%         \hline
-%         Category & $\Delta$ P [\%] & Error[\%]\\ \hline
-%  $|\eta| < 1$ $r9 < 0.94$	&	0.7350	&	0.0270 \\
-%  $|\eta| < 1$ $r9 > 0.94$	&	1.0620	&	0.0243 \\
-%  $|\eta| < 2$ $r9 < 0.94$	&	0.3790	&	0.0671 \\
-%  $|\eta| < 2$ $r9 > 0.94$	&	1.3180	&	0.0798 \\
-%  $|\eta| > 1$ $r9 < 0.94$	&	0.8500	&	0.0410 \\
-%  $|\eta| > 1$ $r9 > 0.94$	&	1.5000	&	0.1260 \\
-%  $|\eta| > 2$ $r9 < 0.94$	&	-0.5838	&	0.1081 \\
-%  $|\eta| > 2$ $r9 > 0.94$	&	0.8010	&	0.0593 \\
-%   \hline
-%     \end{tabular}
-% %  \end{center}
-% %\end{table}
-% %\end{document}

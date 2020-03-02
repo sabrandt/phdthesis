@@ -1,37 +1,40 @@
 \section{Modeling \pp collisions}
-In collisions at very low energies, protons can be approximated as electrically charged objects. At higher energies, such as those at the LHC, the structure within protons begins to have an important role for the scattering process. \W and \Z bosons are produced from the interaction of quarks and gluons (both also referred to as partons) within the proton\cite{PhysRevLett.23.930,PhysRevLett.23.935}. The contributions of the partons to the proton's structure are described by parton distribution functions (PDFs). The PDFs cannot be calculated directly, and are instead determined from experimental data.  (add citations) Valence quarks, sea quarks, and gluons within the proton are described by the PDFs. 
-% Therefore, the internal structure of the protons is represented by the structure functions i.e. in Equation~\ref{eq:structure_func}, where the $x$ is the fraction of the proton's total momentum carried by a given parton, and $f_i(x)$ is the distribution of the parton. 
-% \begin{equation}
-% F(x) = \sum_i{x_if_i(x_i)}
-    % \label{eq:structure_func}
-% \end{equation}
+% Theoretical predictions of \pp collisions are an important tool for understanding physical processes and modeling observables. Major components of these predictions are described in this chapter. 
+% \subsection{Proton Parton Distribution Functions}
+In collisions at very low energies, protons can be approximated as electrically charged objects. At higher energies, such as those at the LHC, the structure within protons begins to have an important role for the scattering process. \W and \Z bosons are produced from the interaction of quarks and gluons (both also referred to as partons) within the proton\cite{PhysRevLett.23.930,PhysRevLett.23.935}. The contributions of the partons to the proton's structure are described by parton distribution functions (PDFs). The PDFs, $f_i(x,Q^2)$, give the probability of finding a parton of carrying a fraction $x$ of the proton momentum. The PDFs cannot be calculated directly, and are instead determined from experimental data. Valence quarks, sea quarks, and gluons within the proton are described by the PDFs. 
 
-Calculations for cross section predictions must be done perturabitively in QCD. The highest order calculation currently available for the \W and \Z production is NNLO
-\cite{Anastasiou:2003ds}. However, soft and collinear gluons emissions produce logarithmic terms which cause singularities. The factorization theorem can be used in QCD processes, separating the perturbative and non-perturbative sections of the calculation at a factorization scale, $\mu_F$~\cite{Collins:1989gx}. This allows the singularities due to the soft gluon emissions to be factored out and contained within the PDFs.  Equation~\ref{eq:factorization_xsec} shows the factorized cross section calculation. $f_{a}$ and $f_{b}$ are the parton distribution functions for the quarks and gluons in the two protons, $x_a$ and $x_b$ are the fractions of total momentum carried by each parton, and $\hat{\sigma}$ is the cross section for the hard process. 
+For hard scattering processes such as \W and \Z boson production, the momentum transfer, $Q$ is high. Due to the asymptotic freedom of QCD, the coupling constant $\alpha_S(Q^2)$ is is small, and perturbative calculations are effective. The highest order calculation currently available for the \W and \Z production is next-to-next-to-leading order (NNLO)\cite{Anastasiou:2003ds}. 
 
+In the perturbative expansions, initial-state radiation of soft and collinear gluons produces logarithmic terms which cause singularities and divergences in the calculations. To accommodate this effect, the calculation can be split into perturbative and non-perturbative regimes. The factorization theorem ensures that the hard process is independent of the intial-state radiation, and separates the QCD calculations at a factorization scale, $\mu_F$. This allows the singularities due to the soft gluon emissions to be factored out and contained within the PDFs~\cite{Collins:1989gx}. The PDF dependence on the factorization scale is determined by the Dokshitzer–Gribov– Lipatov–Altarelli–Parisi (DGLAP) equations. The DGLAP equations introduce a $\mu_F$ dependence to the scale-independent PDFs by including initial-state soft radiation, and provide an evolution of the PDFs over different factorization scales\cite{Gribov:1972ri,Dokshitzer:1977sg}.  Equation~\ref{eq:factorization_xsec} shows the factorized cross section calculation. The first section includes the PDFs, $f_{a}$ and $f_{b}$, evaluated at the factorization scale $\mu_F$, for partons $a$ and $b$, each carrying fractions $x_a$ and $x_b$ of the proton momentum. The second half describes the hard scattering between the two partons, where the cross section, $\hat{\sigma}$, is expanded perturbatively.  
 \begin{equation}
 \begin{aligned}
-\sigma_{p_a p_b \rightarrow n} &= \sum_{a,b}{\int{dx_a dx_b f_{a}(x_a, \mu^2_F)f_{b}(x_b, \mu^2_F)}} \\ &\times[\hat{\sigma}_{LO}(x_a x_b s, \mu^2_R, \mu^2_F)+\alpha_S \hat{\sigma}_{NLO}(x_a x_b s, \mu^2_R, \mu^2_F) + \cdot]
+\sigma_{p_a p_b \rightarrow n} &= \sum_{a,b}{\int{dx_a dx_b f_{a}(x_a, \mu^2_F)f_{b}(x_b, \mu^2_F)}} \\ &\times[\hat{\sigma}_{LO}(x_a x_b s, \mu^2_R, \mu^2_F)+\alpha_S \hat{\sigma}_{NLO}(x_a x_b s, \mu^2_R, \mu^2_F) + \cdots]
     \label{eq:factorization_xsec}
 \end{aligned}
 \end{equation}
-Factorization scale dependence of the PDFs is determined by the DGLAP equation. Parametrizations of PDFs are determined, and solutions to the DGLAP equation provide the evolution of the PDFs over different scales of $\mu_F$ \cite{Gribov:1972ri,Dokshitzer:1977sg}
+Parton-parton cross sections ($\hat{\sigma}$) are determined by numerically integrating matrix element calculations by using a Monte Carlo (MC) process to sample the phase space.
+
+Matrix element calculation breaks down for soft and collinear final states. Instead, parton shower models are used to produce the final-states at non-perturbative scales. Showering is modeled as series of radiative steps, with partons branching into consecutively lower energy state: $q\rightarrow gq$, $g\rightarrow gg$, and $g\rightarrow q\bar{q}$ for QCD. Branching probability at a scale $Q^2$ is determined by evolving the splitting functions using the DGLAP equations. Additionally QED interactions ($q\rightarrow q\gamma$ and $l\rightarrow l\gamma$) are included in the shower modeling. Parton showering continues to the scale $\Lambda\sim 200~\mathrm{MeV}$, where bare partons are hadronized into color-neutral hadrons. Then the unstable hadrons are decayed according to branching ratios. Factorization and a hard scatter process, along with subsequent parton showering and hadronization is illustrated in Figure~\ref{fig:sm:evtgen}.
+
+% Multiple collaborations exist to provide tools capable of performing the different calculations described above. 
 
 \input{plots/SM/fig_evtgen.tex}
+% %%%%%%%%%%%%%%%% vvvvvvv finish later
+% %% Comment back in later 
+% \subsection{\W and \Z production at the LHC [need some work]}
+% In the \pp collisions, the bosons are produced through the interaction of quarks and gluons within the protons \cite{}. The primary production modes for the \W and \Z bosons is through the Drell-Yann process, predonminantly $u\bar{u}, d\bar{d}\rightarrow Z$,  $u\bar{d}\rightarrow W^+$,  and $d\bar{u}\rightarrow W^-$. 
 
-Matrix element calculation breaks down for soft and collinear final states. Instead, parton shower models are used to produce the final-states at non-perturbative scales. Showering is modeled as series of radiative steps, with partons branching into consecutively lower energy state: $q\rightarrow gq$, $g\rightarrow gg$, and $g\rightarrow q\bar{q}$ for QCD. Additionally QED interactions ($q\rightarrow q\gamma$ and $l\rightarrow l\gamma$) are included in the shower modeling. Parton showering continues to the scale $\Lambda_{QCD}\approx 200~\mathrm{MeV}$, bare partons are hadronized into color-neutral hadrons. Then the unstable hadrons are decayed according to branching ratios. Factorization and a hard scatter process, along with subsequent parton showering and hadronization is illustrated in Figure~\ref{fig:sm:evtgen}.
-
-
-
-\subsection{\W and \Z production at the LHC [need some work]}
-In the \pp collisions, the bosons are produced through the interaction of quarks and gluons within the protons \cite{}. The primary production modes for the \W and \Z bosons is through the Drell-Yann process, predonminantly $u\bar{u}, d\bar{d}\rightarrow Z$,  $u\bar{d}\rightarrow W^+$,  and $d\bar{u}\rightarrow W^-$. 
-
-Figure~\ref{fig:sm:summary:xVsQ2}.
-
-%%%% figure
-\input{plots/SM/fig_q.tex}
+% Figure~\ref{fig:sm:summary:xVsQ2}.
 
 
+
+
+% %%%% figure
+% \input{plots/SM/fig_q.tex}
+
+%%%%%%%%%% ^^^^^ Section needs to be finished
+
+%% Comment back in later if I feel like finishing
 
 % \subsection{Simulating \pp collisions[need some work]}
 % Practical descriptions of theoretical predictions are provided by Monte Carlo event generators. These generators rely on the approximations and factorization schemes that were described earlier in this section. Many collaborations dedicated to event generation tools exist, and are important in the era of LHC physics. The event generators come in generally two types: matrix element generators and parton shower generators. The matrix-element generators are distinguished by the order in $\alpha_s$ to which they provide calculations. 

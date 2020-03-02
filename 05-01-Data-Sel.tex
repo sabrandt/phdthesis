@@ -1,5 +1,5 @@
 \chapter{Data Samples and Event Selection}\label{ch:data}
-The data used in this analysis were collected in late 2017 by the CMS Experiment during Run II of the LHC. At this time, the LHC delivered two sets of \pp collisions, at \serag (2017G) and at \serah (2017H). This chapter details the information related to data collection and Monte Carlo simulations associated with these data taking periods. Additionally, details regarding the object identification criteria and event selection are provided.
+The data used in this analysis were collected in late 2017 by the CMS Experiment during Run II of the LHC. At this time, the LHC delivered two sets of \pp collisions, at \sg (2017G) and at \sh (2017H). This chapter details the information related to data collection and Monte Carlo simulations associated with these data taking periods. Details regarding the object identification criteria and event selection are also provided.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%     Dataset 
@@ -7,11 +7,11 @@ The data used in this analysis were collected in late 2017 by the CMS Experiment
 
 
 \section{Datasets}\label{ch:data:dataset}
-Data used in this thesis are from the LHC run eras 2017G and 2017H, consisting of \pp collisions at \serag and \serah, respectively. [Add LUMI] Names of the data streams and relevant run era and reconstruction version identifications are listed in Table~\ref{tab:dataset13} and Table~\ref{tab:dataset5}. 
+Data used in this analysis are from the LHC run eras 2017G and 2017H, consisting of \pp collisions at \sg with integrated luminosity $\mathcal{L}=\lumig$ and \sh with integrated luminosity $\mathcal{L}=\lumih$, respectively. Names of the data streams and relevant run era and reconstruction version identifications are listed in Table~\ref{tab:dataset13} and Table~\ref{tab:dataset5}. 
 \input{tables/Data/tab-datastream.tex}
 
 \section{Triggers}\label{ch:data:triggers}
-All events considered must have at least one lepton selected by the relevant trigger path. For muons, the kinematic requirement is $\pt>17\GeV$ and $|\eta|<2.4$ for both \serag and \serah. For electrons, the kinematic requirement is $\pt>20\GeV$ ($\pt>17\GeV$) and $|\eta|<2.5$ for \serag (\serah). Additional isolation and reconstruction quality criteria, which are less restrictive than the offline selection criteria, are applied at the trigger level. Names of the trigger paths are listed in  Table~\ref{tab:triggers}
+All events considered must have at least one lepton selected by the relevant trigger path. For muons, the kinematic requirement is $\pt>17\GeV$ and $|\eta|<2.4$ for both \sg and \sh. For electrons, the kinematic requirement is $\pt>20\GeV$ ($\pt>17\GeV$) and $|\eta|<2.5$ for \sg (\sh). Additional isolation and reconstruction quality criteria, which are less restrictive than the offline selection criteria, are applied at the trigger level. Names of the trigger paths are listed in  Table~\ref{tab:triggers}
 
 \input{tables/Data/tab-triggers.tex}
 
@@ -20,11 +20,13 @@ All events considered must have at least one lepton selected by the relevant tri
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Luminosity}\label{ch:lumi}
-Data used for physics analyses are required to pass the quality certification regarding operation of detector subsystems during the data taking period. The list of data taking periods with highest quality requirements are provided in a golden JSON. The JSON files containing the selected data segments for 2017G (\serag) and 2017H (\serah) are: \\
-\centerline{\texttt{\small Cert\_306546-306826\_5TeV\_EOY2017ReReco\_Collisions17\_JSON.txt}}
-\centerline{\texttt{\small Cert\_306896-307082\_13TeV\_PromptReco\_Collisions17\_JSON\_LowPU\_lowPU.txt}}
+Data used for physics analyses are required to pass the quality certification regarding operation of detector subsystems during the data taking period. 
+% The list of data taking periods with highest quality requirements are compiled into a good run list .
+% The JSON files containing the selected data segments for 2017G (\sg) and 2017H (\sh) are: \\
+% \centerline{\texttt{\small Cert\_306546-306826\_5TeV\_EOY2017ReReco\_Collisions17\_JSON.txt}}
+% \centerline{\texttt{\small Cert\_306896-307082\_13TeV\_PromptReco\_Collisions17\_JSON\_LowPU\_lowPU.txt}}
 %
-Pileup conditions during the data taking periods are shown in Figure~\ref{fig:data:lumiPU13}, with an average of $\langle\mu\rangle=3$ collisions per bunch crossing. The instantaneous luminosity per day is shown in Figure~\ref{fig:data:lumiperday5}. Uncertainties on the luminosity measurement are 1.7\% (3.5\%) for the certified data at \serah (\serag). The total integrated luminosity collected by the data streams during \serag and \serah are listed in Table~\ref{tab:lumis}~\cite{LumiPOGNumbers}.
+The 2017G and 2017H data taking periods are notable for the LHC conditions producing very few additional collisions in the concurrent or adjacent bunch crossings. These additional collisions are referred to as pileup events. Pileup conditions during the data taking periods are shown in Figure~\ref{fig:data:lumiPU13}, with an average of $\langle\mu\rangle=3$ collisions per bunch crossing. The instantaneous luminosity per day is shown in Figure~\ref{fig:data:lumiperday5}. Uncertainties on the luminosity measurement are 1.7\% (3.5\%) for the certified data at \sh (\sg). The total integrated luminosity collected by the data streams during \sg and \sh are listed in Table~\ref{tab:lumis}.~\cite{LumiCalibTwiki,CMS:2018elu}.
 \input{plots/Data/fig-lumi-PU.tex}
 \input{plots/Data/fig-lumi-day.tex}
 \input{tables/Data/tab-lumi.tex}
@@ -37,94 +39,88 @@ Pileup conditions during the data taking periods are shown in Figure~\ref{fig:da
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Simulated samples}\label{ch:data:sim}
-Several simulated Monte Carlo (MC) samples are used in the descriptions of signal and background processes. The \Wpm and Z boson signal events are simulated at next-to-leading order (NLO) with up to two outgoing partons at Born level by \MGvATNLO~2.3.3~\cite{Alwall:2014hca}. An additional set of simulations of the \Wpm and Z signal processes are provided at NLO by \POWHEG~2.0~\cite{Alioli:2008gx,Frixione:2007vw,powheg:2010,Alioli:2010xd} for the \Wpm and \MINLO~\cite{Hamilton:2012rf} for the Z. Background samples (di-boson and \ttbar) are also simulated with \POWHEG~2.0. Underlying event modeling, parton showering, hadronization, and final state radiation are done by \PYTHIA~8.230~\cite{Sjostrand:2014zea}, using tune CP5~\cite{Sirunyan:2019dfx} and default parton distribution functions (PDFs) provided by NNPDF3.1~\cite{Ball:2017nwa}. Primary sample names and their respective production cross sections are listed in Table~\ref{tab:allSamples5} (Table~\ref{tab:allSamples13}) for \serag (\serah).
+Several simulated Monte Carlo (MC) samples are used in the descriptions of signal and background processes. The \Wpm and \Z boson signal events are simulated at next-to-leading order (NLO) with up to two outgoing partons at Born level by \MGvATNLO~2.3.3~\cite{Alwall:2014hca}. An additional set of simulations of the \Wpm and \Z boson signal processes are provided at NLO by \POWHEG~2.0~\cite{Alioli:2008gx,Frixione:2007vw,powheg:2010,Alioli:2010xd} for the \Wpm and \MINLO~\cite{Hamilton:2012rf} for the \Z boson. Background samples (di-boson and \ttbar) are also simulated with \POWHEG~2.0. Underlying event modeling, parton showering, hadronization, and final state radiation are done by \PYTHIA~8.230~\cite{Sjostrand:2014zea}, using tune CP5~\cite{Sirunyan:2019dfx} and default parton distribution functions (PDFs) provided by NNPDF3.1~\cite{Ball:2017nwa}. Primary sample names and their respective production cross sections are listed in Table~\ref{tab:allSamples5} (Table~\ref{tab:allSamples13}) for \sg (\sh).
 
-The MC samples also include simulation of additional events occurring in the same and adjacent bunch crossings (pileup). The distribution of pileup interactions is simulated to match the corresponding conditions in data. For all MC, simulation of detector response is performed by \GEANTfour~\cite{Agostinelli:2002hh}, with full event reconstruction being done using the same algorithms used to reconstruct data. Object and event reconstruction was described in Chapter~\ref{ch:reco}. 
+The distribution of pileup interactions is simulated to match the corresponding conditions in data. For all simulated samples, simulation of detector response is performed by \GEANTfour~\cite{Agostinelli:2002hh}, with full event reconstruction being done using the same algorithms used to reconstruct data. Object and event reconstruction was described in Chapter~\ref{ch:reco}. 
 
 \input{tables/Data/tab-mc.tex}
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%     Signal & Bkg modeling
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Modeling of Signal and Background}\label{ch:data:modelSigAndBkg}
-% %% Discuss the signal and background MC here
-% Monte Carlo samples are used to model the signal and some of the background processes. The rest of the background is modeled from a data-driven approach. Background processes which are considered are those coming from \ttbar~production, QCD multi-jet production, and  other electroweak processes. 
-
-% \begin{itemize}
-% \item \ttbar: top quark pairs produced, with the lepton(s) from the decay products being reconstructed within the fiducial region
-% \item Di-Boson production: Cross section predictions are only for the production of a single boson. Di-boson processes $WW$, $WZ$, and $ZZ$ can produce single- or di-lepton signatures satisfying the W or Z selection criteria
-% \item \ztt~(\Z background to the \Z): Single \Z production with the \Z decaying to a pair of $\tau$, and the leptons from the $\tau$ decays are reconstruted as \zee~ or \zmm.
-% \item \ztt, \zmm, \zee~ (\Z background to the \W): \zll, with one reconstructed lepton in the fiducial region. One of the largest EWK backgrounds to the W.
-% \item \wtau: Single W production, where the W decays via a $\tau$ to a $\mu$ or $e$. 
-% \item QCD multi-jet events: jets faking isolated leptons
-% \item High \pt photon: conversion into an electron of a hard photon from the process $pp\rightarrow\gamma+\mathrm{jets}$. Affects only the electron channel.
-% \end{itemize}
-
-% The QCD background is the most significant background for the W measurement, with a larger impact in the electron channel than the muon channel due to the additional contribution of the $\gamma+\mathrm{jets}$ photon conversions into electrons. In addition, the \wtau~ and \ztt~ backgrounds become significant at higher \met. 
-
-% Signal samples for both W and Z production are generated with aMC@NLO interface to Pythia8 for parton showering, using the CP5 tune. Alternative samples containing event generation by POWHEG and minlo and shower modeling by PHOTOS are used for cross-checks and evaluation of uncertainties. Background samples for top production and diboson production are generated with POWHEG intefaced to Pythia8 using the CP5 tune. 
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%     Event Selection
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Event Selection \& Fiducial Region}
- \subsubsection{Reconstructed Event Selection}
-Preliminary \Wpm and \Z event candidates are identified by the presence of at least one lepton identified by the single electron and single muon triggers described in Section~\ref{ch:data:triggers}. These are further selected by applying the offline electron or muon reconstruction identification criteria described in Section~\ref{ch:IdIso}. 
-A \Z boson event requires the presence a pair of oppositely charged leptons ($e^{+}e^{-}$ or $\mu^{+}\mu^{-}$), each of the charged leptons being identified by the trigger, each of the charged leptons fulfilling the ID requirements in Section~\ref{ch:IdIso}, and an invariant mass of \masswindow. 
-Selection of a \Wpm candidate requires one charged lepton identified by the trigger and passing all ID requirements in Section~\ref{ch:IdIso}. A veto is applied to events containing additional same-flavor leptons passing a loose identification requirement. Additionally, \Wpm events are required to have an invariant mass $\mt > 40\GeV$, with \mt defined by: 
-$\mt = \sqrt{ 2 \pt \met ( 1 - \cos(\Delta\phi) ) }$, where $\Delta\phi$ is the angle between the lepton and \vmet in the transverse plane.
+\subsubsection{Reconstructed}
+Preliminary \Wpm and \Z boson event candidates are identified by the presence of at least one lepton identified by the single electron and single muon triggers described in Section~\ref{ch:data:triggers}. These are further selected by applying the offline electron or muon reconstruction identification criteria described in Section~\ref{ch:IdIso}. 
+A \Z boson event requires the presence a pair of oppositely charged leptons ($e^{+}e^{-}$ or $\mu^{+}\mu^{-}$), at least one of the leptons being identified by the trigger, and each of the leptons fulfilling the ID requirements in Section~\ref{ch:IdIso}, and an invariant mass of \masswindow. 
+Selection of a \Wp or \Wm boson candidate requires one charged lepton identified by the trigger and passing all ID requirements in Section~\ref{ch:IdIso}. A veto is applied to events containing additional leptons passing a loose identification requirement. 
+
 \phil{This section is important, I would write it systematically with bullets. W selection is .... and Z selection is.... Its all jumbled and hard to read}
+% Additionally, \Wpm events are required to have an invariant mass $\mt > 40\GeV$, with \mt defined by: 
+% $\mt = \sqrt{ 2 \pt \met ( 1 - \cos(\Delta\phi) ) }$, where $\Delta\phi$ is the angle between the lepton and \vmet in the transverse plane.
+
 
 \subsubsection{Fiducial Region}
-The fiducial region for the \Wpm and \Z acceptance at generator-level emulates the selection at reconstruction level. This requires kinematic cuts $\pt > 25 \GeV$ and $|\eta| < 2.4$ for all charged leptons. Additionally, the \Z boson fiducial region includes a requirement on the dilepton mass: \masswindow. The fiducial region for the \Wpm includes the transverse mass requirement $\mt>40\GeV$.
+The fiducial region for the \Wpm and \Z boson acceptance at generator-level emulates the selection at reconstruction level. This requires kinematic cuts $\pt > 25 \GeV$ and $|\eta| < 2.4$ for all charged leptons. Additionally, the \Z boson fiducial region includes a requirement on the dilepton mass: \masswindow. The fiducial region for the \W boson includes the transverse mass requirement $\mt>40\GeV$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%     object definition
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Object Identification}\label{ch:IdIso}
-The \Wpm (\Z) boson candidates are identified by the presence of one (two) well-identified leptons passing a strong set of criteria ensuring proper reconstruction and identification. This section contains a description of the identification requirements for the \wlnu and \zll signal leptons, as well as the requirements for the lepton veto for the \Wpm selection.
+The \W and \Z boson candidates are identified by the presence of one or two, respectively, well-identified leptons passing a strong set of criteria ensuring proper reconstruction and identification. This section contains a description of the identification requirements for the \wlnu and \zll signal leptons, as well as the requirements for the lepton veto for the \Wpm boson selection.
+
+\subsection{Isolation}\label{ch:id:iso}
+One of the most important observables used to separate the leptons from \Wp and \Wm boson events from QCD background is the isolation. Isolated leptons have little other activity within a cone of $\Delta R < 0.3$, and leptons from \wlnu decays are generally isolated. The isolation of a lepton is constructed from the sum of all charged and neutral hadrons and ECAL deposits within $\Delta R < 0.3$ of the lepton, as shown in Equation~\ref{eq:pfiso}. 
+\begin{equation}
+    I_{PF} = \frac{1}{\pt}\sum_{\Delta R<0.3}( \pt^{h^0} + \pt^{h^\pm} +  \pt^{\gamma})
+    \label{eq:pfiso}
+\end{equation}
+The individual contributions to the PF isolation are the sums of corresponding particle types which fall within a cone of $\Delta R < 0.4$.
+% \begin{equation}
+%     \Delta R = \sqrt{\Delta\eta^2+\Delta\phi^2}
+%     \label{eq:dR}
+% \end{equation}
+% Neutral particle contributions due to pileup are estimated by computing charged hadron contributions from pileup vertices and scaling it by 0.5. The scaling factor was determined using simulation. This pileup contribution is subtracted from the total neutral particle energy sum to get the neutral particle isolation, which is limited to be $\geq0$.
 
 \subsection{Electrons}\label{ch:IdIso:Ele}
-Electrons originating from a candidate \Wpm or \Z are required to pass the standard cut-based identification with medium working point. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Ele}~\cite{EgammaIDIsoCuts}. The \Wpm selection requires the absence of additional electrons in the event. The veto is performed using additional electrons fulfilling the loose working point identification requirements, with criteria listed in Table~\ref{tab:Data:Sel:EleVeto}. 
-\phil{explain the bullets}
-\begin{itemize}
-    \item $\pt > 25 \GeV$: high-\pt leptons
-    \item $|\eta|< 2.4$: make the electron fiducial region match the muon fiducial region
-    \item ($\Delta\eta_{In}$,$\Delta\phi_{In}$): ECAL supercluster and track are matched when extrapolating to vertex
-    \item $\sigma_{i\eta i\eta}$: electron-like cluster profile
-    \item H/E: Allow only a small amount of activity in the HCAL in the region behind the ECAL electron
-    \item $|d_{0,bs}|$,~$|d_{z,bs}|$: small impact parameters in the transverse plane and longitudinal axis, relative to the beam spot
-    \item $|1/E-1/p|$: 
-    \item $\mathrm{Iso_{PF}}/\pt$: isolated leptons less likely to be from a jet
-    \item Missing Hits: Require very few missing hits in tracker layers
-    \item Conversion fit veto probability should be < $10^{-6}$, electron unlikely to be from $\gamma$ conversion
-\end{itemize}
 
+Electrons originating from candidate \Wp, \Wm, and \Z bosons are required to pass the standard cut-based identification with medium working point. Backgrounds producing electron-like signatures include overlapping charged and neutral pions, pions showering in the ECAL, and jets, and the selection criteria are designed to exclude these. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Ele} Descriptions of the observables are provided below. The \Wpm boson selection requires the absence of additional leptons in the event. The veto is performed with leptons fulfilling the loose working point identification requirements, with criteria for electrons listed in Table~\ref{tab:Data:Sel:EleVeto}. 
+%~\cite{EgammaIDIsoCuts}.
+\subsubsection{Electron Observables}
+\begin{itemize}
+    \item \textbf{($\Delta\eta_{In}$,$\Delta\phi_{In}$):} Geometric matching of the ECAL supercluster and electron GSF track, extrapolated to the vertex. Real electrons are well-matched since they come from the same object. 
+    \item \textbf{$\sigma_{i\eta i\eta}$:} Shape of the shower in the ECAL. Electrons can be discriminated from jets by the evolution of the shower in the 5x5 crystal region around the seed.
+    \item \textbf{H/E:} Ratio of energy deposited in HCAL to ECAL. Electrons tend to deposit most of their energy in the ECAL, while jets deposit substantial amounts their of energy in the HCAL.
+    \item \textbf{$|d_{0,bs}|$,~$|d_{z,bs}|$:} Impact parameters are defined as the distance of closest approach of the track to the vertex. Requiring an impact parameter cut removes electrons from displaced vertices.
+    \item \textbf{$|1/E-1/p|$:} Electron energy measured in ECAL is compatible with momentum measured in tracker.
+    \item \textbf{Number of Missing Hits}: Number of missing tracker hits in tracker layer
+    \item \textbf{Isolation:} Requiring that electrons be isolated reduces the number of jets reconstructed as electrons.
+    \item \textbf{Conversion probability}: Photons converting to electron-positron pairs are a source of isolated electrons. Electrons from photon conversion are identified by fitting $e^+e^-$ pairs to a common vertex.
+\end{itemize}
 
 \input{tables/Data/tab-ele-id.tex}
 \input{tables/Data/tab-ele-veto.tex}
 
 \subsection{Muons}\label{ch:IdIso:Mu}
-Muons originating from a candidate \Wpm or \Z are required to pass the standard cut-based identification with tight working point\phil{delete with tight working point} with tight working point requirement on the muon PF isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}~\cite{MuonIDIsoCuts}. As in the electron channel, the \Wpm selection requires the absence of additional muons in the event. The veto is performed using additional muons fulfilling the loose working point identification requirements and no isolation requirement, with criteria listed in Table~\ref{tab:Data:Sel:Mu:Veto}.
-\phil{again this could use a little more text to tie things together; itdoesn't read well}
-\begin{itemize}
-    \item $\pt > 25 \GeV$: high-\pt leptons only
-    \item $|\eta| < 2.4$: muons within the appropriate detector volume
-    \item Muons must be identified as such by particle flow muon ID and be reconstructed by the GlobalMuon algorithm
-    \item $\chi^2/$ndof: Quality of the global muon fit must satisfy $\chi^2/$ndof < 10
-    \item \# Valid Mu Hits: At least one good muon system hit is required in the GlobalMuon fit
-    \item \# Matched Stations: Muon stations have at least 2 muon segments
-    \item \# Tracker Layers: At least 6 tracker layers should have hits
-    \item \# Valid Pixel Hits: at least one hit in the pixel tracker associated with the muon
-    \item $|d_{0,bs}|$,~$|d_{z,bs}|$: loose cut on impact parameters in the transverse plane and longitudinal axis, relative to the beam spot 
-    \item $\mathrm{Iso_{PF}}/\pt$: Muons must be isolated. Similar to electrons, the particle-flow isolation is used. 
-\end{itemize}
 
+Muons originating from a candidate \Wpm or \Z boson are required to pass the standard cut-based identification with tight working point\phil{delete with tight working point} with tight working point requirement on the muon PF isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}.Descriptions of the observables are provided below. As in the electron channel, the \Wpm boson selection requires the absence of additional leptons in an event which pass the loose cut-based ID. The criteria for muons is listed in Table~\ref{tab:Data:Sel:Mu:Veto}. 
+%~\cite{MuonIDIsoCuts}. 
+% do i even need citation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Muon Observables}
+
+\begin{itemize}
+    \item \textbf{Global Muon \& PF Muon:} Muon candidate is successfully reconstructed by these algorithms
+    \item \textbf{$\chi^2/$ndof:} Quality of the muon track fit, require convergence of the fit.
+    \item \textbf{Number of Valid Hits:} Number of muon system hits included in the global muon reconstruction. Global muons rarely have 0 valid hits.
+    \item \textbf{Number of Matched Stations:} Number of muon segments in the muon stations
+    \item \textbf{Number of Pixel Hits:} Activity in the pixel tracker associated with the muon removes muons from backgrounds such as cosmic rays and decay-in-flight of pions and kaons. 
+    \item \textbf{Number of Tracker Hits:} Similar to the pixel tracker requirements, the total number of tracker hits can further reduce backgrounds from decay-in-flight.
+    \item \textbf{$|d_{0,bs}|$,~$|d_{z,bs}|$:} Impact parameters $d_0$ and $d_z$ are defined as the distance of closest approach of a track to the primary interaction vertex. Removes muons from displaced vertices and cosmic rays. 
+    \item \textbf{Isolation:} Muons originating from heavy flavor decays often have other leptons and light mesons nearby, and are therefore less isolated.
+\end{itemize}
 
 \input{tables/Data/tab-mu-id.tex}
 \input{tables/Data/tab-mu-veto.tex}

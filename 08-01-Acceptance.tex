@@ -1,18 +1,21 @@
-\chapter{Acceptance}
+\chapter{Acceptance}\label{ch:acceptance}
 
 \section{Acceptance Calculation}
-The acceptance, $A$, for \Wpm and \Z events is the fraction of simulated events producing decay products within the fiducial volume satisfying the geometric and kinematic requirements. The specific requirements are $\pt>25\GeV$ and $|\eta| < 2.4$ for both electrons and muons (Table~\ref{tab:Acc:Gen:Cuts}). An additional requirement on transverse mass, $\mt > 40 \GeV$, is applied for \Wpm events. For \Z events, only those which are generated with \masswindow are considered.
+The acceptance, $A$, for \Wpm and \Z boson events is the fraction of simulated events producing decay products within the fiducial volume satisfying the geometric and kinematic requirements. The specific requirements are $\pt>25\GeV$ and $|\eta| < 2.4$ for both electrons and muons (Table~\ref{tab:Acc:Gen:Cuts}). An additional requirement on transverse mass, $\mt > 40 \GeV$, is
+applied for \Wpm events. For \Z events, only those which are generated with \masswindow are considered.
 \input{tables/Acceptance/tab-fiducial-cuts.tex}
-Generator-level acceptance can be computed before and after the effects of final-state radiation (FSR) are simulated. The acceptance values for \Wp, \Wm, and \Z calculated from \aMCATNLO with NNPDF3.1 PDF and \PYTHIA8.2 for parton showering for electron and muon channels are shown in Table~\ref{tab:Acc:Gen:Val:5TeV} (Table~\ref{tab:Acc:Gen:Val:13TeV}) for \serag (\serah). The post-FSR column indicates that the leptons have undergone bremsstrahlung, and the dressed lepton category incorporates final state radiation photons into the lepton kinematics. This is done by identifying any photons which are within $\Delta R < 0.1$ of the lepton and adding them back to the lepton momentum vector. Statistical uncertainty on the generator-level acceptance is negligible. Additional uncertainties from theoretical sources are discussed in the next section.
+Generator-level acceptance can be computed before and after the effects of final-state radiation (FSR) are simulated. The acceptance values for \Wp, \Wm, and \Z bosons are calculated from \aMCATNLO with NNPDF3.1 PDF and \PYTHIA8.2 for parton showering are shown in Table~\ref{tab:Acc:Gen:Val:5TeV} (Table~\ref{tab:Acc:Gen:Val:13TeV}) for \sg (\sh). The post-FSR column indicates that the leptons have undergone bremsstrahlung, and the dressed lepton category incorporates final state radiation photons into the lepton kinematics. This is done by identifying any photons which are within $\Delta R < 0.1$ of the lepton and adding them back to the lepton momentum vector. Statistical uncertainty in the generator-level acceptance is negligible. Additional uncertainties from theoretical sources are discussed in the next section.
 \input{tables/Acceptance/tab-acc-vals-5.tex}
 \input{tables/Acceptance/tab-acc-vals-13.tex}
 
-Acceptance values for samples generated with \aMCATNLO and \POWHEG are shown in Table~\ref{tab:Acc:ele:5TeV} (electrons) and Table~\ref{tab:Acc:mu:5TeV} (muons) for \serag and Table~\ref{tab:Acc:ele:13TeV} (electrons) and Table~\ref{tab:Acc:mu:13TeV} (muons) for \serah. 
-\input{tables/Acceptance/tab-acc-gen-5.tex}
-\input{tables/Acceptance/tab-acc-gen-13.tex}
+%%%%% 
+% Acceptance values for samples generated with \aMCATNLO and \POWHEG are shown in Table~\ref{tab:Acc:ele:5TeV} (electrons) and Table~\ref{tab:Acc:mu:5TeV} (muons) for \sg and Table~\ref{tab:Acc:ele:13TeV} (electrons) and Table~\ref{tab:Acc:mu:13TeV} (muons) for \sh. 
+% \input{tables/Acceptance/tab-acc-gen-5.tex}
+% \input{tables/Acceptance/tab-acc-gen-13.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systematic Uncertainty}\label{ch:acc:unc}
+Uncertainties in the measurement due to theoretical predictions are studied by using the acceptance and comparing baseline values to alternate predictive models. The differences are taken as the uncertainties.
 
 \subsection{Higher-order QCD corrections}
 \phil{for you variations can you label whether its percentages or acceptance units?}
@@ -20,22 +23,30 @@ Acceptance values for samples generated with \aMCATNLO and \POWHEG are shown in 
 The highest order calculation available for calculating the W cross section is NNLO, and uncertainty comes from the lack of higher order terms. The uncertainty due to these higher order terms is estimated by varying the the QCD renormalization (\mur) and factorization (\muf) scales and evaluating the impact this has on the acceptance.\phil{By what values are you varying the scales} Acceptance is calculated with variations on the \mur and \muf scales, and the uncertainty is taken to be the maximum deviation from the central value. Table~\ref{tab:Acc:Sys:QCD} for 13 TeV, 5 TeV, and 13TeV/5TeV.
 
 
+
+\subsubsection{PDF uncertainties}
+The proton PDFs describe the momentum probability distributions of quarks and gluons within the proton, and are obtained by fitting to experimental data. Several different collaborations produce PDFs, with derivations using different techniques and different datasets. Methods for evaluating uncertainties in the PDFs due to uncertainties in their parameters are also provided, generally in the form of error PDFs with a $\pm 1 \sigma$ variation on each parameter value. NNPDF provides replica PDFs which are created by using a Monte Carlo technique to sample the probability distributions of observables. Following the procedure outlined in Reference~\cite{Butterworth:2015oua}, the uncertainty in acceptance due to the PDF uncertainties is taken as the standard deviation of the replica set acceptance values. Results are listed in Table~\ref{tab:acc:sys:pdf:all}.
+
+\subsubsection{Resummation and NNLO QCD}
+For low-\pt boson production, the fixed order calculations are unreliable due to soft gluon emissions producing logarithmic divergences in the cross section calculation
+~\cite{Collins:1984kg}. Resummation of the logarithmic terms is included as one of the components of the boson production cross section, and different tools can provide predictions to different orders of accuracy. Parton shower models with leading logarithmic (LL) accuracy (e.g. \PYTHIA, \SHERPA, \HERWIG ~\cite{Sjostrand:2014zea,Gleisberg:2008ta,Bahr:2008pv}) can be combined with fixed-order calculations (e.g. \aMCATNLO, \MINLO, \POWHEG) to provide full event descriptions~\cite{Nason:2004rx,Frixione:2002ik,Alioli:2010xd,Alwall:2014hca}. Higher-order resummation terms can be matched to the fixed-order calculations to provide accurate predictions over the entire boson \pt range~\cite{Balazs:1995nz,Catani:2015vma}. 
+The primary simulations are provided by \aMCATNLO, interfaced to \PYTHIA8 for parton showering and \MADGRAPH5 for the hard-scatter matrix element calculations. Resummation to LL is provided by \PYTHIA8 and QCD calculations to NLO are provided by \MADGRAPH5. Higher-order descriptions---NNLO for perturbative QCD and next-to-next-to-leading-logarithmic (NNLL) for resummation of soft QCD effects---are provided by \RESBOS~\cite{Ladinsky:1993zn, Balazs:1997xd, Landry:2002ix} using the CT14~\cite{Dulat:2015mca} NNLO PDF set.  Differences in acceptance predictions between the baseline sample with QCD to NLO and resummation to LL and the \RESBOS prediction with QCD to NNLO and resummation to NNLL are taken as the uncertainties.
+
+%% Theory Uncertainties
+\subsubsection{Higher-Order QCD}
+Perturbative QCD predictions for \W and \Z boson production are currently only available to NNLO~\cite{Melnikov:2006kv,Catani:2009sm}. To estimate the effect of the missing higher-order terms of the expansion, the renormalization ($\mu_R$) and factorization ($\mu_F$) scales are varied by a factor of 2 from their baseline value, i.e. baseline $\mu = M_{\W}$ with variations $\mu=M_{\W}/2$ and $\mu=2M_{\W}$. Acceptance computed for each combination of $\mu_R$ and $\mu_F$ variations is compared to the baseline acceptance value and the maximum difference is used to estimate the uncertainty due to missing higher-order QCD terms. Results are shown in Table~\ref{tab:Acc:Sys:QCD}.
+% aMC@NLO:
+%  $\textsc{FxFx}$ scheme~\cite{Frederix:2012ps}
+
+
+\subsubsection{Electroweak Corrections}
+Modeling of electromagnetic FSR is provided by \PYTHIA and \PHOTOS, with \POWHEG for the matrix-element calculations. Uncertainties in the FSR modeling are estimated as the difference in acceptance between the two models.
+
+% EWK calculations NLO, importnat for high boson pT
+% ~\cite{Dittmaier:2014qza,Lindert:2017olm}
+
 \input{tables/Acceptance/tab-unc-qcd-all.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{PDF variations}
-Uncertainties in the PDFs are determined by making different PDF replicas with variations. The uncertainty due to PDF variations is taken to be the envelope between the central value and replica sets, as shown in Equation~\ref{eq:acc.gen.unc.pdf}, where the number of replica PDFs, $N_{PDF}$, is 99.
-\begin{equation}
-\sigma_{PDF}=\sqrt{\sum_{i}^{N_{PDF}} \Bigg(\frac{A_{i}-A}{A}\Bigg)^2*\frac{1}{N_{PDF}}}
-\label{eq:acc.gen.unc.pdf}
-\end{equation}
-
-
 \input{tables/Acceptance/tab-unc-pdf-all.tex}
-\subsection{Resummation}
-Coming soon
-\subsection{EWK}
-[Coming soon] Difference between FSR models.
 % comment back in some time
 % \input{tables/Acceptance/tab-acc-unc-ele-13.tex}
 % \input{tables/Acceptance/tab-acc-unc-mu-13.tex}
@@ -58,3 +69,4 @@ Coming soon
 % \input{ch09/tab.09.03.Acc.Reco/tab.09.03.Reco.13TeV.tex}
 % \input{ch09/tab.09.03.Acc.Reco/tab.09.03.Reco.5TeV.tex}
 % \input{ch09/tab.09.03.Acc.Reco/tab.09.03.Reco.13to5.tex}
+

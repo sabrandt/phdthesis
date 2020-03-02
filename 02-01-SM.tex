@@ -1,5 +1,5 @@
 \chapter{Physics Background}\label{ch:sm}
-The Standard Model (SM) of particle physics is a $SU(3)\otimes SU(2)\otimes U(1)$ gauge theory that describes the interactions of fundamental particles. It is generally described in two parts, electoweak theory and quantum chromodynamics, presented in the following section. In later sections, the production of \W and \Z in \pp collisions and the modeling of these processes is described. 
+The Standard Model of particle physics is a $SU(3)\otimes SU(2)\otimes U(1)$ gauge theory that describes the interactions of fundamental particles. It is generally described in two parts, electroweak theory and quantum chromodynamics, presented in the following section. In later sections, the production of \W and \Z bosons in \pp collisions and the modeling of these processes is described. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -8,21 +8,21 @@ The Standard Model (SM) of particle physics is a $SU(3)\otimes SU(2)\otimes U(1)
 
 \section{The Standard Model}\label{ch:sm:sm}
 \subsubsection{Introduction}
-The Standard Model of particle physics (SM) has been a remarkably successful theory describing fundamental particles and their interactions. The fundamental constituents of matter---leptons and quarks---interact through the strong and electroweak interactions. Depicted in Figure~\ref{fig:intro:sm}, the SM consists of three families of quarks (purple), three families of leptons (green), the force carriers (red), and the Higgs boson (yellow). 
+The SM has been a remarkably successful theory describing fundamental particles and their interactions. The fundamental constituents of matter---leptons and quarks---interact through the strong and electroweak interactions. Depicted in Figure~\ref{fig:intro:sm}, the SM consists of three families of quarks (purple), three families of leptons (green), the force carriers (red), and the Higgs boson (yellow). 
 
 \input{plots/Intro/fig_sm.tex}
 
 Familiar building blocks of matter---protons and neutrons---are not the most basic particles, they are composed of constituent quarks and gluons. There are three families of quarks, with six total flavors. Up-type quarks up ($u$), charm ($c$), and top ($t$) have electric charge $+\frac{2}{3} e$, and down-type quarks down ($d$), strange ($s$), and bottom ($b$) have electric charge $-\frac{1}{3}e$. Protons are $uud$, with an electric charge of $+1e$. The strong interaction, mediated by the gluon, binds quarks together into hadrons. The strength of the strong coupling is distance-dependent, with coupling increasing\phil{decreasing or strong coupling at short scales} at long length scales. Therefore, bare quarks have never been observed, as it is favored for them to quickly form bound states. The lepton families are the electron and its more massive analogs, the muon and tau leptons, along with their corresponding neutrinos. 
 
-The weak interaction is propagated by the \W and \Z bosons. Both the charged leptons, neutrinos, and quarks can couple to \W and \Z.  The\phil{remove The} At low energies, the weak interaction is commonly know for its role in beta decay, with uses such as radioluminescent tritium illumination sources and medical imaging positron emission tomography (PET scan).  At energies achieved by the LHC, the \W and \Z bosons can be produced in $pp$ collisions and the properties of the production can be studied. As described in later sections, this provides us with important information on several fronts, including event modeling and detector performance.
+The weak interaction is propagated by the \W and \Z bosons. Both the charged leptons, neutrinos, and quarks can couple to \W and \Z bosons.  At low energies, the weak interaction is commonly know for its role in beta decay, with uses such as radioluminescent tritium illumination sources and medical imaging positron emission tomography (PET scan).  At energies achieved by the LHC, the \W and \Z bosons can be produced in $pp$ collisions and the properties of the production can be studied. As described in below, this provides important information on several fronts, including event modeling and detector performance.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                     ewk
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Electroweak Theory}\label{ch:sm:ewk}
-In the Standard Model \cite{SMEWK1,SMEWK2,SMEWK3}, electroweak interactions belong to the gauge group $SU(2) \otimes U(1)$, with the gauge bosons $W_{\mu}^i$ ($i = 1,2,3$) for $SU(2)$ and  $B_{\mu}$ for $U(1)$.  The left-handed fermions transform as doublets, where the leptons are given in Equation~\ref{eq:phys:ewk:leptons} and quarks are shown in Equation~\ref{eq:phys:ewk:quarks}. The $d_i'$ are given by $d_i' = \sum_j V_{ij} d_i$, where $V_{ij}$ are the elements of the Cabibbo-Kobayashi-Maskawa (CKM) matrix\cite{ckm1,ckm2}.
-
+In the SM\cite{SMEWK1,SMEWK2,SMEWK3}, electroweak interactions belong to the gauge group $SU(2) \otimes U(1)$, with the gauge bosons $W_{\mu}^i$ ($i = 1,2,3$) for $SU(2)$ and  $B_{\mu}$ for $U(1)$.  The left-handed fermions transform as doublets, where the leptons are given in Equation~\ref{eq:phys:ewk:leptons} and quarks are shown in Equation~\ref{eq:phys:ewk:quarks}. The $d_i'$ are given by $d_i' = \sum_j V_{ij} d_i$, where $V_{ij}$ are the elements of the Cabibbo-Kobayashi-Maskawa (CKM) matrix\cite{ckm1,ckm2}.
 \begin{equation}
   \Psi=\binom{v_e}{l_e},~\binom{v_{\mu}}{l_{\mu}},~\binom{v_{\tau}}{l_{\tau}}
   \label{eq:phys:ewk:leptons}
@@ -31,28 +31,6 @@ In the Standard Model \cite{SMEWK1,SMEWK2,SMEWK3}, electroweak interactions belo
   \Psi=\binom{u}{d'},~\binom{c}{s'},~\binom{t}{b'}
   \label{eq:phys:ewk:quarks}
 \end{equation}
-
-
-% \begin{equation}
-% \mathcal{L}=\sum_{i}\bar{\psi}_i
-%     \label{eq:ewk:lagrangian}
-% \end{equation}
-
-% \begin{equation}
-%     \begin{pmatrix}
-%       \gamma  \\ Z
-%     \end{pmatrix}
-%     = 
-%     \begin{pmatrix}
-%       \cos{\theta_W} & \sin{\theta_W}  \\ 
-%       -\sin{\theta_W} & \cos{\theta_W}
-%     \end{pmatrix}
-%     \begin{pmatrix}
-%       B  \\ W
-%     \end{pmatrix}
-% \end{equation}
-%% add the equations here. 
-
 Vector fields corresponding to particles with spin 1 and mass are the $W_\mu^\pm$, $Z_\mu$, and photon $A_\mu$, which are given in terms of the gauge fields as:
 \begin{equation}
 \begin{aligned}
@@ -62,8 +40,10 @@ Vector fields corresponding to particles with spin 1 and mass are the $W_\mu^\pm
 \end{aligned}
 \label{eq:ewk_s1_particles}
 \end{equation}
-Mass generation is achieved through spontaneous symmetry breaking of $SU(2)\otimes U(1)$ to $U(1)_{em}$ with the addition of a complex scalar doublet $\phi = \frac{1}{\sqrt{2}}\binom{\sqrt{2}\phi^+}{\phi^0 + ia^0}$, known as the Higgs mechanism\cite{ewsb1,ewsb2,ewsb3}. The potential is given by $V(\phi) = \mu^2\phi^\dagger\phi + \lambda^2(\phi^\dagger \phi)^2$, with the full Lagrangian being given in Equation~\ref{eq:lagrangian_higgs}. With $\mu^2 < 0$, the vacuum expectation value of $\phi$ is $<\phi> = v/\sqrt{2} = \mu/\lambda$ with $v\approx 246$ GeV. 
+
+Mass generation is achieved through spontaneous symmetry breaking of $SU(2)\otimes U(1)$ to $U(1)_{em}$ with the addition of a complex scalar doublet $\phi = \frac{1}{\sqrt{2}}\binom{\sqrt{2}\phi^+}{\phi^0 + ia^0}$, known as the Brout-Englert-Higgs mechanism\cite{ewsb1,ewsb2,ewsb3}. The potential is given by $V(\phi) = \mu^2\phi^\dagger\phi + \lambda^2(\phi^\dagger \phi)^2$, with the full Lagrangian being given in Equation~\ref{eq:lagrangian_higgs}. With $\mu^2 < 0$, the vacuum expectation value of $\phi$ is $<\phi> = v/\sqrt{2} = \mu/\lambda$ with $v\approx 246$ GeV. 
 \phil{I would call below $\mathcal{L_{Higgs}}$}
+
 \begin{equation}
     \mathcal{L} = (D_\mu\Phi)^\dagger(D^\mu\Phi) - \mu^2 \Phi^\dagger\Phi - \lambda(\Phi^\dagger\Phi)^2
     \label{eq:lagrangian_higgs}
@@ -83,36 +63,45 @@ m_\gamma &= 0
 \end{aligned}
 \label{eq:boson_masses}
 \end{equation}
-Fermion masses are likewise given through a Yukawa coupling to the Higgs field, shown in Equation~\ref{eq:yukawa}. Fermion masses become $m_{f_i} = h_{f_i} v / \sqrt{2}$ after rotation into a basis where the Higgs-fermion interaction is diagonalized. The fermion coupling to the Higgs is $\frac{m_f}{v}\bar{f}fH$, proportional to its mass.
+Fermion masses are likewise given through a Yukawa coupling to the Higgs field, shown in Equation~\ref{eq:yukawa}. Fermion masses become $m_{f_i} = h_{f_i} v / \sqrt{2}$ after rotation into a basis where the Higgs-fermion interaction is diagonalized. The fermion coupling to the Higgs boson is $\frac{m_f}{v}\bar{f}fH$, proportional to its mass.
 \begin{equation}
 \mathcal{L}_{yukawa} = -\hat{h}_{d_{i,j}}\bar{q}_{L_i}\Phi d_{R_j} - \hat{h}_{u_{i,j}}\bar{q}_{L_i}\bar{\Phi} u_{R_j} -\hat{h}_{l_{i,j}}\bar{l}_{L_i}\Phi e_{R_j} + h.c.
     \label{eq:yukawa}
 \end{equation}
-In Equation~\ref{eq:yukawa}, $q_L$ and $u_R,d_R$ are the quark doubles and singlets, and $l_L$ and $e_R$ are the lepton doublets and singlets. As the Higgs boson is electromagnetically neutral and also transforms as a singlet in $SU(3)$, there are no tree-level couplings of the Higgs to photons or gluons.
+In Equation~\ref{eq:yukawa}, $q_L$ and $u_R,d_R$ are the quark doubles and singlets, and $l_L$ and $e_R$ are the lepton doublets and singlets. As the Higgs boson is electromagnetically neutral and also transforms as a singlet in $SU(3)$, there are no tree-level couplings of the Higgs to either photons or gluons.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                     qcd
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Quantum Chromodynamics}\label{ch:sm:qcd}
-The strong interaction between quarks and gluons is described by quantum chromodynamics (QCD). QCD is the $SU(3)$ part of the $SU(3)\otimes SU(2)\otimes U(1)$ part of the SM, and is given by the QCD Lagrangian in Equation~\ref{eq:qcd_lagrangian}. Repeated indices are summed over. The $\bar{\psi}_{f,\alpha}$ represent the quark spinors, where $f$ represents quark flavor (6 flavors: $u,c,t,d,s,b$), $\alpha$ represents color (3 colors), and the quark masses are $m_f$. 
+
+The strong interaction between quarks and gluons is described by quantum chromodynamics (QCD), the $SU(3)$ part of the SM. Interactions between quarks and gluons is described by the Dirac Lagrangian density given in Equation~\ref{eq:qcd_lagrangian}. Quarks and gluons carry color charges (red, green, or blue: $N_C = 3$), and there are eight color-combinations of gluons as mediators of the strong force ($A^C_\mu$,~$C=[1...8]$). Quarks are represented by the $\bar{\psi}_{f,\alpha}$ spinors, with the six flavors of quarks ($u,c,t,d,s,b$) represented by $f$, the three colors by $\alpha$, and the quark masses by $m_f$.
 \phil{You forgot $\psi$ ie $\gamma_{f,\beta}\psi_{f,\alpha}$}
+
 %% QCD Lagrangian
 \begin{equation}
-    \mathcal{L}=\bar{\psi}_{f,\alpha}(i\gamma^\mu \partial_\mu \delta_{\alpha\beta}-g_s\gamma^\mu t^C_{\alpha\beta}\mathcal{A}^C_\mu-m_f\delta_{\alpha\beta})\gamma_{f,\beta}-\frac{1}{4}F^b_{\mu\nu}F^{b,\mu\nu}-\theta\frac{g^2_{s}}{72\pi^2}\epsilon_{\mu\nu\rho\sigma}F^{c,\mu\nu}F^{c,\rho\sigma}
+    \mathcal{L}=\bar{\psi}_{f,\alpha}(i\gamma^\mu \partial_\mu \delta_{\alpha\beta}-g_s\gamma^\mu t^C_{\alpha\beta}\mathcal{A}^C_\mu-m_f\delta_{\alpha\beta})\gamma_{f,\beta}-\frac{1}{4}F^b_{\mu\nu}F^{b,\mu\nu}
     \label{eq:qcd_lagrangian}
 \end{equation}
-
-The gluon fields are given by $A^C_\mu$, where C is from 1 to $N_C^2 - 1 = 8$ ($N_C = 3$, with 8 gluons). $t^C_{\alpha\beta}$ are generators of the color group which are eight 3x3 matrices. $\gamma^\mu$ are the Dirac $\gamma$ matrices. The strong coupling constant is $g_s$ ($\alpha_s = \frac{g_s}{4\pi}$).  The field tensors $F_{\mu\nu}$ are given by: 
+%% %% Full Lagrangian
+% \begin{equation}
+%     \mathcal{L}=\bar{\psi}_{f,\alpha}(i\gamma^\mu \partial_\mu \delta_{\alpha\beta}-g_s\gamma^\mu t^C_{\alpha\beta}\mathcal{A}^C_\mu-m_f\delta_{\alpha\beta})\gamma_{f,\beta}-\frac{1}{4}F^b_{\mu\nu}F^{b,\mu\nu}-\theta\frac{g^2_{s}}{72\pi^2}\epsilon_{\mu\nu\rho\sigma}F^{c,\mu\nu}F^{c,\rho\sigma}
+%     \label{eq:qcd_lagrangian}
+% \end{equation}
+ The eight generators of the $SU(3)$ color group are $3\times 3$ matrices $t^C_{\alpha\beta}$. The strong coupling constant is $g_s$ ($\sqrt{4\pi\alpha_s}$), where $\alpha_s$ varies with energy scale.  The gluon field tensors $F_{\mu\nu}$ are shown in Equation~\ref{eq:qcd_field_tensors}, where the $f_{ABC}$ are the structure constants of $SU(3)$.
 \begin{equation}
 F_{\mu\nu}^A = \delta_{\mu} \mathcal{A}^A_{\nu} - \delta_{\nu} \mathcal{A}^A_\mu - g_s f_{ABC} \mathcal{A}_\mu^B \mathcal{A}_\nu^C,~~~~ [t^A, t^B] = if_{ABC}t^C
 \label{eq:qcd_field_tensors}
 \end{equation}
-where the $f_{ABC}$ are the structure constants of $SU(3)$. 
-The parameters of QCD are the quark masses ($m_f$) and the coupling constant ($g_s$). Additionally, the $\theta$ in the last term of Equation~\ref{eq:qcd_lagrangian}, indicates there is room in QCD for CP violation. One of the consequences of this is a non-zero electric dipole moment of the neutron. However, experimental limits constrain that term to be $\theta < 10^{-10}$ \cite{PhysRevLett.97.131801}.
-Predictive methods for QCD include lattice gauge theory and perturbative methods expanding in the coupling. Feynman rules include $q\bar{q}g$ and $ggg$ vertices which are proportional to $g_s$ and a 4-gluon vertex that is proportional to $g_s^2$ \cite{Ellis:1991qj}. Perturbative QCD (pQCD) expresses predictions for observables in terms of the coupling $\alpha_s(\mu_R^2)$, which is a function of the renormalization scale $\mu_R$. The effective strength of the strong interaction in a process with momentum transfer $Q^2$ is $\alpha_s(\mu_R^2 \sim Q^2)$. The renormalization group equation:
+The parameters of QCD are the quark masses ($m_f$) and the coupling constant ($g_s$). There is an additional term in the QCD Lagrangian which is not included in Equation~\ref{eq:qcd_lagrangian}, which contains a parameter $\theta$, and allows for CP violation in QCD. Experimental limits on the neutron electric dipole moment constrain this term to be $\theta < 10^{-10}$ \cite{PhysRevLett.97.131801}.
+
+Computational methods for QCD predictions include lattice gauge theory and perturbative expansion methods. Feynman rules for QCD allow diagrams with $q\bar{q}g$ and $ggg$ vertices and a $gggg$ vertex\cite{Ellis:1991qj}. Perturbative QCD (pQCD) expresses predictions for observables as an expansion in terms of the coupling $\alpha_s(\mu_R^2)$ i.e. $f = f_0 + f_1\alpha_s + f_2\alpha_s^2 + f_3\alpha_s^3 +....$. The coupling $\alpha_s(\mu_R^2)$ is a function of the renormalization scale $\mu_R$, and the effective strength of the interaction with momentum transfer $Q^2$ is $\alpha_s(\mu_R^2 \sim Q^2)$. Calculations are done with Feynman diagrams and are generally performed to only a few terms---leading order (LO, first term), next-to-leading order (NLO, first two terms), and so forth.
+The scale dependence of QCD is expressed in the renormalization group equation:
 \begin{equation}
     \mu^2_R\frac{d\alpha_s}{d\mu_R^2} = \beta(\alpha_s) = -(b_0 \alpha_s^2 + b_1 \alpha_s^3 + b_2 \alpha_s^4 + \cdots)
     \label{eq:renormalization_group}
 \end{equation}
-where $b_0$ is the 1-loop coefficient, $b_1$ is the 2-loop coefficient, etc. The minus sign indicates that the strong coupling becomes weak for interactions with high momentum transfer and is strongly interacting for low energy scales, the source of asymptotic freedom \cite{PhysRevLett.30.1346, PhysRevLett.30.1343}. $\alpha_s \sim 0.1$ for $Q$ around 100 GeV - TeV,  and is much stronger for processes with momentum transfer $\sim$1 GeV. Free quarks have not been observed---they quickly hadronize into mesons or baryons on the time scale $\sim 1/\Lambda$, while the top quark decays before hadronization. This is understood as a result of the strong coupling increasing at low energies (large distance scales), and only the color-singlet hadrons are observed.
+%where $b_0$ is the 1-loop coefficient, $b_1$ is the 2-loop coefficient, etc. 
+The minus sign indicates that the coupling becomes weak for interactions with high momentum transfer and is strongly interacting for low energy scales, the source of asymptotic freedom \cite{PhysRevLett.30.1346, PhysRevLett.30.1343}. Values of $\alpha_s$ range from $\alpha_s \sim 0.1$ for $Q$ in the $100 \GeV - \TeV$ range to over $\alpha_s \sim 0.3$ for processes with momentum transfer $Q \sim 1 \GeV$, as depicted in Figure~\ref{fig:sm:alpha_s}. Free quarks have not been observed---they quickly hadronize into mesons or baryons on the time scale $\sim 1/\Lambda$, while the top quark decays before hadronization. This is understood as a result of the strong coupling increasing at low energies (large distance scales), and only the color-singlet hadrons are observed.
+\input{plots/SM/fig_alphas.tex}

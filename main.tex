@@ -43,8 +43,10 @@
 \newcommand{\sbr}{\ensuremath{\sigma \times Br}\xspace}
 \newcommand{\TeV}{\ensuremath{\,\text{Te\hspace{-.08em}V}}\xspace}
 \newcommand{\GeV}{\ensuremath{\,\text{Ge\hspace{-.08em}V}}\xspace}
-\newcommand{\serag}{\ensuremath{\sqrt{s}=5.02\TeV}\xspace}
-\newcommand{\serah}{\ensuremath{\sqrt{s}=13\TeV}\xspace}
+\newcommand{\sg}{\ensuremath{\sqrt{s}=5.02\TeV}\xspace}
+\newcommand{\sh}{\ensuremath{\sqrt{s}=13\TeV}\xspace}
+
+\newcommand{\ns}{\ensuremath{\,\text{ns}}\xspace}
 
 \newcommand{\rwpm}{\ensuremath{R_{\Wp/\Wm}}\xspace}
 \newcommand{\rwpz}{\ensuremath{R_{\Wp/\Z}}\xspace}
@@ -55,7 +57,7 @@
 \newcommand{\lumih}{\ensuremath{199.3\pm 4 \invpb}\xspace}
 
 \newcommand{\GEANTfour} {{\textsc{Geant4}}\xspace}
-\newcommand{\MINLO} {\textsc{MINLO}\xspace}
+\newcommand{\MINLO} {\textsc{m}\textsc{inlo}\xspace}
 \newcommand{\MADGRAPH} {\textsc{MadGraph}\xspace}
 \newcommand{\aMCATNLO} {a\textsc{mc@nlo}\xspace}
 \newcommand{\MCATNLO} {\textsc{mc@nlo}\xspace}
@@ -63,9 +65,12 @@
 \newcommand{\PHOTOS} {\textsc{photos}\xspace}
 \newcommand{\POWHEG} {{\textsc{powheg}}\xspace}
 \newcommand{\PYTHIA} {{\textsc{pythia}}\xspace}
+\newcommand{\RESBOS} {{\textsc{resbos}}\xspace}
+\newcommand{\SHERPA} {{\textsc{sherpa}}\xspace}
+\newcommand{\HERWIG} {{\textsc{herwig}}\xspace}
 
 \newcommand{\masswindow}{\ensuremath{60\GeV\leq \mathrm{M}_{ll}\leq 120\GeV}\xspace}
-
+\newcommand\barparen[1]{\overset{(-)}{#1}}
 
 \newcommand{\uprp}{\ensuremath{u_{\perp}}\xspace}
 \newcommand{\upar}{\ensuremath{u_{||}}\xspace}
@@ -146,10 +151,12 @@
 \input{10-01-SignalExtraction.tex}
 \input{12-01-Systematics.tex}
 \input{13-01-Results.tex}
-% \input{14-01-Summary.tex}
+\input{14-01-Summary.tex}
 
 
 \appendix
+%% Put all the efficiency plots in the appendix
+\input{A-Efficiencies.tex} 
 % \input{A-Recoil-Fits.tex} %% leave out for now, comment in later?
 
 \input{biblio}
