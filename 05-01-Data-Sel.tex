@@ -50,14 +50,24 @@ The distribution of pileup interactions is simulated to match the corresponding 
 %%%     Event Selection
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Event Selection \& Fiducial Region}
-\subsubsection{Reconstructed}
-Preliminary \Wpm and \Z boson event candidates are identified by the presence of at least one lepton identified by the single electron and single muon triggers described in Section~\ref{ch:data:triggers}. These are further selected by applying the offline electron or muon reconstruction identification criteria described in Section~\ref{ch:IdIso}. 
-A \Z boson event requires the presence a pair of oppositely charged leptons ($e^{+}e^{-}$ or $\mu^{+}\mu^{-}$), at least one of the leptons being identified by the trigger, and each of the leptons fulfilling the ID requirements in Section~\ref{ch:IdIso}, and an invariant mass of \masswindow. 
-Selection of a \Wp or \Wm boson candidate requires one charged lepton identified by the trigger and passing all ID requirements in Section~\ref{ch:IdIso}. A veto is applied to events containing additional leptons passing a loose identification requirement. 
 
-\phil{This section is important, I would write it systematically with bullets. W selection is .... and Z selection is.... Its all jumbled and hard to read}
-% Additionally, \Wpm events are required to have an invariant mass $\mt > 40\GeV$, with \mt defined by: 
-% $\mt = \sqrt{ 2 \pt \met ( 1 - \cos(\Delta\phi) ) }$, where $\Delta\phi$ is the angle between the lepton and \vmet in the transverse plane.
+Preliminary \Wpm and \Z boson event candidates are identified by the presence of at least one lepton identified by the single electron and single muon triggers described in Section~\ref{ch:data:triggers}. These are further selected by applying the offline electron or muon reconstruction identification criteria described in Section~\ref{ch:IdIso}. 
+\subsubsection{\Z boson selection}
+Candidate \Z boson events are selected using the following criteria:
+\begin{itemize}
+    \item two well-identified leptons
+    \item leptons are oppositely charged
+    \item leptons are same flavor 
+    \item at least one lepton matched to trigger
+    \item \masswindow
+\end{itemize} 
+\subsubsection{\W boson selection}
+Candidate \W boson events are selected using the following criteria:
+\begin{itemize}
+    \item well-identified lepton
+    \item lepton matched to trigger
+    \item veto against events containing additional leptons
+\end{itemize}
 
 
 \subsubsection{Fiducial Region}
@@ -104,7 +114,7 @@ Electrons originating from candidate \Wp, \Wm, and \Z bosons are required to pas
 
 \subsection{Muons}\label{ch:IdIso:Mu}
 
-Muons originating from a candidate \Wpm or \Z boson are required to pass the standard cut-based identification with tight working point\phil{delete with tight working point} with tight working point requirement on the muon PF isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}.Descriptions of the observables are provided below. As in the electron channel, the \Wpm boson selection requires the absence of additional leptons in an event which pass the loose cut-based ID. The criteria for muons is listed in Table~\ref{tab:Data:Sel:Mu:Veto}. 
+Muons originating from a candidate \Wpm or \Z boson are required to pass the standard cut-based identification with an additional requirement on muon isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}.Descriptions of the observables are provided below. As in the electron channel, the \Wpm boson selection requires the absence of additional leptons in an event which pass the loose cut-based ID. The criteria for muons is listed in Table~\ref{tab:Data:Sel:Mu:Veto}. 
 %~\cite{MuonIDIsoCuts}. 
 % do i even need citation
 
