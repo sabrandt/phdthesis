@@ -1,5 +1,5 @@
 \chapter{Data Samples and Event Selection}\label{ch:data}
-The data used in this analysis were collected in late 2017 by the CMS Experiment during Run II of the LHC. At this time, the LHC delivered two sets of \pp collisions, at \sg (2017G) and at \sh (2017H). This chapter details the information related to data collection and Monte Carlo simulations associated with these data taking periods. Details regarding the object identification criteria and event selection are also provided.
+The data used in this analysis were collected in late 2017 by the CMS Experiment during Run II of the LHC. At this time, the LHC delivered two sets of \pp collisions, at \sg (2017G) and at \sh (2017H) with special run conditions which are specifically motivated by precision electroweak measurements. This chapter provides details of the run conditions, data collection, and Monte Carlo simulations associated with these data taking periods. Details regarding the object identification criteria and event selection are also provided.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%     Dataset 
@@ -7,31 +7,24 @@ The data used in this analysis were collected in late 2017 by the CMS Experiment
 
 
 \section{Datasets}\label{ch:data:dataset}
-Data used in this analysis are from the LHC run eras 2017G and 2017H, consisting of \pp collisions at \sg with integrated luminosity $\mathcal{L}=\lumig$ and \sh with integrated luminosity $\mathcal{L}=\lumih$, respectively. Names of the data streams and relevant run era and reconstruction version identifications are listed in Table~\ref{tab:dataset13} and Table~\ref{tab:dataset5}. 
+Data used in this analysis are from the LHC run eras 2017G and 2017H, consisting of \pp collisions at \sg with integrated luminosity $\mathcal{L}=\lumig$ and \sh with integrated luminosity $\mathcal{L}=\lumih$, respectively. These two data taking periods had special run conditions with very few additional \pp collisions in concurrent or adjacent bunch crossings. The additional collisions are referred to as pileup events. Runs with low pileup are particularly suited for electroweak precision measurements such as this one, as additional pileup events contribute to increased background and worsening object resolution.
+Names of the data streams and relevant run era and reconstruction version identifications are listed in Table~\ref{tab:dataset13} and Table~\ref{tab:dataset5}. 
 \input{tables/Data/tab-datastream.tex}
 
 \section{Triggers}\label{ch:data:triggers}
-All events considered must have at least one lepton selected by the relevant trigger path. For muons, the kinematic requirement is $\pt>17\GeV$ and $|\eta|<2.4$ for both \sg and \sh. For electrons, the kinematic requirement is $\pt>20\GeV$ ($\pt>17\GeV$) and $|\eta|<2.5$ for \sg (\sh). Additional isolation and reconstruction quality criteria, which are less restrictive than the offline selection criteria, are applied at the trigger level. Names of the trigger paths are listed in  Table~\ref{tab:triggers}
-
+All events considered must have at least one lepton selected by the relevant trigger path. For muons, the kinematic requirement is $\pt>17\GeV$ and $|\eta|<2.4$ for both \sg and \sh. For electrons, the kinematic requirement is $\pt>20\GeV$ ($\pt>17\GeV$) and $|\eta|<2.5$ for \sg (\sh). Additional isolation and reconstruction quality criteria, which are less restrictive than the offline selection criteria, are applied at the trigger level. The trigger menus used in the low pileup runs include triggers with looser selection criteria which are not used in normal LHC run conditions. Names of the trigger paths are listed in  Table~\ref{tab:triggers}
 \input{tables/Data/tab-triggers.tex}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%     Lumi Calibration 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Luminosity}\label{ch:lumi}
-Data used for physics analyses are required to pass the quality certification regarding operation of detector subsystems during the data taking period. 
-% The list of data taking periods with highest quality requirements are compiled into a good run list .
-% The JSON files containing the selected data segments for 2017G (\sg) and 2017H (\sh) are: \\
-% \centerline{\texttt{\small Cert\_306546-306826\_5TeV\_EOY2017ReReco\_Collisions17\_JSON.txt}}
-% \centerline{\texttt{\small Cert\_306896-307082\_13TeV\_PromptReco\_Collisions17\_JSON\_LowPU\_lowPU.txt}}
-%
-The 2017G and 2017H data taking periods are notable for the LHC conditions producing very few additional collisions in the concurrent or adjacent bunch crossings. These additional collisions are referred to as pileup events. Pileup conditions during the data taking periods are shown in Figure~\ref{fig:data:lumiPU13}, with an average of $\langle\mu\rangle=3$ collisions per bunch crossing. The instantaneous luminosity per day is shown in Figure~\ref{fig:data:lumiperday5}. Uncertainties on the luminosity measurement are 1.7\% (3.5\%) for the certified data at \sh (\sg). The total integrated luminosity collected by the data streams during \sg and \sh are listed in Table~\ref{tab:lumis}.~\cite{LumiCalibTwiki,CMS:2018elu}.
+Data used for physics analyses are required to pass the quality certification regarding operation of detector subsystems during the data taking period. Pileup conditions during the data taking periods are shown in Figure~\ref{fig:data:lumiPU13} (Figure~\ref{fig:data:lumiPU5}) for 2017H (2017G), with an average of $\langle\mu\rangle=3$ collisions per bunch crossing. The instantaneous luminosity per day is shown in Figure~\ref{fig:data:lumiperday5}. Uncertainties on the luminosity measurement are 1.7\% (3.5\%) for the certified data at \sh (\sg). The total integrated luminosity collected by the data streams during \sg and \sh are listed in Table~\ref{tab:lumis}.~\cite{LumiCalibTwiki,CMS:2018elu}.
 \input{plots/Data/fig-lumi-PU.tex}
 \input{plots/Data/fig-lumi-day.tex}
 \input{tables/Data/tab-lumi.tex}
-
-%% Is there a specific thing to cite if you use brilcalc to get the lumi out of the trigger path
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,8 +108,6 @@ Electrons originating from candidate \Wp, \Wm, and \Z bosons are required to pas
 \subsection{Muons}\label{ch:IdIso:Mu}
 
 Muons originating from a candidate \Wpm or \Z boson are required to pass the standard cut-based identification with an additional requirement on muon isolation. The thresholds for observables required to pass this requirement are listed in Table~\ref{tab:Data:Sel:Mu}.Descriptions of the observables are provided below. As in the electron channel, the \Wpm boson selection requires the absence of additional leptons in an event which pass the loose cut-based ID. The criteria for muons is listed in Table~\ref{tab:Data:Sel:Mu:Veto}. 
-%~\cite{MuonIDIsoCuts}. 
-% do i even need citation
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Muon Observables}

@@ -17,20 +17,19 @@ Generator-level acceptance can be computed before and after the effects of final
 \section{Systematic Uncertainty}\label{ch:acc:unc}
 Uncertainties in the measurement due to theoretical predictions are studied by using the acceptance and comparing baseline values to alternate predictive models. The differences are taken as the uncertainties.
 
-
 \subsubsection{PDF uncertainties}
-The proton PDFs describe the momentum probability distributions of quarks and gluons within the proton, and are obtained by fitting to experimental data. Several different collaborations produce PDFs, with derivations using different techniques and different datasets. Methods for evaluating uncertainties in the PDFs due to uncertainties in their parameters are also provided, generally in the form of error PDFs with a $\pm 1 \sigma$ variation on each parameter value. NNPDF provides replica PDFs which are created by using a Monte Carlo technique to sample the probability distributions of observables. Following the procedure outlined in Reference~\cite{Butterworth:2015oua}, the uncertainty in acceptance due to the PDF uncertainties is taken as the standard deviation of the replica set acceptance values. Results are listed in Table~\ref{tab:acc:sys:pdf:all}.
+The proton PDFs describe the momentum probability distributions of quarks and gluons within the proton, and are obtained by fitting to experimental data. Several different collaborations produce PDFs, with derivations using different techniques and different datasets. Methods for evaluating uncertainties in the PDFs due to uncertainties in their parameters are also provided, generally in the form of error PDFs with a $\pm 1 \sigma$ variation on each parameter value. NNPDF provides replica PDFs which are created by using a Monte Carlo technique to sample the probability distributions of observables. Following the procedure outlined in Reference~\cite{Butterworth:2015oua}, the uncertainty in acceptance due to the PDF uncertainties is taken as the standard deviation of the replica set acceptance values. Results are listed in Table~\ref{tab:thyunc:ele:13} and Table~\ref{tab:thyunc:mu:13}.
 
 \subsubsection{Resummation and NNLO QCD}\label{ch:resummation}
 For low-\pt boson production, the fixed order calculations are unreliable due to soft gluon emissions producing logarithmic divergences in the cross section calculation
 ~\cite{Collins:1984kg}. Resummation of the logarithmic terms is included as one of the components of the boson production cross section, and different tools can provide predictions to different orders of accuracy. Parton shower models with leading logarithmic (LL) accuracy (e.g. \PYTHIA, \SHERPA, \HERWIG ~\cite{Sjostrand:2014zea,Gleisberg:2008ta,Bahr:2008pv}) can be combined with fixed-order calculations (e.g. \aMCATNLO, \MINLO, \POWHEG) to provide full event descriptions~\cite{Nason:2004rx,Frixione:2002ik,Alioli:2010xd,Alwall:2014hca}. Higher-order resummation terms can be matched to the fixed-order calculations to provide accurate predictions over the entire boson \pt range~\cite{Balazs:1995nz,Catani:2015vma}. 
-The primary simulations are provided by \aMCATNLO, interfaced to \PYTHIA8 for parton showering and \MADGRAPH5 for the hard-scatter matrix element calculations. Resummation to LL is provided by \PYTHIA8 and QCD calculations to NLO are provided by \MADGRAPH5. Higher-order descriptions---NNLO for perturbative QCD and next-to-next-to-leading-logarithmic (NNLL) for resummation of soft QCD effects---are provided by DYTURBO using the CT14~\cite{Dulat:2015mca} NNLO PDF set. Differences in acceptance predictions between the baseline sample with QCD to NLO and resummation to LL and the DYTURBO prediction with QCD to NNLO and resummation to NNLL are taken as the uncertainties.
+The primary simulations are provided by \aMCATNLO, interfaced to \PYTHIA8 for parton showering and \MADGRAPH5 for the hard-scatter matrix element calculations. Resummation to LL is provided by \PYTHIA8 and QCD calculations to NLO are provided by \MADGRAPH5. Higher-order descriptions---NNLO for perturbative QCD and next-to-next-to-leading-logarithmic (NNLL) for resummation of soft QCD effects---are provided by \RESBOS~\cite{Ladinsky:1993zn, Balazs:1997xd, Landry:2002ix} for \sh and DYTURBO using the CT14~\cite{Dulat:2015mca} NNLO PDF set for \sh and \sg as no \RESBOS grids exist yet for \sg. Differences in acceptance predictions between the baseline sample with QCD to NLO and resummation to LL and the DYTURBO prediction with QCD to NNLO and resummation to NNLL are taken as the uncertainties.
 
 %%\RESBOS~\cite{Ladinsky:1993zn, Balazs:1997xd, Landry:2002ix}
 
 %% Theory Uncertainties
 \subsubsection{Higher-Order QCD}
-Perturbative QCD predictions for \W and \Z boson production are currently only available to NNLO~\cite{Melnikov:2006kv,Catani:2009sm}. To estimate the effect of the missing higher-order terms of the expansion, the renormalization ($\mu_R$) and factorization ($\mu_F$) scales are varied by a factor of 2 from their baseline value, i.e. baseline $\mu = M_{\W}$ with variations $\mu=M_{\W}/2$ and $\mu=2M_{\W}$. Acceptance computed for each combination of $\mu_R$ and $\mu_F$ variations is compared to the baseline acceptance value and the maximum difference is used to estimate the uncertainty due to missing higher-order QCD terms. Results (as a percentage of the acceptance) are shown in Table~\ref{tab:Acc:Sys:QCD}.
+Perturbative QCD predictions for \W and \Z boson production are currently only available to NNLO~\cite{Melnikov:2006kv,Catani:2009sm}. To estimate the effect of the missing higher-order terms of the expansion, the renormalization ($\mu_R$) and factorization ($\mu_F$) scales are varied by a factor of 2 from their baseline value, i.e. baseline $\mu = M_{\W}$ with variations $\mu=M_{\W}/2$ and $\mu=2M_{\W}$. Acceptance computed for each combination of $\mu_R$ and $\mu_F$ variations is compared to the baseline acceptance value and the maximum difference is used to estimate the uncertainty due to missing higher-order QCD terms. Results (as a percentage of the acceptance) are shown in Table~\ref{tab:thyunc:ele:13} and Table~\ref{tab:thyunc:mu:13}.
 % aMC@NLO:
 %  $\textsc{FxFx}$ scheme~\cite{Frederix:2012ps}
 
@@ -41,8 +40,8 @@ The electroweak corrections include both types of radiative photon corrections--
 % EWK calculations NLO, importnat for high boson pT
 % ~\cite{Dittmaier:2014qza,Lindert:2017olm}
 
-\input{tables/Acceptance/tab-unc-qcd-all.tex}
-\input{tables/Acceptance/tab-unc-pdf-all.tex}
+% \input{tables/Acceptance/tab-unc-qcd-all.tex}
+% \input{tables/Acceptance/tab-unc-pdf-all.tex}
 % comment back in some time
 \input{tables/Acceptance/tab-acc-unc-13.tex}
 % \input{tables/Acceptance/tab-acc-unc-ele-5.tex}
