@@ -1,6 +1,6 @@
 \chapter{Hadronic Recoil Corrections}\label{ch:recoil}
 
-Missing transverse energy spectra of the \W and \Z boson signal simulation does not fully describe the observed distributions in data. This is attributable to multiple effects, such as mis-modeling of multiple scattering and detector simulation, or imperfect detector calibration in data. Therefore, the simulated \met spectrum is not able to describe the observed \met spectrum to sufficient precision necessary for this measurement. Corrections to the hadronic recoil in simulated events in \W and \Z boson events are used to match the data and MC \met resolution and response. 
+Missing transverse energy spectra of the \W and \Z boson signal simulation does not fully describe the observed distributions in data. This is attributable to multiple effects, such as mis-modeling of multiple scattering and detector simulation, or imperfect detector calibration in data. Therefore, the simulated \met distribution is not able to describe the observed \met distribution to sufficient precision necessary for this measurement. In order to compensate for this, \zmm events in data and simulation are used to produce corrections to the hadronic recoil. These corrections are used to match the \met resolution and response in simulated \W and \Z boson events to that of data.
 
 The \W and \Z boson share a similar production mechanism and are similar in mass, so data corrections derived from \zmm. The hadronic recoil of each event is corrected, and the \met is recomputed based on these corrected values. 
 
@@ -12,12 +12,12 @@ The hadronic recoil is characterized as the negative vector sum of the \met and 
 
 The recoil is split into two components: the projection parallel to the boson momentum, \upar, and perpendicular to the boson momentum, $u_\perp$, as shown in Equations~\ref{eq:ch10:upar} and~\ref{eq:ch10:uprp}. 
 \begin{equation}
-    u_{||} = \vec{U}\cdot \vec{Z_{p_T}}
+    u_{||} = ||\vec{U}\cdot \vec{Z_{p_T}}||
     \label{eq:ch10:upar}
 \end{equation}
 
 \begin{equation}
-    u_\perp = \vec{U} -  u_{||}
+    u_\perp = ||\vec{U} -  u_{||}||
     \label{eq:ch10:uprp}
 \end{equation}
 
@@ -41,7 +41,7 @@ Recoil is parametrized in general the same way for each of the samples:
 \item \upar and \uprp  in each \pt bin are fit with a double-Gaussian function
 \end{enumerate}
 Figures~\ref{fig:recoil:data_fit_example}
- and ~\ref{fig:recoil:mc_fit_example} provide examples of these double-Gaussian fits in data and simulation. Recoil parametrization is done in data for \zmm and simulation for \zmm and \wmunu. The reference boson \pt for the Z is from the reconstructed dilepton system $\mu_1+\mu_2$. For W events, the boson \pt is directly \phil{can you explicitly say the Z pt is from data}  from the generator-level information in the simulation. These corrections are further separated by charge, to be applied separately to $W^+$ and $W^-$.
+ and ~\ref{fig:recoil:mc_fit_example} provide examples of these double-Gaussian fits in data and simulation. Recoil parametrization is done in data for \zmm and simulation for \zmm and \wmunu. The \pt of the \Z bosons is determined by the reconstructed dilepton \pt. For \W bosons, the \pt is taken directly from the generator-level information in the simulation. The parametrization of the recoil in the \W boson sample is further separated by charge, to be applied separately to $W^+$ and $W^-$.
 Additionally, fits for \upar and \uprp in Z data include the simulated dilepton background contributions from electroweak and \ttbar sources.
 
 \input{plots/Recoil/fig_example_data.tex}
@@ -82,12 +82,11 @@ The effect of the recoil corrections on the \zmm \met and recoil distributions i
 \section{Uncertainties}\label{ch:recoil:unc}
 The parametrization method described above implicitly makes the assumption that the recoil distribution can uniformly be described by a double-Gaussian over the entire \pt range as well as the assumption that the parametrization can be treated as one inclusive rapidity region. Alternative models are used to address the systematic uncertainty due to these assumptions. 
 
-The impact of these uncertainties is accounted for by propagating the differences in \met through \mt to as uncertainties on the W yield extraction fit. Additionally, statistical uncertainties for each of the fit parameters is propagated to the final result in the same way.
-The details of how each of the uncertainties is calculated is listed below.
+The impact of these uncertainties is accounted for by propagating the differences in \met through \mt to as uncertainties on the \W boson signal fit as described in the following chapter. Additionally, statistical uncertainties for each of the fit parameters is propagated to the final result in the same way.
+The details of how each of the uncertainties is modeled is calculated is listed below.
 \begin{enumerate}
-    \item Statistical uncertainty: covariance matrix for individual bin fit results are diagonalized. There is one eigenvalue per nuisance parameter Each eigenvalue is modified by 1$\sigma$, and new PDFs are constructed from the modified covariance matrix. The modified PDFs are then used as described in Section~\ref{ch10:recoil:apply}. 
-    \item Systematic due to assumption of double-Gaussian function: A Gaussian kernel is used to describe the distributions. 
-    \item Systematic due to rapidity binning: The main correction set is binned inclusively in $y$. An alternative binning choice is to separate fits into 3 eta bins: $|y|<0.5$,~ $0.5 <  |y| < 1.0$, and $|y| < 1.0$ and fit with the 2-Gaussian function. 
+    \item \textbf{Binning}: The baseline rapidity ($y$) binning is a single inclusive bin. An alternative using three $y$ bins ($|y|<0.5$,~ $0.5 <  |y| < 1.0$, and $|y| < 1.0$) is fit with the double-Gaussian function. 
+    \item \textbf{Model}: The baseline fit model is a double-Gaussian. A Gaussian kernel is used as an alternative. 
+    \item \textbf{Statistical uncertainty}: One additional correction set per free parameter is created to estimate the impact of statistical uncertainty in the fit results on the \met modeling. There are a total of 10 correction sets, 6 for $u_{||}$ and 4 for $u_{\perp}$ (two Gaussians with $\mu$,~$\sigma$, and normalization, $u_{\perp}$ has $\mu=0$ fixed for both Gaussians). Principal component analysis of each fit result is used to create the variation correction sets by diagonalizing the covariance matrix and varying one eigenvalue by $\pm 1 \sigma$ and creating a new function from the altered covariance matrix.
 \end{enumerate}
- 
-The difference between \met spectra from each of the listed configurations is incorporated as an uncertainty on the W signal shape in the W signal extraction fit.
+Each of these uncertainty models produces an alternate set of recoil corrections. These are applied as described in Section~\ref{ch10:recoil:apply}. The difference in \met from each of the listed configurations is incorporated as an uncertainty on the \W boson signal \mt distribution in the \W signal extraction fit.

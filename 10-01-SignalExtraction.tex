@@ -26,7 +26,7 @@ The \Z boson and \Wp and \Wm boson signal processes are described by simulation,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background Modeling}\label{ch:sig:bkg}
 
-Backgrounds are estimated from both simulation and data-driven sources. Simulated backgrounds include the \ttbar and various electroweak processes, and include the appropriate normalization factors for prefiring and efficiency. Backgrounds to \W and \Z boson can include \ttbar and diboson ($WW$, $WZ$, $ZZ$) processes contributing one or two isolated leptons, respectively. The DY background to the \W is from a \zmm or \zee decay with only one lepton being in the detector volume, or the \ztt with one of the $\tau$ decaying leptonically. \ztt with leptonic $\tau$ decays is also a background to the \Z. The \wtau, with leptonic $\tau$ decay also contributes to the \W backgrounds.\phil{wtaunu is not compiling}
+Backgrounds are estimated from both simulation and data-driven sources. Simulated backgrounds include the \ttbar and various electroweak processes, and include the appropriate normalization factors for prefiring and efficiency. Backgrounds to \W and \Z boson can include \ttbar and diboson ($WW$, $WZ$, $ZZ$) processes contributing one or two isolated leptons, respectively. The DY background to the \W is from a \zmm or \zee decay with only one lepton being in the detector volume, or the \ztt with one of the $\tau$ decaying leptonically. \ztt with leptonic $\tau$ decays is also a background to the \Z. The \wtau, with leptonic $\tau$ decay also contributes to the \W backgrounds.
 For all of these simulated background processes, lepton efficiency scale factors, lepton momentum scale corrections, and prefiring corrections are applied when producing the \mt and \mll distributions. Additionally, the \wtau and Drell-Yan background processes in the \Wp and \Wm boson channels include \met corrections.
 
 
@@ -36,9 +36,18 @@ The largest background of the \W is from QCD multijet background. The primary co
 \input{plots/W/fig-W-bkg.tex}
 
 \section{Uncertainties}\label{ch:unc}
+Uncertainties in corrections are propagated to the final observable distributions \mt and \mll. These include variations on the lepton momentum scale factors, recoil corrections, prefiring probability, and lepton efficiency. Estimation of the uncertainties in each of these corrections is described in their respective chapters. This section summarizes how each of the uncertainties is propagated to the final discriminant distributions.
+\subsubsection{\met Uncertainties}
+Each uncertainty in \met modeling is an alternate set of recoil corrections which produces a variant on the \mt distribution. The difference between the baseline \mt distribution and each variant due to uncertainty in \met modeling is taken as the uncertainty. This is propagated into the final fit as a shape uncertainty by symmetrizing around the central \mt distribution. \met uncertainties are only applicable to the \W and \Z boson processes in the \Wp and \Wm boson signal channels. As described in Chapter~\ref{ch:recoil:unc}, there are a total of twelve uncertainty shapes from \met modeling---two due to model assumptions and ten due to each of the free parameters in each \pt bin fit. Each source of uncertainty is considered uncorrelated from the others.
 
-Uncertainties in corrections are propagated to the final observable distributions \mt and \mll. These include variations on the lepton momentum scale factors, recoil corrections, prefiring probability, and lepton efficiency.
-An uncertainty in the QCD multijet shape due to the choice of control region is estimated by using an second isolation range and taking the difference as the shape uncertainty. The main QCD \mt shape is from the $0.30 < \mathrm{Iso} < 0.45$ region, and the shape uncertainty is derived from the difference with respect to the \mt distribution in $0.45 < \mathrm{Iso} < 0.60$. \phil{this section should be tied more closely to the QCD backgroun section}
+\subsubsection{Lepton Efficiency Uncertainties}
+Differences in lepton reconstruction and identification efficiency due to model and even selection choices are described in Chapter~\ref{ch:eff:systematics}. These uncertainties are applicable to all simulated processes in each of the \Wp, \Wm, and \Z boson channels. Each uncertainty is taken as the difference between \mll and \mt distributions with the baseline efficiency value and one of the variations. As with the \met uncertainties, these are symmetrized around the central value of \mll or \mt for each channel. Each source of uncertainty---MC generator, FSR model, background model, tag selection---is considered uncorrelated from the others.
+
+\subsubsection{Lepton Momentum Uncertainties}
+Uncertainties in lepton momentum scale factors are also propagated to \mll and \mt distributions. Differences between distributions constructed from the central value and $+1\sigma$ and $-1\sigma$ variations on the lepton momentum are taken as the uncertainty. 
+
+\subsubsection{QCD shape uncertainty}
+As described in the prior section, the QCD multijet background \mt distribution is estimated from data using non-isolated leptons in the range $0.30 < I < 0.45$. To account for differences in \mt distribution across varying levels of isolation, an uncertainty is taken as the difference between the \mt distributions in $0.30 < I < 0.45$ and $0.45 < I < 0.55$. As with the \met and efficiency scale factor uncertainties, the full uncertainty description is taken by symmetrizing around the central values from the $0.30 < I < 0.45$ region.  The QCD multijet uncertainty is considered uncorrelated between the \Wp and \Wm boson channels. 
 
 \section{Summary}
 
