@@ -1,3 +1,4 @@
+
 \chapter{Lepton Efficiency Scale Factors}\label{ch:eff}
 The efficiency of the trigger and reconstruction and identification steps for leptons is non-unity and differs between simulation and data. Determining the efficiency of the reconstruction and identification stages in simulation and data provides a scale factor $\epsilon_{data}/\epsilon_{MC}$ for each lepton to effectively match the reconstruction efficiency of simulation to data. The scale factor is applied to the simulated signal and background samples to emulate the lepton reconstruction and identification efficiency expected in data. Efficiency scale factors are derived for leptons in $|\eta|<2.4$ and $\pt>25\GeV$, with sufficient $\pt$ and $\eta$ granularity chosen to separate behavior in different kinematic regions and detector geometries. The factorization of the efficiency categories for electrons is shown in Equation~\ref{eq:ele_eff} and for muons in Equation~\ref{eq:mu_eff}.
 \begin{equation}
@@ -117,10 +118,10 @@ Uncertainty due to the selection criteria of the tag lepton are evaluated by dir
 Statistical uncertainties in the efficiency scale factor are taken from the average over all variations on the measurement. The statistical uncertainty for a single $(\pt,\eta)$ bin is treated as Poisson, as given in Ref.~\cite{Paterno:2004cb}. Uncertainties for a given $(\pt,\eta)$ bin are correlated across all events containing leptons in the bin, while the uncertainties from separate $(\pt,\eta)$ bins are treated as uncorrelated. Individual categories (reconstruction, identification and isolation, trigger, etc.) are also treated as uncorrelated. The overall impact on the signal yield from the efficiency scale factor statistical uncertainties for the electron and muon channels in \sg and \sh are listed in Table~\ref{tab:eff:stat:all}.
 \input{tables/Efficiency/tab-stat-unc-all.tex}
 
-% \input{tables/Efficiency/tab-unc-summary-13-mu.tex}
-% \input{tables/Efficiency/tab-unc-summary-13-ele.tex}
-% \input{tables/Efficiency/tab-unc-summary-5-mu.tex}
-% \input{tables/Efficiency/tab-unc-summary-5-ele.tex}
+\input{tables/Efficiency/tab-unc-summary-13-mu.tex}
+\input{tables/Efficiency/tab-unc-summary-13-ele.tex}
+\input{tables/Efficiency/tab-unc-summary-5-mu.tex}
+\input{tables/Efficiency/tab-unc-summary-5-ele.tex}
 % \input{tables/Efficiency/tab-unc-summary-13to5-ele.tex}
 % \input{tables/Efficiency/tab-unc-summary-13to5-mu.tex}
 

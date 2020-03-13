@@ -36,3 +36,37 @@ Prefiring rates by $(\pt,\eta)$ for jets and photons are shown in Figure~\ref{fi
 \input{plots/Prefire/fig_z_rap.tex}
 \input{tables/Prefiring/tab-prefire-5.tex}
 \input{tables/Prefiring/tab-prefire-13.tex}
+
+
+\section{Charge misidentification}
+In electrons, charge determination in event reconstruction can be affected by brems-strahlung photons converting to electron-positron pairs close to the original electron track. This can potentially cause the GSF track reconstruction to incorporate additional information which results in the incorrect charge being assigned to the reconstructed electron. The rate at which this occurs can be determined from the number of events in a $\Z \to e^+ e^-$ sample where the $e^+ e^-$ pairs are reconstructed with charges of opposite-sign (OS) or same-sign (SS). Cases where both or neither charge is reconstructed properly result in an OS event, while one correct and one incorrect charge assignment result in a SS event. Given a charge misidentification rate of \fq and a total number of \zee events $N_Z = N_{OS}+N_{SS}$, the number of expected OS events ($N_{OS}$) and SS events ($N_{SS}$) is described in Equation~\ref{eq:charge:N_OS}. 
+\begin{equation}
+\begin{aligned}
+N_{OS} &= (1 - \fq)^2 \times N_Z + \fq^2 \times N_Z \\
+N_{SS} &= 2 \times \fq (1- \fq) \times N_Z
+\label{eq:charge:N_OS}
+\end{aligned}
+\end{equation}
+Given that the rate of charge misidentification is generally very small ($\fq << 1$), the quadratic terms can be dropped and these are approximated by: 
+\begin{equation}
+\begin{aligned}
+N_{OS} &= (1 - 2\times\fq) \times N_Z \\
+N_{SS} &= 2 \times \fq \times N_Z
+\label{eq:charge:approx}
+\end{aligned}
+\end{equation}
+From Equation~\ref{eq:charge:approx}, the mid-identication rate $\fq$ can determined from the rate of observed SS events: 
+\begin{equation}
+\fq = \frac{N_{SS}}{2\times(N_{SS} + N_{OS})}
+\end{equation}
+The misidentification rate is calculated for both data and simulation, with separate categories for barrel and endcap regions, and the difference between the rates in data and simulation is used as the \fq in Equation~\ref{eq:charge}. As shown in Equation~\ref{eq:charge}, the number of \Wp and \Wm bosons ($N_{W+}$, $N_{W-}$) produced can be estimated from the number of selected \Wp and \Wm bosons ($N^{sel}_{W+}$, $N^{sel}_{W-}$) and \fq. The systematic uncertainty on each channel due to the charge misidentification is taken as the difference between the $N$ and $N^{sel}$. The uncertainties are summarized in Table~\ref{tab:charge} for the \sg and \sh electron channels. Studies on cosmic muons show that there is a negligible effect on muons.
+\begin{equation}
+\begin{aligned}
+    N_{\Wp} = N_{\Wp}^{sel} \times (1-\fq) + N_{\Wm}^{sel} \times \fq \\
+    N_{\Wm} = N_{\Wp}^{sel} \times \fq + N_{\Wm}^{sel} \times (1 - \fq)
+\label{eq:charge}
+\end{aligned}
+\end{equation}
+ 
+
+\input{tables/ChargeMisID/tab-charge.tex}
