@@ -1,19 +1,28 @@
-% \chapter{Coordinates \& Common Observables}~\label{ch:variables}
-% This section provides an explanation of the coordinate system conventions and common terminology used in this thesis.
+\chapter{Coordinates \&  Variables}~\label{ch:variables}
+This section provides an explanation of the coordinate system conventions and common terminology used in this thesis.
 
-% \subsubsection{Coordinate Conventions}
-% Generally the detector can be though of in cylindrical coordinates, with the $z$-axis aligned to the beamline and $z=0$ at the collision point.
-% \begin{itemize}
-%     \item $z$ 
-%     \item $r$ radial distance from beamline
-%     \item 
-% \end{itemize}
+\subsubsection{Coordinate Conventions}
+Generally the detector can be though of in cylindrical coordinates, with the $z$-axis aligned to the beamline and $z=0$ at the collision point.
+\begin{itemize}
+    \item $z$: the $z$-axis is aligned with the beamline through CMS
+    \item $r$ radial distance from beamline
+    \item 
+\end{itemize}
 
-% \subsubsection{Kinematic Variables}
-% \begin{itemize}
-%     \item $p$
-%     \item $\pt$
-%     \item $\eta$
-%     \item $y$
+\subsubsection{Kinematic Variables}
+\begin{itemize}
+    \item $p$
+    \item $\pt$
+    \item $\eta$
+    \item $y = \frac{1}{2}\ln\frac{E+p_z}{E-p_z}$
+    \item $\Delta R = \sqrt{(\phi_1-\phi_2)^2 + (\eta_1-\eta_2)^2}$
     
-% \end{itemize}
+\end{itemize}
+
+$$ y = \frac{1}{2}\ln{\frac{E+p_z}{E-p_z}}  $$
+
+$$\Delta R = \sqrt{(\phi_1-\phi_2)^2 + (\eta_1-\eta_2)^2} $$
+
+$$ \eta = -\ln \tan\bigg(\frac{\theta}{2}\bigg) $$
+
+$$\pt = |\vec{p}| \mathrm{sech}(\eta)  $$
