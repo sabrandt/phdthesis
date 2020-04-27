@@ -22,7 +22,7 @@ The weak interaction is propagated by the \W and \Z bosons. Both the charged lep
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Electroweak Theory}\label{ch:sm:ewk}
-In the SM\cite{SMEWK1,SMEWK2,SMEWK3}, electroweak interactions belong to the gauge group $SU(2) \otimes U(1)$, with the gauge bosons $W_{\mu}^i$ ($i = 1,2,3$) for $SU(2)$ and  $B_{\mu}$ for $U(1)$.  The left-handed fermions transform as doublets, where the leptons are given in Equation~\ref{eq:phys:ewk:leptons} and quarks are shown in Equation~\ref{eq:phys:ewk:quarks}. The $d_i'$ are given by $d_i' = \sum_j V_{ij} d_i$, where $V_{ij}$ are the elements of the Cabibbo-Kobayashi-Maskawa (CKM) matrix\cite{ckm1,ckm2}.
+In the SM\cite{SMEWK1,SMEWK2,SMEWK3}, electroweak interactions belong to the gauge group $SU(2) \otimes U(1)$, with the gauge bosons $W_{\mu}^i$ ($i = 1,2,3$) for $SU(2)$ and  $B_{\mu}$ for $U(1)$.  The left-handed fermions transform as $SU(2)$ doublets, where the leptons are given in Equation~\ref{eq:phys:ewk:leptons} and quarks are shown in Equation~\ref{eq:phys:ewk:quarks}. The $q_i'$ ($d',s',b'$) are given by $q_i' = \sum_j V_{ij} q_i$, where $q_i$ are $d,~s,~b$~ and $V_{ij}$ are the elements of the Cabibbo-Kobayashi-Maskawa (CKM) matrix\cite{ckm1,ckm2} which describes the mixing between the quark generations.
 \begin{equation}
   \Psi=\binom{v_e}{l_e},~\binom{v_{\mu}}{l_{\mu}},~\binom{v_{\tau}}{l_{\tau}}
   \label{eq:phys:ewk:leptons}
@@ -34,8 +34,8 @@ In the SM\cite{SMEWK1,SMEWK2,SMEWK3}, electroweak interactions belong to the gau
 Vector fields corresponding to particles with spin 1 and mass are the $W_\mu^\pm$, $Z_\mu$, and photon $A_\mu$, which are given in terms of the gauge fields as:
 \begin{equation}
 \begin{aligned}
-A_\mu &= B\mu cos\theta + W^3_\mu sin\theta\\
-Z_\mu &= -B\mu sin\theta + W^3_\mu sin\theta\\
+A_\mu &= B_\mu cos\theta + W^3_\mu sin\theta\\
+Z_\mu &= -B_\mu sin\theta + W^3_\mu sin\theta\\
 W_\mu^\pm &= W_\mu^1 \mp i W^2_\mu
 \end{aligned}
 \label{eq:ewk_s1_particles}
@@ -75,7 +75,7 @@ In Equation~\ref{eq:yukawa}, $q_L$ and $u_R,d_R$ are the quark doubles and singl
 
 \subsection{Quantum Chromodynamics}\label{ch:sm:qcd}
 
-The strong interaction between quarks and gluons is described by quantum chromodynamics (QCD), the $SU(3)$ part of the SM. Interactions between quarks and gluons is described by the Dirac Lagrangian density given in Equation~\ref{eq:qcd_lagrangian}. Quarks and gluons carry color charges (red, green, or blue: $N_C = 3$), and there are eight color-combinations of gluons as mediators of the strong force ($A^C_\mu$,with~$C=[1...8]$). Quarks are represented by the $\bar{\psi}_{f,\alpha}$ spinors, with the six flavors of quarks ($u,c,t,d,s,b$) represented by $f$, the three colors by $\alpha$, and the quark masses by $m_f$. The $\gamma^\mu$ are Dirac matrices.
+The strong interaction between quarks and gluons is described by quantum chromodynamics (QCD), the $SU(3)$ part of the SM. Interactions between quarks and gluons is described by the Dirac Lagrangian density given in Equation~\ref{eq:qcd_lagrangian}. Quarks and gluons carry color charges (red, green, or blue: $N_C = 3$), and there are eight color-combinations of gluons as mediators of the strong force (gluon fields represented by: $A^C_\mu$,with~$C=[1...8]$). Quarks are represented by the $\bar{\psi}_{f,\alpha}$ spinors, with the six flavors of quarks ($u,c,t,d,s,b$) represented by $f$, the three colors by $\alpha$, and the quark masses by $m_f$. The $\gamma^\mu$ are Dirac matrices.
 
 
 %% QCD Lagrangian
@@ -94,7 +94,7 @@ F_{\mu\nu}^A = \delta_{\mu} \mathcal{A}^A_{\nu} - \delta_{\nu} \mathcal{A}^A_\mu
 \label{eq:qcd_field_tensors}
 \end{equation}
 % The parameters of QCD are the quark masses ($m_f$) and the coupling constant ($g_s$). 
-There is an additional term in the QCD Lagrangian which is not included in Equation~\ref{eq:qcd_lagrangian}, which contains a parameter $\theta$, and allows for CP violation in QCD. Experimental limits on the neutron electric dipole moment constrain this term to be $\theta < 10^{-10}$ \cite{PhysRevLett.97.131801}.
+There is an additional term in the QCD Lagrangian which is omitted from Equation~\ref{eq:qcd_lagrangian}, which contains a parameter $\theta$, and allows for CP violation in QCD. Experimental limits on the neutron electric dipole moment constrain this term to be $\theta < 10^{-10}$ \cite{PhysRevLett.97.131801}.
 
 Computational methods for QCD predictions include lattice gauge theory and perturbative expansion methods. Feynman rules for QCD allow diagrams with $q\bar{q}g$ and $ggg$ vertices and a $gggg$ vertex\cite{Ellis:1991qj}. Perturbative QCD (pQCD) expresses predictions for observables as an expansion in terms of the coupling $\alpha_s(\mu_R^2)$ i.e. $f = f_0 + f_1\alpha_s + f_2\alpha_s^2 + f_3\alpha_s^3 +....$. The coupling $\alpha_s(\mu_R^2)$ is a function of the renormalization scale $\mu_R$, and the effective strength of the interaction with momentum transfer $Q^2$ is $\alpha_s(\mu_R^2 \sim Q^2)$. Calculations are done with Feynman diagrams and are generally performed to only a few terms---leading order (LO, first term), next-to-leading order (NLO, first two terms), and so forth.
 The scale dependence of QCD is expressed in the renormalization group equation:
@@ -103,5 +103,5 @@ The scale dependence of QCD is expressed in the renormalization group equation:
     \label{eq:renormalization_group}
 \end{equation}
 %where $b_0$ is the 1-loop coefficient, $b_1$ is the 2-loop coefficient, etc. 
-The minus sign indicates that the coupling becomes weak for interactions with high momentum transfer and is strongly interacting for low energy scales, the source of asymptotic freedom \cite{PhysRevLett.30.1346, PhysRevLett.30.1343}. Values of $\alpha_s$ range from $\alpha_s \sim 0.1$ for $Q$ in the $100 \GeV - \TeV$ range to over $\alpha_s \sim 0.3$ for processes with momentum transfer $Q \sim 1 \GeV$, as depicted in Figure~\ref{fig:sm:alpha_s}. Free quarks have not been observed---they quickly hadronize into mesons or baryons on the time scale $\sim 1/\Lambda$, while the top quark decays before hadronization. This is understood as a result of the strong coupling increasing at low energies (large distance scales), and only the color-singlet hadrons are observed.
+The minus sign indicates that the coupling becomes weak for interactions with high momentum transfer and is strongly interacting for low energy scales, the source of asymptotic freedom \cite{PhysRevLett.30.1346, PhysRevLett.30.1343}. Values of $\alpha_s$ range from $\alpha_s \sim 0.1$ for $Q$ in the $100 \GeV - \TeV$ range to over $\alpha_s \sim 0.3$ for processes with momentum transfer $Q \sim 1 \GeV$, as depicted in Figure~\ref{fig:sm:alpha_s}. Free quarks have not been observed---they quickly hadronize into mesons or baryons on the time scale $\sim 1/\Lambda_{QCD}$, while the top quark decays before hadronization. This is understood as a result of the strong coupling increasing at low energies (large distance scales), and only the color-singlet hadrons are observed.
 \input{plots/SM/fig_alphas.tex}
