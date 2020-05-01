@@ -21,44 +21,23 @@ Matrix element calculation breaks down for soft and collinear final states. Inst
 \input{plots/SM/fig_evtgen.tex}
 % %%%%%%%%%%%%%%%% vvvvvvv finish later
 % % %% Comment back in later 
-% \subsection{\W and \Z production at the LHC}
-% In the \pp collisions, the bosons are produced through the interaction of quarks and gluons within the protons \cite{}. The primary production modes for the \W and \Z bosons is through the Drell-Yann process, predonminantly $u\bar{u}, d\bar{d}\rightarrow Z$,  $u\bar{d}\rightarrow W^+$,  and $d\bar{u}\rightarrow W^-$. 
+\subsection{\W and \Z production at the LHC}
+In the \pp collisions, the bosons are produced through the interaction of quarks and gluons within the protons. The primary production modes for the \W and \Z bosons is through the Drell-Yann process, predominantly $u\bar{u}, d\bar{d}\rightarrow Z$,  $u\bar{d}\rightarrow W^+$,  and $d\bar{u}\rightarrow W^-$. In proton-proton collisions, these processes require the participation of at least one sea quark \cite{PhysRevLett.25.316}. 
 
-% Figure~\ref{fig:sm:summary:xVsQ2}.
-
-
-
-
-
+The kinematic variables describing the partons participating in the interaction are listed in Equations~\ref{eq:scattering_vars}. The mass of the boson is represented by $M$, the rapidity of the boson is represented by $y$, and \s is the center-of-mass energy of the collision. The relative fraction of the proton's longitudinal momentum held by each of the initial partons is represented by $x_1$ and $x_2$. 
+\begin{equation}
+\begin{aligned}
+M &= \sqrt{x_1 x_2 s} \\ 
+y &= \frac{1}{2} \ln \bigg( \frac{E+p_z}{E-p_z}\bigg) = \frac{1}{2} \ln \bigg( \frac{x_1}{x_2}\bigg)\\ 
+x_1 &= \frac{M}{\sqrt{s}} e^{y},~ x_2 = \frac{M}{\sqrt{s}} e^{-y}
+\end{aligned}
+\label{eq:scattering_vars}
+\end{equation}
 % % %%%% figure
-% \input{plots/SM/fig_q.tex}
+\input{plots/SM/fig_q.tex}
 
-% Measurements of \W and \Z boson production at the LHC provide information related to different PDFs due to the different relative contribution of each flavor in the production.
+\W and \Z boson production occupies a phase space near $Q \sim 100 \GeV$ (approximately the \W or \Z boson mass). Given a measurement acceptance of $|y| < 2.4$, this allows us to study $x$ approximately within the range $10^{-4} < x < 0.1$ at the LHC.
 
-% Contributions of different quark flavors to \W and \Z production over a range of rapidities is shown in Figure~\ref{fig:wz_rapidity}. 
-
-% \input{plots/SM/fig_WZrapitidy}
-
-% %%%%%%%%%% ^^^^^ Section needs to be finished
-
-% %% Comment back in later if I feel like finishing
-
-% % \subsection{Simulating \pp collisions[need some work]}
-% % Practical descriptions of theoretical predictions are provided by Monte Carlo event generators. These generators rely on the approximations and factorization schemes that were described earlier in this section. Many collaborations dedicated to event generation tools exist, and are important in the era of LHC physics. The event generators come in generally two types: matrix element generators and parton shower generators. The matrix-element generators are distinguished by the order in $\alpha_s$ to which they provide calculations. 
-% % \begin{itemize}
-% %     \item \textbf{Pythia}: Pythia is a general-purpose event generator and can do both matrix-element calculation as well as initial and final state radiation and multiparton interactions. Pythia is often interfaced to other matrix-element calculators, where it provides the parton showering and hadronization steps, as done for the samples used in this analysis. \cite{Sjostrand:2014zea}
-% %     \item \textbf{aMC@NLO} MadGraph5\_aMC@NLO is a generator which provides matrix element calculations with up to two additional partons in the final state. This uses the NNPDF3.1 NLO PDF set.
-% %     \item \textbf{ResBos} 
-% %     \item \textbf{Powheg}
-% % \end{itemize}
-
-
-% % Predictions from event generators have uncertainties from several sources. Low-energy QCD processes which are dominiated by non-perturabtive effects are not well modeled and have large uncertainties. Parton showering is limited by its reliance on approximations. Proton PDFs have uncertainties. Additional uncertainty comes from higher-order terms in both QCD and QED, which are currently used at NNLO and LO. 
-
-% % PDF  uncertainties - general comment
-% % include multiple error sets reflecting the best fit with 1 sigma variations on the all of the params in the fit
-% % reflect uncertainties in data also
-% % inherent systematics dependent on way global fit is set up
-
-
-% % better predicionts of ewk mixing angle, w mass etc
+When simulating the proton-proton interactions, the PDFs describing the relative fraction $x$ of the proton's momentum contained by the individual partons is important. As previously described, the PDFs are dependent on the energy scale of the interaction, and in the case of the \W and \Z boson production this scale is around the mass of the bosons $Q\sim 100 \GeV$. There are many collaborations dedicated to providing PDF sets for use in these predictions, with many of the PDFs constructed from global fits to experimental data. Each collaboration uses a different approach and often different sets of experimental data in the fits, resulting in different PDF predictions and uncertainties. Inclusive \W and \Z production cross section measurements play and important role in PDF determination as they  An example illustrating the PDFs involved in \W and \Z boson production is given in Figure~\ref{fig:sm:nnpdf}\cite{Ball:2017nwa,Gao:2017yyd,Accardi:2016ndt,Butterworth:2015oua,Rojo:2015acz}.. 
+\input{plots/SM/fig_nnpdf}.
+An illustration of the involvement of the various quark flavors in the production of \W and \Z bosons at a range of rapidities is shown in Figure~\ref{fig:wz_rapidity}.  Measurement of \W production in proton-proton collisions allows for separation of quark flavors, and ratios of \W and \Z cross sections can provide constraint to the strange content of the proton. \input{plots/SM/fig_WZrapitidy}
